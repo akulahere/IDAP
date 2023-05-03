@@ -10,7 +10,10 @@ class Human {
   private var age: Int
   private var gender: Gender
   
-  
+  enum Gender: String {
+    case male = "male"
+    case female = "female"
+  }
   
   init(name: String, age: Int, gender: Gender) {
     self.name = name
@@ -43,10 +46,9 @@ class Human {
   }
 }
 
-enum Gender: String {
-  case male = "male"
-  case female = "female"
-}
+
+
+
 
 class Person: Human {
   private var isMarried: Bool
@@ -115,8 +117,6 @@ class Person: Human {
   func getChildren() -> [Child] {
     return self.children
   }
-  
-  
 }
 
 
@@ -136,10 +136,7 @@ class Child: Human {
 
 
 let danil = Human(name: "Danil", age: 15, gender: .male)
-
-
 let newMan = Person(name: "Ivan", age: 20, gender: .male, isMarried: false, parents: (nil, nil))
-
 let newWoman = Person(name: "Lera", age: 16, gender: .female, isMarried: false, parents: (nil, nil))
 
 newMan.childrenCount
@@ -150,6 +147,6 @@ newMan.getMarriageStatus()
 newWoman.getMarriageStatus()
 
 newMan.makeChild(name: "Sam", gender: .male, with: newWoman)
-//newMan.makeChild(name: "Sam", gender: .male, with: newWoman)
+newMan.makeChild(name: "Sam", gender: .male, with: newWoman)
 newMan.childrenCount
 newWoman.childrenCount
