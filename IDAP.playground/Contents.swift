@@ -47,9 +47,6 @@ class Human {
 }
 
 
-
-
-
 class Person: Human {
   private var isMarried: Bool
   private var partner: Person?
