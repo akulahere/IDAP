@@ -136,6 +136,64 @@ final class HumanSpec: QuickSpec {
                 expect(Gender.female.rawValue).to(equal("female"))
             }
         }
+        
+        describe("Creature") {
+            var creature: Creature!
+            
+            beforeEach {
+                creature = Creature(name: "A", gender: .male, mass: 10.0, age: 5)
+            }
+            
+            // MARK: Creature init
+            
+            it("should have correct initial values") {
+                expect(creature.name).to(equal("A"))
+                expect(creature.gender).to(equal(Gender.male))
+                expect(creature.mass).to(equal(10.0))
+                expect(creature.age).to(equal(5))
+                expect(creature.children).to(beEmpty())
+            }
+            
+            // MARK: Creature fight
+            
+            it("fights correctly") {
+                expect(creature.fight()).to(equal("A fights!"))
+            }
+            
+            // MARK: Creature give birth
+            
+            it("gives birth correctly") {
+                let baby = creature.giveBirth(to: "B")
+                expect(baby.name).to(equal("B"))
+                expect(baby.age).to(equal(0))
+                expect(baby.mass).to(equal(1.0))
+            }
+            
+            // MARK: Creature add and removes baby correctly
+            
+            it("adds and removes children correctly") {
+                let child = creature.giveBirth(to: "C")
+                expect(creature.children).to(beEmpty())
+                creature.addChild(child)
+                expect(creature.children).to(haveCount(1))
+                expect(creature.children.first).to(beIdenticalTo(child))
+                
+                creature.removeChild(child)
+                expect(creature.children).to(beEmpty())
+            }
+            
+            // MARK: Creature say hello
+            
+            it("says hello correctly") {
+                let child1 = Creature(name: "D", gender: .female, mass: 1.0, age: 0)
+                let child2 = Creature(name: "E", gender: .male, mass: 1.0, age: 0)
+                
+                creature.addChild(child1)
+                creature.addChild(child2)
+                
+                expect(creature.sayHello()).to(equal("A says: Hello!\nD says: Hello!\nE says: Hello!"))
+            }
+        }
     }
 }
 

@@ -32,7 +32,6 @@ class Creature {
         self.age = age
     }
 
-    
     func fight() -> String {
         return "\(name) fights!"
     }
