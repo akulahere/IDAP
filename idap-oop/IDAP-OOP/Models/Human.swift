@@ -1,8 +1,8 @@
 //
 //  Human.swift
-//  idap-oop
+//  IDAP-OOP
 //
-//  Created by Dmytro Akulinin on 03.05.2023.
+//  Created by Dmytro Akulinin on 04.05.2023.
 //
 
 import Foundation

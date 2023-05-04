@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/dmytro/Developer/iOS/IDAP/idap-oop/IdapOOP.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
