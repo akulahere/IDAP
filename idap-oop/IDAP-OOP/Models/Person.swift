@@ -56,7 +56,7 @@ class Person: Human {
     func becomeMarried(partner: Person) {
         self.isMarried = true
         partner.isMarried = true
-        partner.partner = partner
+        partner.partner = self
         self.partner = partner
     }
     
