@@ -31,14 +31,15 @@ class Person: Human {
     // MARK: -
     // MARK: Initializations and Deallocations
 
-    init(name: String,
+    init(
+        name: String,
          age: Int,
          gender: Gender,
          isMarried: Bool,
          partner: Person? = nil,
          parents: Parents,
-         children: [Human] = [])
-    {
+         children: [Human] = []
+    ) {
         self.isMarried = isMarried
         self.partner = partner
         self.parents = parents
