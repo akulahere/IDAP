@@ -13,11 +13,15 @@ import Foundation
 
 class Creature: Equatable {
     
-    
-    
     // MARK: -
     // MARK: Variables
+    
     private let id = UUID()
+    var genderSpecific: String {
+        return "Ancient"
+    }
+    
+    
     let name: String
     let mass: Double
     var age: Int
@@ -32,8 +36,6 @@ class Creature: Equatable {
         self.age = age
     }
     
-    
-    
     // MARK: -
     // MARK: Public
     
@@ -47,7 +49,7 @@ class Creature: Equatable {
     }
     
     func sayHello() -> String {
-        var greetings = "\(self.name) says: Hello!"
+        var greetings = "\(self.name) says: Hello from \(genderSpecific)!"
         for child in self.children {
             greetings += "\n\(child.sayHello())"
         }
@@ -63,31 +65,26 @@ class Creature: Equatable {
 }
 
 class MaleCreature: Creature {
-    func fight() -> String {
-        return "\(self.name) fights!"
+    override var genderSpecific: String {
+        return "Man"
     }
     
-    override func sayHello() -> String {
-        var greetings = "\(self.name) says: Hello as Man!"
-        for child in self.children {
-            greetings += "\n\(child.sayHello())"
-        }
-        return greetings
+    func fight() -> String {
+        return "\(self.name) fights!"
     }
 }
 
 class FemaleCreature: Creature {
-    func giveBirth(to name: String) -> Creature {
-        let baby = Bool.random() ? MaleCreature(name: name, mass: 1.0, age: 0) :
-                                   FemaleCreature(name: name, mass: 1.0, age: 0)
-        return baby
+    override var genderSpecific: String {
+        return "Female"
     }
     
-    override func sayHello() -> String {
-        var greetings = "\(self.name) says: Hello as Woman!"
-        for child in self.children {
-            greetings += "\n\(child.sayHello())"
-        }
-        return greetings
+    
+    func giveBirth(to name: String) -> Creature {
+        let baby = Bool.random()
+        ? MaleCreature(name: name, mass: 1.0, age: 0)
+        : FemaleCreature(name: name, mass: 1.0, age: 0)
+        
+        return baby
     }
 }
