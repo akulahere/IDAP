@@ -31,24 +31,24 @@ class ViewController: UIViewController {
         print("Creature")
         let creature = Creature(name: "Creature1", gender: .male, mass: 80, age: 30)
         let child1 = creature.giveBirth(to: "Baby1")
-        creature.addChild(child1)
+        creature.add(child: child1)
 
         let grandChild1 = child1.giveBirth(to: "Baby1-GrandBaby-1")
-        child1.addChild(grandChild1)
+        child1.add(child: grandChild1)
 
         let child2 = creature.giveBirth(to: "Baby2")
-        creature.addChild(child2)
+        creature.add(child: child2)
 
         let grandChild2 = child2.giveBirth(to: "Baby2-GrandBaby1")
-        child2.addChild(grandChild2)
+        child2.add(child: grandChild2)
 
         let grandChild3 = child2.giveBirth(to: "Baby2-GrandBaby2")
-        child2.addChild(grandChild3)
+        child2.add(child: grandChild3)
 
         print(creature.sayHello())
         
         print("------REMOVE-----")
-        creature.removeChild(child1)
+        creature.remove(child: child1)
         print(creature.sayHello())
     }
 }

@@ -11,11 +11,13 @@ import Foundation
 // Есть существо, у существа есть переменная пола, есть строка имени, есть масса, есть возраст, есть массив детей. Существо умеет воевать и рожать детей. При родах существо не добавляет к себе ребенка автоматом. Существо умеет добавит к себе детей и удалить. Существо умеет говорить "Привет!", причем, когда существо говорит привет, то сначала говорит оно, а потом все его дети (значит и дети детей, и т.д.).
 
 
-class Creature {
+class Creature: Equatable {
+
+    
     
     // MARK: -
     // MARK: Variables
-    
+    private let id = UUID()
     let name: String
     let gender: Gender
     let mass: Double
@@ -44,14 +46,13 @@ class Creature {
         return Creature(name: name, gender: babyGender, mass: 1.0, age: 0)
     }
 
-    func addChild(_ child: Creature) {
+    func add(child: Creature) {
         self.children.append(child)
     }
 
-    func removeChild(_ child: Creature) {
-        if let index = self.children.firstIndex(where: { $0.name == child.name }) {
-            self.children.remove(at: index)
-        }
+    func remove(child: Creature) {
+        self.children.removeAll { $0 == child }
+
     }
 
     func sayHello() -> String {
@@ -60,6 +61,13 @@ class Creature {
             greetings += "\n\(child.sayHello())"
         }
         return greetings
+    }
+    
+    // MARK: -
+    // MARK: Equatable
+
+    static func == (lhs: Creature, rhs: Creature) -> Bool {
+        lhs.id == rhs.id
     }
 }
 

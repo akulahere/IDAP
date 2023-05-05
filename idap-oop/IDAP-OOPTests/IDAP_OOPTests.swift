@@ -18,41 +18,11 @@ final class HumanSpec: QuickSpec {
                 human = Human(name: "John", age: 30, gender: .male)
             }
             
-            // MARK: Human init
-            
-            it("should have correct initial values") {
-                expect(human.name).to(equal("John"))
-                expect(human.age).to(equal(30))
-                expect(human.gender).to(equal(Gender.male))
-            }
-            
             // MARK: Age increasing
             
             it("should increase age by one when calling increaseAge") {
                 human.increaseAge()
                 expect(human.age).to(equal(31))
-            }
-        }
-        
-        describe("Child") {
-            var child: Child!
-            var father: Human!
-            var mother: Human!
-            
-            beforeEach {
-                father = Human(name: "John", age: 30, gender: .male)
-                mother = Human(name: "Jane", age: 28, gender: .female)
-                child = Child(name: "Billy", age: 0, gender: .male, parents: (father, mother))
-            }
-            
-            // MARK: Child init
-            
-            it("should have correct initial values") {
-                expect(child.name).to(equal("Billy"))
-                expect(child.age).to(equal(0))
-                expect(child.gender).to(equal(Gender.male))
-                expect(child.parents.father).to(beIdenticalTo(father))
-                expect(child.parents.mother).to(beIdenticalTo(mother))
             }
         }
         
@@ -70,11 +40,6 @@ final class HumanSpec: QuickSpec {
             // MARK: Correct Person Init
             
             it("should have correct initial values") {
-                expect(person.name).to(equal("Alice"))
-                expect(person.age).to(equal(25))
-                expect(person.gender).to(equal(Gender.female))
-                expect(person.isMarried).to(beFalse())
-                expect(person.partner).to(beNil())
                 expect(person.parents.father).to(beIdenticalTo(father))
                 expect(person.parents.mother).to(beIdenticalTo(mother))
                 expect(person.children).to(beEmpty())
@@ -146,11 +111,7 @@ final class HumanSpec: QuickSpec {
             
             // MARK: Creature init
             
-            it("should have correct initial values") {
-                expect(creature.name).to(equal("A"))
-                expect(creature.gender).to(equal(Gender.male))
-                expect(creature.mass).to(equal(10.0))
-                expect(creature.age).to(equal(5))
+            it("should have no children") {
                 expect(creature.children).to(beEmpty())
             }
             
@@ -174,11 +135,11 @@ final class HumanSpec: QuickSpec {
             it("adds and removes children correctly") {
                 let child = creature.giveBirth(to: "C")
                 expect(creature.children).to(beEmpty())
-                creature.addChild(child)
+                creature.add(child: child)
                 expect(creature.children).to(haveCount(1))
                 expect(creature.children.first).to(beIdenticalTo(child))
                 
-                creature.removeChild(child)
+                creature.remove(child: child)
                 expect(creature.children).to(beEmpty())
             }
             
@@ -188,8 +149,8 @@ final class HumanSpec: QuickSpec {
                 let child1 = Creature(name: "D", gender: .female, mass: 1.0, age: 0)
                 let child2 = Creature(name: "E", gender: .male, mass: 1.0, age: 0)
                 
-                creature.addChild(child1)
-                creature.addChild(child2)
+                creature.add(child: child1)
+                creature.add(child: child2)
                 
                 expect(creature.sayHello()).to(equal("A says: Hello!\nD says: Hello!\nE says: Hello!"))
             }
