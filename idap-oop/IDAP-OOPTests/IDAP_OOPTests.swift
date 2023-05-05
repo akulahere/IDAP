@@ -106,7 +106,7 @@ final class HumanSpec: QuickSpec {
             var creature: Creature!
             
             beforeEach {
-                creature = Creature(name: "A", gender: .male, mass: 10.0, age: 5)
+                creature = Creature(name: "A",  mass: 10.0, age: 5)
             }
             
             // MARK: Creature init
@@ -146,8 +146,8 @@ final class HumanSpec: QuickSpec {
             // MARK: Creature say hello
             
             it("says hello correctly") {
-                let child1 = Creature(name: "D", gender: .female, mass: 1.0, age: 0)
-                let child2 = Creature(name: "E", gender: .male, mass: 1.0, age: 0)
+                let child1 = Creature(name: "D", mass: 1.0, age: 0)
+                let child2 = Creature(name: "E", mass: 1.0, age: 0)
                 
                 creature.add(child: child1)
                 creature.add(child: child2)
@@ -157,6 +157,3 @@ final class HumanSpec: QuickSpec {
         }
     }
 }
-
-
-

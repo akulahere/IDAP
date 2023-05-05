@@ -29,26 +29,21 @@ class ViewController: UIViewController {
         print(anotherMan.childrenCount)
         
         print("Creature")
-        let creature = Creature(name: "Creature1", gender: .male, mass: 80, age: 30)
-        let child1 = creature.giveBirth(to: "Baby1")
-        creature.add(child: child1)
-
-        let grandChild1 = child1.giveBirth(to: "Baby1-GrandBaby-1")
-        child1.add(child: grandChild1)
-
-        let child2 = creature.giveBirth(to: "Baby2")
-        creature.add(child: child2)
-
-        let grandChild2 = child2.giveBirth(to: "Baby2-GrandBaby1")
-        child2.add(child: grandChild2)
-
-        let grandChild3 = child2.giveBirth(to: "Baby2-GrandBaby2")
-        child2.add(child: grandChild3)
-
-        print(creature.sayHello())
+        let ancientCreautre = Creature(name: "Ancient1", mass: 900, age: 100)
         
-        print("------REMOVE-----")
-        creature.remove(child: child1)
-        print(creature.sayHello())
+        let femaleCreature = FemaleCreature(name: "female1", mass: 100, age: 10)
+        let femaleCreature1 = FemaleCreature(name: "female2", mass: 100, age: 10)
+        
+        let child1 = femaleCreature.giveBirth(to: "Manual child 1")
+        let child2 = femaleCreature.giveBirth(to: "Manual child 2")
+        let child3 = femaleCreature1.giveBirth(to: "Manual child 3")
+        
+        var zoo = [ancientCreautre, femaleCreature, child1, child2, child3]
+        zoo.forEach { creature in
+            if let female = creature as? FemaleCreature {
+                zoo.append(female.giveBirth(to: "Random child \(Int.random(in: 1...100))"))
+            }
+        }
+        zoo.forEach { print($0.sayHello()) }
     }
 }

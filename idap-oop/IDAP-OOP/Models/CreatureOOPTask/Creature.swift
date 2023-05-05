@@ -12,49 +12,40 @@ import Foundation
 
 
 class Creature: Equatable {
-
+    
     
     
     // MARK: -
     // MARK: Variables
     private let id = UUID()
     let name: String
-    let gender: Gender
     let mass: Double
     var age: Int
     private(set) var children: [Creature] = []
-
+    
     // MARK: -
     // MARK: Initializations and Deallocations
     
-    init(name: String, gender: Gender, mass: Double, age: Int) {
+    init(name: String, mass: Double, age: Int) {
         self.name = name
-        self.gender = gender
         self.mass = mass
         self.age = age
     }
-
-    func fight() -> String {
-        return "\(name) fights!"
-    }
-
+    
+    
+    
     // MARK: -
     // MARK: Public
     
-    func giveBirth(to name: String) -> Creature {
-        let babyGender = Bool.random() ? Gender.male : Gender.female
-        return Creature(name: name, gender: babyGender, mass: 1.0, age: 0)
-    }
-
     func add(child: Creature) {
         self.children.append(child)
     }
-
+    
     func remove(child: Creature) {
         self.children.removeAll { $0 == child }
-
+        
     }
-
+    
     func sayHello() -> String {
         var greetings = "\(self.name) says: Hello!"
         for child in self.children {
@@ -65,9 +56,38 @@ class Creature: Equatable {
     
     // MARK: -
     // MARK: Equatable
-
+    
     static func == (lhs: Creature, rhs: Creature) -> Bool {
         lhs.id == rhs.id
     }
 }
 
+class MaleCreature: Creature {
+    func fight() -> String {
+        return "\(self.name) fights!"
+    }
+    
+    override func sayHello() -> String {
+        var greetings = "\(self.name) says: Hello as Man!"
+        for child in self.children {
+            greetings += "\n\(child.sayHello())"
+        }
+        return greetings
+    }
+}
+
+class FemaleCreature: Creature {
+    func giveBirth(to name: String) -> Creature {
+        let baby = Bool.random() ? MaleCreature(name: name, mass: 1.0, age: 0) :
+                                   FemaleCreature(name: name, mass: 1.0, age: 0)
+        return baby
+    }
+    
+    override func sayHello() -> String {
+        var greetings = "\(self.name) says: Hello as Woman!"
+        for child in self.children {
+            greetings += "\n\(child.sayHello())"
+        }
+        return greetings
+    }
+}
