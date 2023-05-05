@@ -67,7 +67,7 @@ class CarWasn: Building {
     
     func giveCar(to washer: Washer) {
         // cycle to find free washer
-        // if there is free washer find a free room add car to the room 
+        // if there is free washer find a free room add car to the room
     }
     
     func add(emloyee: Employee) {
@@ -101,19 +101,20 @@ class Employee {
 
 
 class Director: Employee {
-    
-    
-    func takeMoney(money: Money, from: Accountant) {
-    }
-    
-    func calculateBalance() -> Money {
+
+    func profit() -> Money {
+        // complicated func to calculate all salaries 
         return Money(value: 0)
     }
 }
 
 class Accountant: Employee {
-    func calculateMoney() -> Int {
-        return Int.max
+    func calculateMoney() -> Money {
+        return self.money
+    }
+    
+    func giveMoney() {
+        // zero accountant balance, add this ammount to director balance
     }
 }
 
