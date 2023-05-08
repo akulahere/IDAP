@@ -23,6 +23,7 @@
 		66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CAE2A091E4F0055F58A /* Accountant.swift */; };
 		66D57CB12A091E520055F58A /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB02A091E510055F58A /* Director.swift */; };
 		66D57CB32A091E550055F58A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB22A091E550055F58A /* Employee.swift */; };
+		66D57CCA2A094F890055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC92A094F890055F58A /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		66D57CAE2A091E4F0055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
 		66D57CB02A091E510055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		66D57CB22A091E550055F58A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		66D57CC92A094F890055F58A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				66D57CA32A091CA80055F58A /* CarWash.swift */,
 				66D57CAB2A091E3D0055F58A /* Employees */,
 				66D57CA62A091CA80055F58A /* Money.swift */,
+				66D57CC92A094F890055F58A /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */,
 				66D57CA72A091CA80055F58A /* CarWash.swift in Sources */,
 				66D57CA82A091CA80055F58A /* Car.swift in Sources */,
+				66D57CCA2A094F890055F58A /* Car.swift in Sources */,
 				66D57C712A0919200055F58A /* AppDelegate.swift in Sources */,
 				66D57CB12A091E520055F58A /* Director.swift in Sources */,
 				66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */,

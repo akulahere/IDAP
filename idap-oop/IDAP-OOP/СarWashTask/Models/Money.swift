@@ -1,6 +1,6 @@
 //
 //  Money.swift
-//  IDAP-observer
+//  IDAP-OOP
 //
 //  Created by Dmytro Akulinin on 08.05.2023.
 //
@@ -10,9 +10,9 @@ import Foundation
 class Money {
     
     // MARK: -
-    // MARK: Vaiables
+    // MARK: Variables
 
-    private(set) var value: Double {
+    var value: Double {
         willSet {
             if newValue < 0 {
                 fatalError("Not enough money")
@@ -38,4 +38,3 @@ class Money {
         self.value += amount.value
     }
 }
-

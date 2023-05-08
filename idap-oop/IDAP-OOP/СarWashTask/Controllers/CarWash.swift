@@ -33,38 +33,42 @@
 // */
 //
 
-class CarWash {
+class CarWashController {
     
     // MARK: -
     // MARK: Variables
-
-    let washers: [Washer]
-    let accountant: Accountant
-    let director: Director
+    
+    let washerControllers: [WasherController]
+    let accountantController: AccountantController
+    let directorController: DirectorController
     
     // MARK: -
     // MARK: Initializations and Deallocations
-
-    init(washers: [Washer], accountant: Accountant, director: Director) {
-        self.washers = washers
-        self.accountant = accountant
-        self.director = director
-
-        self.washers.forEach { washer in
-            washer.add(observer: self.accountant)
+    
+    init() {
+        
+        self.washerControllers = [
+            WasherController(salary: 30.0, experience: 1),
+            WasherController(salary: 40.0, experience: 2)
+        ]
+        
+        self.accountantController = AccountantController(salary: 300.0, experience: 5)
+        self.directorController = DirectorController(salary: 500.0, experience: 10)
+        
+        for washerController in washerControllers {
+            washerController.delegate = accountantController
         }
-        self.accountant.add(observer: self.director)
+        accountantController.delegate = directorController
     }
-
+    
     // MARK: -
     // MARK: Public
-
+    
     func wash(car: Car) {
-        guard let washer = self.washers.first(where: { $0.money.value == 0 }) else {
+        guard let freeWasherController = washerControllers.first(where: { $0.isFree == true }) else {
             print("No free washers")
             return
         }
-        print("Car wash set a cat to the washer")
-        washer.process(car: car)
+        freeWasherController.process(car: car)
     }
 }
