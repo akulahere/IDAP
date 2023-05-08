@@ -23,6 +23,12 @@
 		6650D2F82A039DB50083033D /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2F72A039DB50083033D /* Human.swift */; };
 		6686D53A2A03A0320061AA21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D5392A03A0320061AA21 /* ViewController.swift */; };
 		6686D53F2A03A4B60061AA21 /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D53E2A03A4B60061AA21 /* Age.swift */; };
+		66D57C582A08D8E20055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C572A08D8E20055F58A /* Car.swift */; };
+		66D57C5A2A08DF160055F58A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C592A08DF160055F58A /* Money.swift */; };
+		66D57C5D2A08DF390055F58A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C5C2A08DF390055F58A /* Employee.swift */; };
+		66D57C5F2A08DF710055F58A /* Washer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C5E2A08DF710055F58A /* Washer.swift */; };
+		66D57C612A08DF9B0055F58A /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C602A08DF9B0055F58A /* Accountant.swift */; };
+		66D57C632A08DFAB0055F58A /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C622A08DFAB0055F58A /* Director.swift */; };
 		8286F2723CBB01444A7984C7 /* Pods_IDAP_OOP_IDAP_OOPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BFD002526EC61763E1E83F /* Pods_IDAP_OOP_IDAP_OOPUITests.framework */; };
 		BBD065FA811BA676F5FE776D /* Pods_IDAP_OOP_IDAP_OOPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94F57F07CF3468FB1C61EB8 /* Pods_IDAP_OOP_IDAP_OOPTests.framework */; };
 		D01412709941FD2D22BCD8EE /* Pods_IDAP_OOP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE023C713F040FE59019EF6 /* Pods_IDAP_OOP.framework */; };
@@ -69,6 +75,12 @@
 		6650D2F72A039DB50083033D /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		6686D5392A03A0320061AA21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6686D53E2A03A4B60061AA21 /* Age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Age.swift; sourceTree = "<group>"; };
+		66D57C572A08D8E20055F58A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		66D57C592A08DF160055F58A /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		66D57C5C2A08DF390055F58A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		66D57C5E2A08DF710055F58A /* Washer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washer.swift; sourceTree = "<group>"; };
+		66D57C602A08DF9B0055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
+		66D57C622A08DFAB0055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		753F2658274EA8E1034DF9A1 /* Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		797392052E83689CB89CABB0 /* Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80371B41055A68165C3145D7 /* Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +163,10 @@
 		663640FF2A0518C90088CB80 /* СarWashTask */ = {
 			isa = PBXGroup;
 			children = (
+				66D57C5B2A08DF2F0055F58A /* Employees */,
+				66D57C572A08D8E20055F58A /* Car.swift */,
 				663641002A0519110088CB80 /* CarWash.swift */,
+				66D57C592A08DF160055F58A /* Money.swift */,
 			);
 			path = "СarWashTask";
 			sourceTree = "<group>";
@@ -242,6 +257,17 @@
 				6650D2C62A039CE40083033D /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		66D57C5B2A08DF2F0055F58A /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C5C2A08DF390055F58A /* Employee.swift */,
+				66D57C5E2A08DF710055F58A /* Washer.swift */,
+				66D57C602A08DF9B0055F58A /* Accountant.swift */,
+				66D57C622A08DFAB0055F58A /* Director.swift */,
+			);
+			path = Employees;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,10 +514,16 @@
 				663640FE2A03E9C80088CB80 /* Creature.swift in Sources */,
 				6650D2F82A039DB50083033D /* Human.swift in Sources */,
 				6650D2F62A039D850083033D /* Person.swift in Sources */,
+				66D57C632A08DFAB0055F58A /* Director.swift in Sources */,
 				663641012A0519110088CB80 /* CarWash.swift in Sources */,
+				66D57C5A2A08DF160055F58A /* Money.swift in Sources */,
+				66D57C5F2A08DF710055F58A /* Washer.swift in Sources */,
 				6650D2C12A039CE40083033D /* AppDelegate.swift in Sources */,
+				66D57C582A08D8E20055F58A /* Car.swift in Sources */,
+				66D57C5D2A08DF390055F58A /* Employee.swift in Sources */,
 				6686D53A2A03A0320061AA21 /* ViewController.swift in Sources */,
 				6650D2F42A039D690083033D /* Child.swift in Sources */,
+				66D57C612A08DF9B0055F58A /* Accountant.swift in Sources */,
 				6650D2C32A039CE40083033D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
