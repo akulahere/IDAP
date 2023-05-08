@@ -12,9 +12,8 @@ protocol MoneyContainable: AnyObject {
     var money: Money { get set }
 }
 
-protocol MoneyTaker: AnyObject {
-    
-    func take(employee: MoneyContainable, payment: Money)
+protocol EmployeeObserver: AnyObject {
+    func update(employee: MoneyContainable, payment: Money)
 }
 
 class Employee {

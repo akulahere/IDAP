@@ -50,8 +50,10 @@ class CarWash {
         self.accountant = accountant
         self.director = director
 
-        self.washers.forEach { $0.delegate = self.accountant }
-        self.accountant.delegate = self.director
+        self.washers.forEach { washer in
+            washer.add(observer: self.accountant)
+        }
+        self.accountant.add(observer: self.director)
     }
 
     // MARK: -

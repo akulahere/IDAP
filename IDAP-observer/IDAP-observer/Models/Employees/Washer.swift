@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class Washer:
     Employee,
     MoneyContainable
@@ -14,18 +15,24 @@ class Washer:
     
     // MARK: -
     // MARK: Variables
-    
-    weak var delegate: MoneyTaker?
-    
+    var observers: [EmployeeObserver] = []
+
     // MARK: -
     // MARK: Public
+    
+    func add(observer: EmployeeObserver) {
+        observers.append(observer)
+    }
     
     func process(car: Car) {
         print("___________________________________________________")
         print("Washer has started washing the car")
         wash(car: car)
         let payment = collectMoney(from: car)
-        self.delegate?.take(employee: self, payment: payment)
+        observers.forEach { observer in
+            observer.update(employee: self, payment: payment)
+        }
+
     }
     
     // MARK: -

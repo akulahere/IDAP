@@ -10,29 +10,39 @@ import Foundation
 class Accountant:
       Employee,
       MoneyContainable,
-      MoneyTaker
+      EmployeeObserver
 {
     
     // MARK: -
     // MARK: Vaiables
-
-    weak var delegate: MoneyTaker?
     
+    var observers: [EmployeeObserver] = []
+
+    
+    // MARK: -
+    // MARK: Public
+    
+    func add(observer: EmployeeObserver) {
+        observers.append(observer)
+    }
+
     // MARK: -
     // MARK: Private
 
     private func calculate(payment: Money) {
         self.money.add(amount: payment)
-        self.delegate?.take(employee: self, payment: payment)
         print("___________________________________________________")
         print("Accountant collect money from washer")
         print("Accountant balance: \(self.money.value)")
+        observers.forEach { observer in
+            observer.update(employee: self, payment: payment)
+        }
     }
 
-    
     // MARK: -
-    // MARK: MoneyTaker
-    func take(employee: MoneyContainable, payment: Money) {
+    // MARK: EmployeeObserver
+    
+    func update(employee: MoneyContainable, payment: Money) {
         employee.money.subtract(amount: payment)
         self.calculate(payment: payment)
     }

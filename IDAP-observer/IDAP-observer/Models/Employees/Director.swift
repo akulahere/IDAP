@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Director: Employee, MoneyTaker {
+class Director: Employee, EmployeeObserver {
     
     // MARK: -
     // MARK: Private
@@ -19,12 +19,10 @@ class Director: Employee, MoneyTaker {
         print("Director balance: \(self.money.value)")
     }
 
-    // MARK: -
-    // MARK: AccountantDelegate
-
-    func take(employee: MoneyContainable, payment: Money) {
+    func update(employee: MoneyContainable, payment: Money) {
         employee.money.subtract(amount: payment)
         self.receive(money: payment)
     }
+
 }
 
