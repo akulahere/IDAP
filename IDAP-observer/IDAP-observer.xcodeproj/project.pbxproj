@@ -16,6 +16,13 @@
 		66D57C882A0919220055F58A /* IDAP_observerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C872A0919220055F58A /* IDAP_observerTests.swift */; };
 		66D57C922A0919220055F58A /* IDAP_observerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C912A0919220055F58A /* IDAP_observerUITests.swift */; };
 		66D57C942A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C932A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift */; };
+		66D57CA72A091CA80055F58A /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA32A091CA80055F58A /* CarWash.swift */; };
+		66D57CA82A091CA80055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA42A091CA80055F58A /* Car.swift */; };
+		66D57CAA2A091CA80055F58A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA62A091CA80055F58A /* Money.swift */; };
+		66D57CAD2A091E4B0055F58A /* Washer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CAC2A091E4B0055F58A /* Washer.swift */; };
+		66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CAE2A091E4F0055F58A /* Accountant.swift */; };
+		66D57CB12A091E520055F58A /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB02A091E510055F58A /* Director.swift */; };
+		66D57CB32A091E550055F58A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB22A091E550055F58A /* Employee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		66D57C8D2A0919220055F58A /* IDAP-observerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-observerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D57C912A0919220055F58A /* IDAP_observerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_observerUITests.swift; sourceTree = "<group>"; };
 		66D57C932A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_observerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66D57CA32A091CA80055F58A /* CarWash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarWash.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/CarWash.swift"; sourceTree = "<group>"; };
+		66D57CA42A091CA80055F58A /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Car.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/Car.swift"; sourceTree = "<group>"; };
+		66D57CA62A091CA80055F58A /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Money.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/Money.swift"; sourceTree = "<group>"; };
+		66D57CAC2A091E4B0055F58A /* Washer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washer.swift; sourceTree = "<group>"; };
+		66D57CAE2A091E4F0055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
+		66D57CB02A091E510055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
+		66D57CB22A091E550055F58A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +113,12 @@
 		66D57C6F2A0919200055F58A /* IDAP-observer */ = {
 			isa = PBXGroup;
 			children = (
+				66D57CB62A091EF00055F58A /* Resources */,
+				66D57CB52A091EE10055F58A /* Views */,
+				66D57CB42A091ECD0055F58A /* Controllers */,
+				66D57CA22A091C6B0055F58A /* Models */,
 				66D57C702A0919200055F58A /* AppDelegate.swift */,
 				66D57C722A0919200055F58A /* SceneDelegate.swift */,
-				66D57C742A0919200055F58A /* ViewController.swift */,
-				66D57C762A0919200055F58A /* Main.storyboard */,
-				66D57C792A0919220055F58A /* Assets.xcassets */,
-				66D57C7B2A0919220055F58A /* LaunchScreen.storyboard */,
 				66D57C7E2A0919220055F58A /* Info.plist */,
 			);
 			path = "IDAP-observer";
@@ -125,6 +139,53 @@
 				66D57C932A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift */,
 			);
 			path = "IDAP-observerUITests";
+			sourceTree = "<group>";
+		};
+		66D57CA22A091C6B0055F58A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66D57CA42A091CA80055F58A /* Car.swift */,
+				66D57CA32A091CA80055F58A /* CarWash.swift */,
+				66D57CAB2A091E3D0055F58A /* Employees */,
+				66D57CA62A091CA80055F58A /* Money.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66D57CAB2A091E3D0055F58A /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				66D57CAC2A091E4B0055F58A /* Washer.swift */,
+				66D57CAE2A091E4F0055F58A /* Accountant.swift */,
+				66D57CB02A091E510055F58A /* Director.swift */,
+				66D57CB22A091E550055F58A /* Employee.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		66D57CB42A091ECD0055F58A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C742A0919200055F58A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66D57CB52A091EE10055F58A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C762A0919200055F58A /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66D57CB62A091EF00055F58A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C792A0919220055F58A /* Assets.xcassets */,
+				66D57C7B2A0919220055F58A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D57CAD2A091E4B0055F58A /* Washer.swift in Sources */,
+				66D57CAA2A091CA80055F58A /* Money.swift in Sources */,
 				66D57C752A0919200055F58A /* ViewController.swift in Sources */,
+				66D57CB32A091E550055F58A /* Employee.swift in Sources */,
+				66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */,
+				66D57CA72A091CA80055F58A /* CarWash.swift in Sources */,
+				66D57CA82A091CA80055F58A /* Car.swift in Sources */,
 				66D57C712A0919200055F58A /* AppDelegate.swift in Sources */,
+				66D57CB12A091E520055F58A /* Director.swift in Sources */,
 				66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

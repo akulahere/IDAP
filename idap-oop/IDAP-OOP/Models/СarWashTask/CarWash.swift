@@ -1,6 +1,6 @@
 ////
 ////  CarWash.swift
-////  IDAP-OOP
+////  IDAP-observer
 ////
 ////  Created by Dmytro Akulinin on 05.05.2023.
 ////

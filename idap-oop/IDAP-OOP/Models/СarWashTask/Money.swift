@@ -1,6 +1,6 @@
 //
 //  Money.swift
-//  IDAP-OOP
+//  IDAP-observer
 //
 //  Created by Dmytro Akulinin on 08.05.2023.
 //
@@ -38,3 +38,4 @@ class Money {
         self.value += amount.value
     }
 }
+
