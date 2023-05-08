@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660B16AB2A0957490054A7AF /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AA2A0957490054A7AF /* Car.swift */; };
+		660B16AD2A0957600054A7AF /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AC2A0957600054A7AF /* CarWash.swift */; };
+		660B16AF2A0957890054A7AF /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AE2A0957890054A7AF /* Money.swift */; };
 		66D57C712A0919200055F58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C702A0919200055F58A /* AppDelegate.swift */; };
 		66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C722A0919200055F58A /* SceneDelegate.swift */; };
 		66D57C752A0919200055F58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C742A0919200055F58A /* ViewController.swift */; };
@@ -16,14 +19,10 @@
 		66D57C882A0919220055F58A /* IDAP_observerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C872A0919220055F58A /* IDAP_observerTests.swift */; };
 		66D57C922A0919220055F58A /* IDAP_observerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C912A0919220055F58A /* IDAP_observerUITests.swift */; };
 		66D57C942A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C932A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift */; };
-		66D57CA72A091CA80055F58A /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA32A091CA80055F58A /* CarWash.swift */; };
-		66D57CA82A091CA80055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA42A091CA80055F58A /* Car.swift */; };
-		66D57CAA2A091CA80055F58A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CA62A091CA80055F58A /* Money.swift */; };
 		66D57CAD2A091E4B0055F58A /* Washer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CAC2A091E4B0055F58A /* Washer.swift */; };
 		66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CAE2A091E4F0055F58A /* Accountant.swift */; };
 		66D57CB12A091E520055F58A /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB02A091E510055F58A /* Director.swift */; };
 		66D57CB32A091E550055F58A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CB22A091E550055F58A /* Employee.swift */; };
-		66D57CCA2A094F890055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC92A094F890055F58A /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		660B16AA2A0957490054A7AF /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		660B16AC2A0957600054A7AF /* CarWash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
+		660B16AE2A0957890054A7AF /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		66D57C6D2A0919200055F58A /* IDAP-observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-observer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D57C702A0919200055F58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66D57C722A0919200055F58A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 		66D57CAE2A091E4F0055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
 		66D57CB02A091E510055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		66D57CB22A091E550055F58A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		66D57CC92A094F890055F58A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +151,9 @@
 				66D57CA32A091CA80055F58A /* CarWash.swift */,
 				66D57CAB2A091E3D0055F58A /* Employees */,
 				66D57CA62A091CA80055F58A /* Money.swift */,
-				66D57CC92A094F890055F58A /* Car.swift */,
+				660B16AA2A0957490054A7AF /* Car.swift */,
+				660B16AC2A0957600054A7AF /* CarWash.swift */,
+				660B16AE2A0957890054A7AF /* Money.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,13 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D57CAD2A091E4B0055F58A /* Washer.swift in Sources */,
-				66D57CAA2A091CA80055F58A /* Money.swift in Sources */,
 				66D57C752A0919200055F58A /* ViewController.swift in Sources */,
+				660B16AF2A0957890054A7AF /* Money.swift in Sources */,
 				66D57CB32A091E550055F58A /* Employee.swift in Sources */,
 				66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */,
-				66D57CA72A091CA80055F58A /* CarWash.swift in Sources */,
-				66D57CA82A091CA80055F58A /* Car.swift in Sources */,
-				66D57CCA2A094F890055F58A /* Car.swift in Sources */,
+				660B16AD2A0957600054A7AF /* CarWash.swift in Sources */,
+				660B16AB2A0957490054A7AF /* Car.swift in Sources */,
 				66D57C712A0919200055F58A /* AppDelegate.swift in Sources */,
 				66D57CB12A091E520055F58A /* Director.swift in Sources */,
 				66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */,
