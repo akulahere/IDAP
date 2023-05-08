@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol AccountantDelegate: AnyObject {
-    func accountantDidCalculateMoney(_ accountant: Accountant, payment: Money)
-}
-
-class Accountant: Employee, WasherDelegate {
+class Accountant:
+      Employee,
+      MoneyContainable,
+      MoneyTaker
+{
     
     // MARK: -
     // MARK: Vaiables
 
-    weak var delegate: AccountantDelegate?
+    weak var delegate: MoneyTaker?
     
     // MARK: -
-    // MARK: Public
+    // MARK: Private
 
-    func calculate(payment: Money) {
+    private func calculate(payment: Money) {
         self.money.add(amount: payment)
-        delegate?.accountantDidCalculateMoney(self, payment: payment)
+        self.delegate?.take(employee: self, payment: payment)
         print("___________________________________________________")
         print("Accountant collect money from washer")
         print("Accountant balance: \(self.money.value)")
@@ -31,10 +31,9 @@ class Accountant: Employee, WasherDelegate {
 
     
     // MARK: -
-    // MARK: WasherDelegate
-
-    func washerDidCollectPayment(_ washer: Washer, payment: Money) {
-        washer.money.subtract(amount: payment)
-        calculate(payment: payment)
+    // MARK: MoneyTaker
+    func take(employee: MoneyContainable, payment: Money) {
+        employee.money.subtract(amount: payment)
+        self.calculate(payment: payment)
     }
 }

@@ -50,15 +50,15 @@ class CarWash {
         self.accountant = accountant
         self.director = director
 
-        washers.forEach { $0.delegate = self.accountant }
+        self.washers.forEach { $0.delegate = self.accountant }
         self.accountant.delegate = self.director
     }
 
     // MARK: -
     // MARK: Public
 
-    func startWash(car: Car) {
-        guard let washer = washers.first(where: { $0.money.value == 0 }) else {
+    func wash(car: Car) {
+        guard let washer = self.washers.first(where: { $0.money.value == 0 }) else {
             print("No free washers")
             return
         }

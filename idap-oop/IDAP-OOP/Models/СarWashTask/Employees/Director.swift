@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Director: Employee, AccountantDelegate {
+class Director: Employee, MoneyTaker {
     
     // MARK: -
-    // MARK: Public
+    // MARK: Private
 
-    func receive(money: Money) {
+    private func receive(money: Money) {
         self.money.add(amount: money)
         print("___________________________________________________")
         print("Director collect money")
@@ -22,8 +22,8 @@ class Director: Employee, AccountantDelegate {
     // MARK: -
     // MARK: AccountantDelegate
 
-    func accountantDidCalculateMoney(_ accountant: Accountant, payment: Money) {
-        accountant.money.subtract(amount: payment)
-        receive(money: payment)
+    func take(employee: MoneyContainable, payment: Money) {
+        employee.money.subtract(amount: payment)
+        self.receive(money: payment)
     }
 }

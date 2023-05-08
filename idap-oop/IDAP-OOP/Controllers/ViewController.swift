@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         print("Director money: \(director.money.value)")
         print("___________________________________________________")
         
-        carWash.startWash(car: car)
+        carWash.wash(car: car)
         
         print("___________________________________________________")
         print("Final state: ")

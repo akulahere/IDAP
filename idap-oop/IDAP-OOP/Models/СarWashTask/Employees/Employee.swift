@@ -7,6 +7,16 @@
 
 import Foundation
 
+protocol MoneyContainable: AnyObject {
+    
+    var money: Money { get set }
+}
+
+protocol MoneyTaker: AnyObject {
+    
+    func take(employee: MoneyContainable, payment: Money)
+}
+
 class Employee {
     
     // MARK: -
