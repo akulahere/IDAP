@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660B16B12A095E700054A7AF /* DirectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16B02A095E700054A7AF /* DirectorView.swift */; };
+		660B16B32A095E790054A7AF /* AccountantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16B22A095E790054A7AF /* AccountantView.swift */; };
 		663640FE2A03E9C80088CB80 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663640FD2A03E9C80088CB80 /* Creature.swift */; };
 		663641012A0519110088CB80 /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663641002A0519110088CB80 /* CarWash.swift */; };
 		6650D2C12A039CE40083033D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2C02A039CE40083033D /* AppDelegate.swift */; };
@@ -61,6 +63,8 @@
 		21BFD002526EC61763E1E83F /* Pods_IDAP_OOP_IDAP_OOPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDAP_OOP_IDAP_OOPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA6BC67BCD06300925EF9D6 /* Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig"; sourceTree = "<group>"; };
 		472C7D7434F95E4E35BC70EC /* Pods-IDAP-OOP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP/Pods-IDAP-OOP.release.xcconfig"; sourceTree = "<group>"; };
+		660B16B02A095E700054A7AF /* DirectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorView.swift; sourceTree = "<group>"; };
+		660B16B22A095E790054A7AF /* AccountantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountantView.swift; sourceTree = "<group>"; };
 		663640FD2A03E9C80088CB80 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		663641002A0519110088CB80 /* CarWash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
 		6650D2BD2A039CE40083033D /* IDAP-OOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-OOP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,11 +212,11 @@
 		6650D2BF2A039CE40083033D /* IDAP-OOP */ = {
 			isa = PBXGroup;
 			children = (
+				6650D2F02A039D2B0083033D /* Tasks */,
 				663640FF2A0518C90088CB80 /* СarWashTask */,
 				6686D53D2A03A3A90061AA21 /* Views */,
 				6686D53C2A03A3650061AA21 /* Resources */,
 				6686D53B2A03A1D80061AA21 /* Controllers */,
-				6650D2F02A039D2B0083033D /* Tasks */,
 				6650D2C02A039CE40083033D /* AppDelegate.swift */,
 				6650D2C22A039CE40083033D /* SceneDelegate.swift */,
 				6650D2CE2A039CE50083033D /* Info.plist */,
@@ -307,6 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				66D57CC32A0935780055F58A /* WasherView.swift */,
+				660B16B02A095E700054A7AF /* DirectorView.swift */,
+				660B16B22A095E790054A7AF /* AccountantView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				6650D2F62A039D850083033D /* Person.swift in Sources */,
 				66D57C632A08DFAB0055F58A /* DirectorController.swift in Sources */,
 				663641012A0519110088CB80 /* CarWash.swift in Sources */,
+				660B16B12A095E700054A7AF /* DirectorView.swift in Sources */,
 				66D57CBB2A0931EE0055F58A /* Money.swift in Sources */,
 				66D57C5F2A08DF710055F58A /* Washer.swift in Sources */,
 				6650D2C12A039CE40083033D /* AppDelegate.swift in Sources */,
@@ -579,6 +586,7 @@
 				6650D2F42A039D690083033D /* Child.swift in Sources */,
 				66D57C612A08DF9B0055F58A /* AccountantController.swift in Sources */,
 				66D57CC62A0944250055F58A /* Accountant.swift in Sources */,
+				660B16B32A095E790054A7AF /* AccountantView.swift in Sources */,
 				6650D2C32A039CE40083033D /* SceneDelegate.swift in Sources */,
 				66D57CC82A0944420055F58A /* Director.swift in Sources */,
 			);

@@ -56,9 +56,9 @@ class ViewController: UIViewController {
         let carWash = CarWashController()
         let car = Car(isDirty: true, money: 100)
         
-        print("Initial state: ")
-        print("Car is dirty: \(car.isDirty)")
-        print("Car money: \(car.money.value)")
+//        print("Initial state: ")
+//        print("Car is dirty: \(car.isDirty)")
+//        print("Car money: \(car.money.value)")
 //        print("Washer1 money: \(washer1.money.value)")
 //        print("Washer2 money: \(washer2.money.value)")
 //        print("Accountant money: \(accountant.money.value)")
@@ -67,10 +67,10 @@ class ViewController: UIViewController {
         
         carWash.wash(car: car)
         
-        print("___________________________________________________")
-        print("Final state: ")
-        print("Car is dirty: \(car.isDirty)")
-        print("Car money: \(car.money.value)")
+//        print("___________________________________________________")
+//        print("Final state: ")
+//        print("Car is dirty: \(car.isDirty)")
+//        print("Car money: \(car.money.value)")
 //        print("Washer1 money: \(washer1.money.value)")
 //        print("Washer2 money: \(washer2.money.value)")
 //        print("Accountant money: \(accountant.money.value)")

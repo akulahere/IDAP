@@ -29,7 +29,7 @@ class WasherController: MoneyContainable {
     // MARK: Public
     
     func process(car: Car) {
-
+        view.start()
         wash(car: car)
         let payment = collectMoney(from: car)
         self.delegate?.take(employee: self, payment: payment)
@@ -48,7 +48,7 @@ class WasherController: MoneyContainable {
         let payment = Money(value: washPrice)
         car.money.subtract(amount: payment)
         self.model.money.add(amount: payment)
-        self.view.showCollecting(
+        self.view.show(
             amount: payment.value,
             washerBalance: self.model.money.value,
             carBalance: car.money.value

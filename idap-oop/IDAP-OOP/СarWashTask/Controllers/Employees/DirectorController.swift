@@ -12,6 +12,7 @@ class DirectorController: MoneyTaker {
     // MARK: -
     // MARK: Variables
     
+    private let view: DirectorView = DirectorView()
     private let model: Director
 
     // MARK: -
@@ -27,9 +28,7 @@ class DirectorController: MoneyTaker {
 
     private func receive(money: Money) {
         self.model.money.add(amount: money)
-        print("___________________________________________________")
-        print("Director collect money")
-        print("Director balance: \(self.model.money.value)")
+        view.show(directorBalance: self.model.money.value)
     }
 
     // MARK: -

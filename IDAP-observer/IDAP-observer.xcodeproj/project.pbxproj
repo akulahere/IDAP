@@ -59,9 +59,6 @@
 		66D57C8D2A0919220055F58A /* IDAP-observerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-observerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D57C912A0919220055F58A /* IDAP_observerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_observerUITests.swift; sourceTree = "<group>"; };
 		66D57C932A0919220055F58A /* IDAP_observerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_observerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		66D57CA32A091CA80055F58A /* CarWash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarWash.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/CarWash.swift"; sourceTree = "<group>"; };
-		66D57CA42A091CA80055F58A /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Car.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/Car.swift"; sourceTree = "<group>"; };
-		66D57CA62A091CA80055F58A /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Money.swift; path = "../../../IDAP-OOP/IDAP-OOP/Models/СarWashTask/Money.swift"; sourceTree = "<group>"; };
 		66D57CAC2A091E4B0055F58A /* Washer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washer.swift; sourceTree = "<group>"; };
 		66D57CAE2A091E4F0055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
 		66D57CB02A091E510055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
@@ -147,10 +144,7 @@
 		66D57CA22A091C6B0055F58A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				66D57CA42A091CA80055F58A /* Car.swift */,
-				66D57CA32A091CA80055F58A /* CarWash.swift */,
 				66D57CAB2A091E3D0055F58A /* Employees */,
-				66D57CA62A091CA80055F58A /* Money.swift */,
 				660B16AA2A0957490054A7AF /* Car.swift */,
 				660B16AC2A0957600054A7AF /* CarWash.swift */,
 				660B16AE2A0957890054A7AF /* Money.swift */,

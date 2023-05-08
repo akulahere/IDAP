@@ -8,12 +8,16 @@
 import Foundation
 
 class WasherView {
-    func showStarting() {
+    
+    // MARK: -
+    // MARK: Public
+
+    func start() {
         print("___________________________________________________")
         print("Washer has started washing the car")
     }
     
-    func showCollecting(amount: Double, washerBalance: Double, carBalance: Double) {
+    func show(amount: Double, washerBalance: Double, carBalance: Double) {
         print("___________________________________________________")
         print("Payment from collected. Ammount: \(amount)")
         print("Washer balance: \(washerBalance)")

@@ -15,6 +15,7 @@ class AccountantController: MoneyTaker, MoneyContainable
 
     weak var delegate: MoneyTaker?
     private let model: Accountant
+    private let view: AccountantView = AccountantView()
     
     // MARK: -
     // MARK: Initializations and Deallocations
@@ -30,14 +31,13 @@ class AccountantController: MoneyTaker, MoneyContainable
     private func calculate(payment: Money) {
         self.model.money.add(amount: payment)
         self.delegate?.take(employee: self, payment: payment)
-        print("___________________________________________________")
-        print("Accountant collect money from washer")
-        print("Accountant balance: \(self.model.money.value)")
+        
+        self.view.show(accountantBalance: self.model.money.value)
     }
 
-    
     // MARK: -
     // MARK: MoneyTaker
+    
     func take(employee: MoneyContainable, payment: Money) {
         employee.give(money: payment)
         self.calculate(payment: payment)
