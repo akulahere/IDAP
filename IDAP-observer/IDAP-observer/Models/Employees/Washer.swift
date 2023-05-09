@@ -13,13 +13,13 @@ class Washer: Employee, MoneyContainable {
     // MARK: -
     // MARK: Variables
     
-    weak var observer: Accountant?
-
+    var observers : [Weak<Accountant>] = []
+    
     // MARK: -
     // MARK: Public
     
     func add(observer: Accountant) {
-        self.observer = observer
+        self.observers.append(Weak(value: observer))
     }
     
     func process(car: Car) {
@@ -27,8 +27,11 @@ class Washer: Employee, MoneyContainable {
         print("Washer has started washing the car")
         wash(car: car)
         let payment = self.collectMoney(from: car)
+        
+        guard let freeAccounter = self.observers.first?.value else { return }
+        
+        freeAccounter.update(payment: payment)
         self.money.subtract(amount: payment)
-        self.observer?.update(payment: payment)
     }
     
     // MARK: -

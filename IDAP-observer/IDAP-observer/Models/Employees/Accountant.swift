@@ -12,13 +12,13 @@ class Accountant: Employee, MoneyContainable {
     // MARK: -
     // MARK: Vaiables
     
-    weak var observer: Director?
-    
+    var observers : [Weak<Director>] = []
+
     // MARK: -
     // MARK: Public
     
     func add(observer: Director) {
-        self.observer = observer
+        self.observers.append(Weak(value: observer))
     }
 
     func update(payment: Money) {
@@ -33,7 +33,10 @@ class Accountant: Employee, MoneyContainable {
         print("___________________________________________________")
         print("Accountant collect money from washer")
         print("Accountant balance: \(self.money.value)")
-        self.observer?.update( payment: payment)
+        
+        guard let freeDirector = self.observers.first?.value else { return }
+        
+        freeDirector.update(payment: payment)
         self.money.subtract(amount: payment)
     }
 }
