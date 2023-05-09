@@ -13,7 +13,7 @@ protocol MoneyContainable: AnyObject {
 }
 
 protocol EmployeeObserver: AnyObject {
-    func update(employee: MoneyContainable, payment: Money)
+    func update(payment: Money)
 }
 
 class Employee {

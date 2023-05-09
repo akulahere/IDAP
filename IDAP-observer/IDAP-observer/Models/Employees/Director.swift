@@ -10,6 +10,13 @@ import Foundation
 class Director: Employee, EmployeeObserver {
     
     // MARK: -
+    // MARK: Public
+    
+    func update(payment: Money) {
+        self.receive(money: payment)
+    }
+
+    // MARK: -
     // MARK: Private
 
     private func receive(money: Money) {
@@ -18,11 +25,4 @@ class Director: Employee, EmployeeObserver {
         print("Director collect money")
         print("Director balance: \(self.money.value)")
     }
-
-    func update(employee: MoneyContainable, payment: Money) {
-        employee.money.subtract(amount: payment)
-        self.receive(money: payment)
-    }
-
 }
-

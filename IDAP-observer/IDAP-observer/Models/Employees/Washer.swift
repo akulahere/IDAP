@@ -8,31 +8,27 @@
 import Foundation
 
 
-class Washer:
-    Employee,
-    MoneyContainable
-{
+class Washer: Employee, MoneyContainable {
     
     // MARK: -
     // MARK: Variables
-    var observers: [EmployeeObserver] = []
+    
+    weak var observer: Accountant?
 
     // MARK: -
     // MARK: Public
     
-    func add(observer: EmployeeObserver) {
-        observers.append(observer)
+    func add(observer: Accountant) {
+        self.observer = observer
     }
     
     func process(car: Car) {
         print("___________________________________________________")
         print("Washer has started washing the car")
         wash(car: car)
-        let payment = collectMoney(from: car)
-        observers.forEach { observer in
-            observer.update(employee: self, payment: payment)
-        }
-
+        let payment = self.collectMoney(from: car)
+        self.money.subtract(amount: payment)
+        self.observer?.update(payment: payment)
     }
     
     // MARK: -

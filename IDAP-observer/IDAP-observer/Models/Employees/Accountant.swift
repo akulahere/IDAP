@@ -7,25 +7,24 @@
 
 import Foundation
 
-class Accountant:
-      Employee,
-      MoneyContainable,
-      EmployeeObserver
-{
+class Accountant: Employee, MoneyContainable {
     
     // MARK: -
     // MARK: Vaiables
     
-    var observers: [EmployeeObserver] = []
-
+    weak var observer: Director?
     
     // MARK: -
     // MARK: Public
     
-    func add(observer: EmployeeObserver) {
-        observers.append(observer)
+    func add(observer: Director) {
+        self.observer = observer
     }
 
+    func update(payment: Money) {
+        self.calculate(payment: payment)
+    }
+    
     // MARK: -
     // MARK: Private
 
@@ -34,17 +33,7 @@ class Accountant:
         print("___________________________________________________")
         print("Accountant collect money from washer")
         print("Accountant balance: \(self.money.value)")
-        observers.forEach { observer in
-            observer.update(employee: self, payment: payment)
-        }
-    }
-
-    // MARK: -
-    // MARK: EmployeeObserver
-    
-    func update(employee: MoneyContainable, payment: Money) {
-        employee.money.subtract(amount: payment)
-        self.calculate(payment: payment)
+        self.observer?.update( payment: payment)
+        self.money.subtract(amount: payment)
     }
 }
-
