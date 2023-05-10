@@ -8,50 +8,57 @@
 import Foundation
 
 
-class Washer: Employee, MoneyContainable {
+class Washer: Employee {
     
     // MARK: -
     // MARK: Variables
     
-    var observers : [Weak<Accountant>] = []
+    var car: Car?
+    var accountantObservers = ThreadSafeObservers<Accountant>()
+    var carWashObservers = ThreadSafeObservers<CarWash>()
     
     // MARK: -
     // MARK: Public
     
     func add(observer: Accountant) {
-        self.observers.append(Weak(value: observer))
+        self.accountantObservers.add(observer: observer)
     }
     
-    func process(car: Car) {
-        print("___________________________________________________")
-        print("Washer has started washing the car")
-        wash(car: car)
-        let payment = self.collectMoney(from: car)
-        
-        guard let freeAccounter = self.observers.first?.value else { return }
-        
-        freeAccounter.update(payment: payment)
-        self.money.subtract(amount: payment)
+    func add(observer: CarWash) {
+        self.carWashObservers.add(observer: observer)
     }
     
     // MARK: -
     // MARK: Private
     
-    private func wash(car: Car) {
+    private func wash() {
+        guard let car = self.car else { fatalError("No car!") }
+        sleep(UInt32(self.experience))
         car.isDirty = false
     }
     
-    private func collectMoney(from car: Car) -> Money {
+    private func collect() {
         let washPrice = Double.random(in: 1...10).rounded()
         let payment = Money(value: washPrice)
-        car.money.subtract(amount: payment)
+        self.car?.money.subtract(amount: payment)
         self.money.add(amount: payment)
-        print("___________________________________________________")
-        print("Payment from collected. Ammount: \(payment.value)")
-        print("Washer balance: \(self.money.value)")
-        print("Car balance: \(car.money.value)")
-        return payment
+    }
+
+    // MARK: -
+    // MARK: Overrided
+
+    override func processInMainThread() {
+        let moneyToNotify = self.money
+        self.carWashObservers.notify(with: .state(self.state))
+        self.accountantObservers.notify(with: .money(moneyToNotify))
+        self.money = Money(value: 0)
+        print("\(self.name!) Finish task. Money sended: \(moneyToNotify.value)")
+    }
+
+    override func processInBackgroundThread() {
+        print("\(self.name!) started a task")
+        self.wash()
+        self.collect()
+        self.car = nil
     }
 }
-
-

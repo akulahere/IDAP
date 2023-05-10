@@ -7,36 +7,52 @@
 
 import Foundation
 
-class Accountant: Employee, MoneyContainable {
+class Accountant: Employee, ObserverProtocol {
+
+    
     
     // MARK: -
     // MARK: Vaiables
     
-    var observers : [Weak<Director>] = []
+    var directorObservers = ThreadSafeObservers<Director>()
 
     // MARK: -
     // MARK: Public
     
     func add(observer: Director) {
-        self.observers.append(Weak(value: observer))
+        self.directorObservers.add(observer: observer)
     }
 
-    func update(payment: Money) {
-        self.calculate(payment: payment)
-    }
-    
     // MARK: -
     // MARK: Private
 
-    private func calculate(payment: Money) {
-        self.money.add(amount: payment)
-        print("___________________________________________________")
-        print("Accountant collect money from washer")
-        print("Accountant balance: \(self.money.value)")
-        
-        guard let freeDirector = self.observers.first?.value else { return }
-        
-        freeDirector.update(payment: payment)
-        self.money.subtract(amount: payment)
+    private func calculate() {
+        sleep(UInt32(self.experience))
+    }
+    
+    func update(with notification: NotificationType) {
+        print("Accountant start")
+        guard case .money(let money) = notification else { return }
+        self.money.add(amount: money)
+        print("Accountant calculate money: \(money.value)")
+
+        startProcessing()
+    }
+    
+    override func processInBackgroundThread() {
+        calculate()
+    }
+    
+    override func processInMainThread() {
+//        let moneyToNotify = self.money
+//        self.directorObservers.notify(with: .money(moneyToNotify))
+//        print("Accountant send money: \(moneyToNotify.value)")
+//
+//        self.money = Money(value: 0)
+        if self.money.value > 0 {
+            print("Accountant Finish task: \(self.money.value)")
+            self.directorObservers.notify(with: .money(self.money))
+            self.money = Money(value: 0)
+        }
     }
 }

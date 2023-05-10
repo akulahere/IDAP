@@ -7,38 +7,57 @@
 
 import Foundation
 
-class CarWash {
+class CarWash: ObserverProtocol {
+    
+    // MARK: -
+    // MARK: Variables
+    
+    private var carQueue: [Car] = []
+    
+    let washers: [Washer]
+    let accountant: Accountant
+    let director: Director
+    
+    // MARK: -
+    // MARK: Initializations and Deallocations
+    
+    init(washers: [Washer], accountant: Accountant, director: Director) {
+        self.washers = washers
+        self.accountant = accountant
+        self.director = director
+        
+        self.washers.forEach { washer in
+            washer.add(observer: self)
+            washer.add(observer: self.accountant)
+        }
+        self.accountant.add(observer: self.director)
+    }
+    
+    // MARK: -
+    // MARK: Public
+    
+    func addToQueue(car: Car) {
+        self.carQueue.append(car)
+        self.assignCar()
+    }
+    
+    // MARK: -
+    // MARK: Private
 
-     // MARK: -
-     // MARK: Variables
+    private func assignCar() {
+        if let car = self.carQueue.first,
+           let washer = self.washers.first(where: { $0.state == .ready }) {
+            washer.car = car
+            self.carQueue.removeFirst()
+            washer.startProcessing()
+        }
+    }
+    
+    // MARK: -
+    // MARK: Observer protocol
 
-     let washers: [Washer]
-     let accountant: Accountant
-     let director: Director
-
-     // MARK: -
-     // MARK: Initializations and Deallocations
-
-     init(washers: [Washer], accountant: Accountant, director: Director) {
-         self.washers = washers
-         self.accountant = accountant
-         self.director = director
-
-         self.washers.forEach { washer in
-             washer.add(observer: self.accountant)
-         }
-         self.accountant.add(observer: self.director)
-     }
-
-     // MARK: -
-     // MARK: Public
-
-     func wash(car: Car) {
-         guard let washer = self.washers.first(where: { $0.money.value == 0 }) else {
-             print("No free washers")
-             return
-         }
-         print("Car wash set a cat to the washer")
-         washer.process(car: car)
-     }
- }
+    func update(with notification: NotificationType) {
+        guard case .state(_) = notification else { return }
+        assignCar()
+    }
+}
