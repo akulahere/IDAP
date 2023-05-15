@@ -12,8 +12,8 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     // MARK: -
     // MARK: Variables
     
-//    private var observers: [Weak<T>]
-    private var observers: [T]
+    private var observers: [Weak<T>]
+//    private var observers: [T]
     private let queue = DispatchQueue(label: "com.carwash.observers", attributes: .concurrent)
     
     // MARK: -
@@ -28,8 +28,8 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     
     func add(observer: T) {
         queue.async(flags: .barrier) {
-            self.observers.append(observer)
-//            self.observers.append(Weak(value: observer))
+//            self.observers.append(observer)
+            self.observers.append(Weak(value: observer))
         }
     }
     
@@ -37,9 +37,9 @@ class ThreadSafeObservers<T: ObserverProtocol> {
         queue.sync {
             for observer in self.observers {
                 DispatchQueue.main.async {
-//                    if let observer = observer.value {
+                    if let observer = observer.value {
                         observer.update(with: notification)
-//                    }
+                    }
                 }
             }
         }
