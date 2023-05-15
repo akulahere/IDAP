@@ -8,7 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: -
+    // MARK: Variables
+    
     var carWash: CarWash?
+    
+    // MARK: -
+    // MARK: Initializations and Deallocations
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -24,43 +31,12 @@ class ViewController: UIViewController {
         self.carWash = carWash
     }
     
+    // MARK: -
+    // MARK: Overrided
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        runCarWashTask()
-    }
-    
-    func runCarWashTask() {
-        let car = Car(isDirty: true, money: 100)
-        var cars: [Car] = []
-        
-        for _ in 1...10  {
-            let newCar = Car(isDirty: true, money: Double.random(in: 30...100).rounded())
-            cars.append(newCar)
-        }
-//        print("Initial state: ")
-//        print("Car is dirty: \(car.isDirty)")
-//        print("Car money: \(car.money.value)")
-//        print("Washer1 money: \(washer1.money.value)")
-//        print("Accountant money: \(accountant.money.value)")
-//        print("Director money: \(director.money.value)")
-//        print("___________________________________________________")
-        
-        cars.forEach { car in
-            self.carWash?.addToQueue(car: car)
-            print("add one car")
-        }
-        
-        
-        
-
-//        print("___________________________________________________")
-//        print("Final state: ")
-//        print("Car is dirty: \(car.isDirty)")
-//        print("Car money: \(car.money.value)")
-//        print("Washer1 money: \(washer1.money.value)")
-////        print("Washer2 money: \(washer2.money.value)")
-//        print("Accountant money: \(accountant.money.value)")
-//        print("Director money: \(director.money.value)")
+        carWash?.startGeneratingCars()
     }
 }
 

@@ -17,6 +17,7 @@ class CarWash: ObserverProtocol {
     let washers: [Washer]
     let accountant: Accountant
     let director: Director
+    let carGeneratorQueue = DispatchQueue(label: "com.carwash.cargenerator", attributes: .concurrent)
     
     // MARK: -
     // MARK: Initializations and Deallocations
@@ -41,21 +42,30 @@ class CarWash: ObserverProtocol {
         self.assignCar()
     }
     
+    func startGeneratingCars() {
+        carGeneratorQueue.async { [weak self] in
+            for _ in 1...100 {
+                let newCar = Car(isDirty: true, money: Double.random(in: 30...100).rounded())
+                self?.addToQueue(car: newCar)
+                print("A new car was generated and added to the queue.")
+            }
+        }
+    }
+    
     // MARK: -
     // MARK: Private
-
+    
     private func assignCar() {
         if let car = self.carQueue.first,
            let washer = self.washers.first(where: { $0.state == .ready }) {
-            washer.car = car
             self.carQueue.removeFirst()
-            washer.startProcessing()
+            washer.startProcessing(processable: car)
         }
     }
     
     // MARK: -
     // MARK: Observer protocol
-
+    
     func update(with notification: NotificationType) {
         guard case .state(_) = notification else { return }
         assignCar()

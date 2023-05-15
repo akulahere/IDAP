@@ -7,33 +7,33 @@
 
 import Foundation
 
-class Director: Employee, ObserverProtocol {
-    func update(with notification: NotificationType) {
-        print("Director start")
-        guard case .money(let money) = notification else { return }
-        self.money.add(amount: money)
-        startProcessing()
-    }
+class Director: Employee<Money>, ObserverProtocol {
     
     // MARK: -
     // MARK: Public
     
-//    func update(payment: Money) {
-//        self.receive(money: payment)
-//    }
-
+    func update(with notification: NotificationType) {
+        print("Director start")
+        guard case .money(let money) = notification else { return }
+        startProcessing(processable: money)
+    }
+    
     // MARK: -
     // MARK: Private
-
-    private func receive() {
+    
+    private func receive(money: Money) {
+        self.money.add(amount: money)
         sleep(UInt32(self.experience))
     }
     
-    override func processInBackgroundThread() {
-        receive()
+    // MARK: -
+    // MARK: Overrided
+    
+    override func processInBackgroundThread(processable: Money) {
+        receive(money: processable)
     }
     
-    override func processInMainThread() {
+    override func processInMainThread(processable: Money) {
         print("Director finish collecting: \(self.money.value) ")
     }
 }

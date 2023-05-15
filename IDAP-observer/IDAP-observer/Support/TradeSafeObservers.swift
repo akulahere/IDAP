@@ -13,7 +13,6 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     // MARK: Variables
     
     private var observers: [Weak<T>]
-//    private var observers: [T]
     private let queue = DispatchQueue(label: "com.carwash.observers", attributes: .concurrent)
     
     // MARK: -
@@ -28,7 +27,6 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     
     func add(observer: T) {
         queue.async(flags: .barrier) {
-//            self.observers.append(observer)
             self.observers.append(Weak(value: observer))
         }
     }

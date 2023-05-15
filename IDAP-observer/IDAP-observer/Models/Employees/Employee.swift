@@ -14,7 +14,7 @@ enum WorkerState {
 }
 
 
-class Employee {
+class Employee<T> {
     
     // MARK: -
     // MARK: Variables
@@ -27,7 +27,7 @@ class Employee {
     
     // MARK: -
     // MARK: Initializations and Deallocations
-
+    
     init(salary: Money, experience: Int) {
         self.salary = salary
         self.experience = experience
@@ -38,21 +38,21 @@ class Employee {
     // MARK: -
     // MARK: Public
     
-    func processInMainThread() {
+    func processInMainThread(processable: T) {
         // to be overridden by subclass
     }
     
-    func processInBackgroundThread() {
+    func processInBackgroundThread(processable: T) {
         // to be overridden by subclass
     }
     
-    final func startProcessing() {
+    final func startProcessing(processable: T) {
         self.state = .working
         DispatchQueue.global(qos: .background).async {
-            self.processInBackgroundThread()
+            self.processInBackgroundThread(processable: processable)
             DispatchQueue.main.async {
                 self.state = .needsProcessing
-                self.processInMainThread()
+                self.processInMainThread(processable: processable)
                 self.state = .ready
                 // notify observers
             }

@@ -7,10 +7,8 @@
 
 import Foundation
 
-class Accountant: Employee, ObserverProtocol {
+class Accountant: Employee<Money>, ObserverProtocol {
 
-    
-    
     // MARK: -
     // MARK: Vaiables
     
@@ -22,33 +20,31 @@ class Accountant: Employee, ObserverProtocol {
     func add(observer: Director) {
         self.directorObservers.add(observer: observer)
     }
-
-    // MARK: -
-    // MARK: Private
-
-    private func calculate() {
-        sleep(UInt32(self.experience))
-    }
+    
     
     func update(with notification: NotificationType) {
         print("Accountant start")
         guard case .money(let money) = notification else { return }
+        startProcessing(processable: money)
+    }
+
+    // MARK: -
+    // MARK: Private
+
+    private func calculate(money: Money) {
         self.money.add(amount: money)
         print("Accountant calculate money: \(money.value)")
-
-        startProcessing()
+        sleep(UInt32(self.experience))
     }
     
-    override func processInBackgroundThread() {
-        calculate()
+    // MARK: -
+    // MARK: Overrided
+    
+    override func processInBackgroundThread(processable: Money) {
+        calculate(money: processable)
     }
     
-    override func processInMainThread() {
-//        let moneyToNotify = self.money
-//        self.directorObservers.notify(with: .money(moneyToNotify))
-//        print("Accountant send money: \(moneyToNotify.value)")
-//
-//        self.money = Money(value: 0)
+    override func processInMainThread(processable: Money) {
         if self.money.value > 0 {
             print("Accountant Finish task: \(self.money.value)")
             self.directorObservers.notify(with: .money(self.money))

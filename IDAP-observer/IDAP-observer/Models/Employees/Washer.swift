@@ -8,12 +8,11 @@
 import Foundation
 
 
-class Washer: Employee {
+class Washer: Employee<Car> {
     
     // MARK: -
     // MARK: Variables
     
-    var car: Car?
     var accountantObservers = ThreadSafeObservers<Accountant>()
     var carWashObservers = ThreadSafeObservers<CarWash>()
     
@@ -31,34 +30,34 @@ class Washer: Employee {
     // MARK: -
     // MARK: Private
     
-    private func wash() {
-        guard let car = self.car else { fatalError("No car!") }
+    private func wash(car: Car) {
         sleep(UInt32(self.experience))
         car.isDirty = false
     }
     
-    private func collect() {
+    private func collect(car: Car) {
+        //        let washPrice = 5.0  // - Test value
         let washPrice = Double.random(in: 1...10).rounded()
         let payment = Money(value: washPrice)
-        self.car?.money.subtract(amount: payment)
+        car.money.subtract(amount: payment)
         self.money.add(amount: payment)
     }
-
+    
     // MARK: -
     // MARK: Overrided
-
-    override func processInMainThread() {
-        let moneyToNotify = self.money
+    
+    override func processInMainThread(processable: Car) {
         self.carWashObservers.notify(with: .state(self.state))
-        self.accountantObservers.notify(with: .money(moneyToNotify))
+        self.accountantObservers.notify(with: .money(self.money))
+        
+        print("\(self.name!) Finish task. Money sended: \(self.money.value)")
+        
         self.money = Money(value: 0)
-        print("\(self.name!) Finish task. Money sended: \(moneyToNotify.value)")
     }
-
-    override func processInBackgroundThread() {
+    
+    override func processInBackgroundThread(processable: Car) {
         print("\(self.name!) started a task")
-        self.wash()
-        self.collect()
-        self.car = nil
+        self.wash(car: processable)
+        self.collect(car: processable)
     }
 }
