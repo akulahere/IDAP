@@ -10,6 +10,7 @@
 		660B16AB2A0957490054A7AF /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AA2A0957490054A7AF /* Car.swift */; };
 		660B16AD2A0957600054A7AF /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AC2A0957600054A7AF /* CarWash.swift */; };
 		660B16AF2A0957890054A7AF /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AE2A0957890054A7AF /* Money.swift */; };
+		66109E4C2A1378AE0057F524 /* CarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66109E4B2A1378AE0057F524 /* CarGenerator.swift */; };
 		66502E2E2A0AAC9000159B1B /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502E2D2A0AAC9000159B1B /* Weak.swift */; };
 		66502E302A0B79BE00159B1B /* TradeSafeObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */; };
 		66D57C712A0919200055F58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C702A0919200055F58A /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		660B16AA2A0957490054A7AF /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		660B16AC2A0957600054A7AF /* CarWash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
 		660B16AE2A0957890054A7AF /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		66109E4B2A1378AE0057F524 /* CarGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGenerator.swift; sourceTree = "<group>"; };
 		66502E2D2A0AAC9000159B1B /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSafeObservers.swift; sourceTree = "<group>"; };
 		66D57C6D2A0919200055F58A /* IDAP-observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-observer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,13 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66502E2C2A0AAC5F00159B1B /* Support */ = {
+		66502E2C2A0AAC5F00159B1B /* F */ = {
 			isa = PBXGroup;
 			children = (
 				66502E2D2A0AAC9000159B1B /* Weak.swift */,
 				66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */,
 			);
-			path = Support;
+			path = F;
 			sourceTree = "<group>";
 		};
 		66D57C642A0919200055F58A = {
@@ -126,7 +128,7 @@
 		66D57C6F2A0919200055F58A /* IDAP-observer */ = {
 			isa = PBXGroup;
 			children = (
-				66502E2C2A0AAC5F00159B1B /* Support */,
+				66502E2C2A0AAC5F00159B1B /* F */,
 				66D57CB62A091EF00055F58A /* Resources */,
 				66D57CB52A091EE10055F58A /* Views */,
 				66D57CB42A091ECD0055F58A /* Controllers */,
@@ -162,6 +164,7 @@
 				660B16AA2A0957490054A7AF /* Car.swift */,
 				660B16AC2A0957600054A7AF /* CarWash.swift */,
 				660B16AE2A0957890054A7AF /* Money.swift */,
+				66109E4B2A1378AE0057F524 /* CarGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				660B16AB2A0957490054A7AF /* Car.swift in Sources */,
 				66D57C712A0919200055F58A /* AppDelegate.swift in Sources */,
 				66502E302A0B79BE00159B1B /* TradeSafeObservers.swift in Sources */,
+				66109E4C2A1378AE0057F524 /* CarGenerator.swift in Sources */,
 				66D57CB12A091E520055F58A /* Director.swift in Sources */,
 				66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */,
 			);

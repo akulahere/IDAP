@@ -32,12 +32,10 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     }
     
     func notify(with notification: NotificationType) {
-        queue.sync {
-            for observer in self.observers {
-                DispatchQueue.main.async {
-                    if let observer = observer.value {
-                        observer.update(with: notification)
-                    }
+        for observer in self.observers {
+            queue.async {
+                if let observer = observer.value {
+                    observer.update(with: notification)
                 }
             }
         }

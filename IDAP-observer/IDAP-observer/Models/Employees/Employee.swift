@@ -50,10 +50,11 @@ class Employee<T> {
         self.state = .working
         DispatchQueue.global(qos: .background).async {
             self.processInBackgroundThread(processable: processable)
+            self.state = .needsProcessing
+
             DispatchQueue.main.async {
-                self.state = .needsProcessing
-                self.processInMainThread(processable: processable)
                 self.state = .ready
+                self.processInMainThread(processable: processable)
                 // notify observers
             }
         }

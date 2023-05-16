@@ -32,9 +32,9 @@ class Accountant: Employee<Money>, ObserverProtocol {
     // MARK: Private
 
     private func calculate(money: Money) {
+        sleep(UInt32(self.experience))
         self.money.add(amount: money)
         print("Accountant calculate money: \(money.value)")
-        sleep(UInt32(self.experience))
     }
     
     // MARK: -

@@ -36,8 +36,8 @@ class Washer: Employee<Car> {
     }
     
     private func collect(car: Car) {
-        //        let washPrice = 5.0  // - Test value
-        let washPrice = Double.random(in: 1...10).rounded()
+                let washPrice = 5.0  // - Test value
+//        let washPrice = Double.random(in: 1...10).rounded()
         let payment = Money(value: washPrice)
         car.money.subtract(amount: payment)
         self.money.add(amount: payment)

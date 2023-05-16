@@ -12,12 +12,18 @@ class CarWash: ObserverProtocol {
     // MARK: -
     // MARK: Variables
     
-    private var carQueue: [Car] = []
+    private var carQueue: [Car] = [] {
+        didSet {
+            print("Car added/removed from queue")
+        }
+    }
     
     let washers: [Washer]
     let accountant: Accountant
     let director: Director
-    let carGeneratorQueue = DispatchQueue(label: "com.carwash.cargenerator", attributes: .concurrent)
+    let carGenerator: CarGenerator = CarGenerator()
+
+    let carWashQueue = DispatchQueue(label: "com.carwash.carwash", attributes: .concurrent)
     
     // MARK: -
     // MARK: Initializations and Deallocations
@@ -26,30 +32,29 @@ class CarWash: ObserverProtocol {
         self.washers = washers
         self.accountant = accountant
         self.director = director
+        self.carGenerator.carWash = self
         
         self.washers.forEach { washer in
             washer.add(observer: self)
             washer.add(observer: self.accountant)
         }
+        
         self.accountant.add(observer: self.director)
+        
     }
     
     // MARK: -
     // MARK: Public
     
     func addToQueue(car: Car) {
-        self.carQueue.append(car)
-        self.assignCar()
+        carWashQueue.async(flags: .barrier) {
+            self.carQueue.append(car)
+            self.assignCar()
+        }
     }
     
-    func startGeneratingCars() {
-        carGeneratorQueue.async { [weak self] in
-            for _ in 1...100 {
-                let newCar = Car(isDirty: true, money: Double.random(in: 30...100).rounded())
-                self?.addToQueue(car: newCar)
-                print("A new car was generated and added to the queue.")
-            }
-        }
+    func run() {
+        self.carGenerator.startGeneratingCars()
     }
     
     // MARK: -
@@ -58,6 +63,7 @@ class CarWash: ObserverProtocol {
     private func assignCar() {
         if let car = self.carQueue.first,
            let washer = self.washers.first(where: { $0.state == .ready }) {
+            print("Car assign")
             self.carQueue.removeFirst()
             washer.startProcessing(processable: car)
         }

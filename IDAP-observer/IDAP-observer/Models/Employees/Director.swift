@@ -22,8 +22,8 @@ class Director: Employee<Money>, ObserverProtocol {
     // MARK: Private
     
     private func receive(money: Money) {
-        self.money.add(amount: money)
         sleep(UInt32(self.experience))
+        self.money.add(amount: money)
     }
     
     // MARK: -
