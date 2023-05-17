@@ -24,6 +24,7 @@ class Employee<T> {
     let experience: Int
     var money: Money
     var state: WorkerState
+    var observers: [ObserverProtocol] = []
     
     // MARK: -
     // MARK: Initializations and Deallocations
@@ -58,5 +59,9 @@ class Employee<T> {
                 // notify observers
             }
         }
+    }
+    
+    func add(observer: ObserverProtocol) {
+        self.observers.append(observer)
     }
 }

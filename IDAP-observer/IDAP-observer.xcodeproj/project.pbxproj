@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66019D342A14D5DD004A48F5 /* ObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66019D332A14D5DD004A48F5 /* ObserverProtocol.swift */; };
+		66019D362A14D5E8004A48F5 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66019D352A14D5E8004A48F5 /* NotificationType.swift */; };
 		660B16AB2A0957490054A7AF /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AA2A0957490054A7AF /* Car.swift */; };
 		660B16AD2A0957600054A7AF /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AC2A0957600054A7AF /* CarWash.swift */; };
 		660B16AF2A0957890054A7AF /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16AE2A0957890054A7AF /* Money.swift */; };
 		66109E4C2A1378AE0057F524 /* CarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66109E4B2A1378AE0057F524 /* CarGenerator.swift */; };
+		66109E4E2A13BD820057F524 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66109E4D2A13BD820057F524 /* Dispatcher.swift */; };
+		66109E502A13BEE20057F524 /* Processable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66109E4F2A13BEE20057F524 /* Processable.swift */; };
 		66502E2E2A0AAC9000159B1B /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502E2D2A0AAC9000159B1B /* Weak.swift */; };
-		66502E302A0B79BE00159B1B /* TradeSafeObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */; };
+		66502E302A0B79BE00159B1B /* ThreadeSafeObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66502E2F2A0B79BE00159B1B /* ThreadeSafeObservers.swift */; };
 		66D57C712A0919200055F58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C702A0919200055F58A /* AppDelegate.swift */; };
 		66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C722A0919200055F58A /* SceneDelegate.swift */; };
 		66D57C752A0919200055F58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C742A0919200055F58A /* ViewController.swift */; };
@@ -46,12 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66019D332A14D5DD004A48F5 /* ObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverProtocol.swift; sourceTree = "<group>"; };
+		66019D352A14D5E8004A48F5 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		660B16AA2A0957490054A7AF /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		660B16AC2A0957600054A7AF /* CarWash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
 		660B16AE2A0957890054A7AF /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		66109E4B2A1378AE0057F524 /* CarGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGenerator.swift; sourceTree = "<group>"; };
+		66109E4D2A13BD820057F524 /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		66109E4F2A13BEE20057F524 /* Processable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processable.swift; sourceTree = "<group>"; };
 		66502E2D2A0AAC9000159B1B /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
-		66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSafeObservers.swift; sourceTree = "<group>"; };
+		66502E2F2A0B79BE00159B1B /* ThreadeSafeObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadeSafeObservers.swift; sourceTree = "<group>"; };
 		66D57C6D2A0919200055F58A /* IDAP-observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-observer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D57C702A0919200055F58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66D57C722A0919200055F58A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				66502E2D2A0AAC9000159B1B /* Weak.swift */,
-				66502E2F2A0B79BE00159B1B /* TradeSafeObservers.swift */,
+				66019D332A14D5DD004A48F5 /* ObserverProtocol.swift */,
+				66502E2F2A0B79BE00159B1B /* ThreadeSafeObservers.swift */,
+				66109E4F2A13BEE20057F524 /* Processable.swift */,
+				66019D352A14D5E8004A48F5 /* NotificationType.swift */,
 			);
 			path = F;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 				660B16AC2A0957600054A7AF /* CarWash.swift */,
 				660B16AE2A0957890054A7AF /* Money.swift */,
 				66109E4B2A1378AE0057F524 /* CarGenerator.swift */,
+				66109E4D2A13BD820057F524 /* Dispatcher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,15 +352,19 @@
 				66D57C752A0919200055F58A /* ViewController.swift in Sources */,
 				660B16AF2A0957890054A7AF /* Money.swift in Sources */,
 				66D57CB32A091E550055F58A /* Employee.swift in Sources */,
+				66109E502A13BEE20057F524 /* Processable.swift in Sources */,
+				66109E4E2A13BD820057F524 /* Dispatcher.swift in Sources */,
 				66D57CAF2A091E4F0055F58A /* Accountant.swift in Sources */,
 				66502E2E2A0AAC9000159B1B /* Weak.swift in Sources */,
 				660B16AD2A0957600054A7AF /* CarWash.swift in Sources */,
 				660B16AB2A0957490054A7AF /* Car.swift in Sources */,
 				66D57C712A0919200055F58A /* AppDelegate.swift in Sources */,
-				66502E302A0B79BE00159B1B /* TradeSafeObservers.swift in Sources */,
+				66019D342A14D5DD004A48F5 /* ObserverProtocol.swift in Sources */,
+				66502E302A0B79BE00159B1B /* ThreadeSafeObservers.swift in Sources */,
 				66109E4C2A1378AE0057F524 /* CarGenerator.swift in Sources */,
 				66D57CB12A091E520055F58A /* Director.swift in Sources */,
 				66D57C732A0919200055F58A /* SceneDelegate.swift in Sources */,
+				66019D362A14D5E8004A48F5 /* NotificationType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

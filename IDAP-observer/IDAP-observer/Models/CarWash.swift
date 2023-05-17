@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CarWash: ObserverProtocol {
+class CarWash {
     
     // MARK: -
     // MARK: Variables
@@ -19,27 +19,30 @@ class CarWash: ObserverProtocol {
     }
     
     let washers: [Washer]
-    let accountant: Accountant
+    let accountants: [Accountant]
     let director: Director
     let carGenerator: CarGenerator = CarGenerator()
-
+    
+    let washersDispatcher: Dispatcher<Car>
+    let accountantDispatcher: Dispatcher<Money>
+    
     let carWashQueue = DispatchQueue(label: "com.carwash.carwash", attributes: .concurrent)
     
     // MARK: -
     // MARK: Initializations and Deallocations
     
-    init(washers: [Washer], accountant: Accountant, director: Director) {
+    init(washers: [Washer], accountants: [Accountant], director: Director) {
         self.washers = washers
-        self.accountant = accountant
+        self.accountants = accountants
+        
+        self.washersDispatcher = Dispatcher(handlers: washers)
+        self.accountantDispatcher = Dispatcher(handlers: accountants)
+        
         self.director = director
         self.carGenerator.carWash = self
         
-        self.washers.forEach { washer in
-            washer.add(observer: self)
-            washer.add(observer: self.accountant)
-        }
-        
-        self.accountant.add(observer: self.director)
+        self.washers.forEach { $0.add(observer: washersDispatcher) }
+        self.accountants.forEach { $0.add(observer: accountantDispatcher) }
         
     }
     
@@ -48,32 +51,11 @@ class CarWash: ObserverProtocol {
     
     func addToQueue(car: Car) {
         carWashQueue.async(flags: .barrier) {
-            self.carQueue.append(car)
-            self.assignCar()
+            self.washersDispatcher.add(processable: car)
         }
     }
     
     func run() {
         self.carGenerator.startGeneratingCars()
-    }
-    
-    // MARK: -
-    // MARK: Private
-    
-    private func assignCar() {
-        if let car = self.carQueue.first,
-           let washer = self.washers.first(where: { $0.state == .ready }) {
-            print("Car assign")
-            self.carQueue.removeFirst()
-            washer.startProcessing(processable: car)
-        }
-    }
-    
-    // MARK: -
-    // MARK: Observer protocol
-    
-    func update(with notification: NotificationType) {
-        guard case .state(_) = notification else { return }
-        assignCar()
     }
 }

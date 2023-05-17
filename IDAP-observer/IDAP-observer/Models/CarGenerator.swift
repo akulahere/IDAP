@@ -20,7 +20,7 @@ class CarGenerator {
     // MARK: Public
     
     func startGeneratingCars() {
-        for _ in 1...4 {
+        for _ in 1...10 {
             self.carGeneratorQueue.async { [weak self] in
                 let newCar = Car(isDirty: true, money: Double.random(in: 30...100).rounded())
                 print("Car created")

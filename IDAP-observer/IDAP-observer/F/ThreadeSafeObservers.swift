@@ -42,13 +42,4 @@ class ThreadSafeObservers<T: ObserverProtocol> {
     }
 }
 
-enum NotificationType {
-    
-    case money(Money)
-    case state(WorkerState)
-}
 
-protocol ObserverProtocol: AnyObject {
-    
-    func update(with notification: NotificationType)
-}

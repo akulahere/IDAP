@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Accountant: Employee<Money>, ObserverProtocol {
+class Accountant: Employee<Money> {
+//class Accountant: Employee<Money>, ObserverProtocol {
 
     // MARK: -
     // MARK: Vaiables
@@ -22,11 +23,11 @@ class Accountant: Employee<Money>, ObserverProtocol {
     }
     
     
-    func update(with notification: NotificationType) {
-        print("Accountant start")
-        guard case .money(let money) = notification else { return }
-        startProcessing(processable: money)
-    }
+//    func update(with notification: NotificationType) {
+//        print("Accountant start")
+//        guard case .money(let money) = notification else { return }
+//        startProcessing(processable: money)
+//    }
 
     // MARK: -
     // MARK: Private

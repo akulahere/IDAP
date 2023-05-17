@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         accountant.name = "Accountant"
         let director = Director(salary: Money(value: 2000), experience: 1)
         director.name = "Director"
-        let carWash = CarWash(washers: [washer1, washer2], accountant: accountant, director: director)
+        let carWash = CarWash(washers: [washer1, washer2], accountants: [accountant], director: director)
         self.carWash = carWash
     }
     
