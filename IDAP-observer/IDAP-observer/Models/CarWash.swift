@@ -41,8 +41,14 @@ class CarWash {
         self.director = director
         self.carGenerator.carWash = self
         
-        self.washers.forEach { $0.add(observer: washersDispatcher) }
-        self.accountants.forEach { $0.add(observer: accountantDispatcher) }
+        self.washers.forEach {
+            $0.washerDispatcher = self.washersDispatcher
+            $0.accountantDispatcher = self.accountantDispatcher
+        }
+        self.accountants.forEach {
+            $0.accountanteDispatcher = self.accountantDispatcher
+            $0.directorObservers.add(observer: director)
+        }
         
     }
     

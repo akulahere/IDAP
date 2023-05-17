@@ -11,7 +11,7 @@ class Weak<T: AnyObject> {
     
     // MARK: -
     // MARK: Variables
-
+    
     weak var value : T?
     
     // MARK: -

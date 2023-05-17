@@ -24,10 +24,12 @@ class ViewController: UIViewController {
         let washer2 = Washer(salary: Money(value: 600), experience: 3)
         washer2.name = "Washer 2"
         let accountant = Accountant(salary: Money(value: 1000), experience: 4)
-        accountant.name = "Accountant"
+        accountant.name = "Accountant 1"
+        let accountant2 = Accountant(salary: Money(value: 2000), experience: 1)
+        accountant2.name = "Accountant 2"
         let director = Director(salary: Money(value: 2000), experience: 1)
         director.name = "Director"
-        let carWash = CarWash(washers: [washer1, washer2], accountants: [accountant], director: director)
+        let carWash = CarWash(washers: [washer1, washer2], accountants: [accountant, accountant2], director: director)
         self.carWash = carWash
     }
     

@@ -15,7 +15,8 @@ class Washer: Employee<Car> {
     
 //    var accountantObservers = ThreadSafeObservers<Accountant>()
 //    var carWashObservers = ThreadSafeObservers<CarWash>()
-    
+    weak var washerDispatcher: Dispatcher<Car>?
+    weak var accountantDispatcher: Dispatcher<Money>?
     // MARK: -
     // MARK: Public
     
@@ -48,12 +49,10 @@ class Washer: Employee<Car> {
     // MARK: Overrided
     
     override func processInMainThread(processable: Car) {
-//        self.carWashObservers.notify(with: .state(self.state))
-//        self.accountantObservers.notify(with: .money(self.money))
-        self.observers.forEach { observer in
-            // switch here
-        }
         
+        washerDispatcher?.update(with: .state(self.state))
+        accountantDispatcher?.add(processable: self.money)
+
         print("\(self.name!) Finish task. Money sended: \(self.money.value)")
         
         self.money = Money(value: 0)

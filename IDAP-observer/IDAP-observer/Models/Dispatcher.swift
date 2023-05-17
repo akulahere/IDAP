@@ -22,9 +22,9 @@ class Dispatcher<T>: ObserverProtocol {
         self.handlers = handlers
         self.queue = []
         
-        handlers.forEach { handler in
-            handler.add(observer: self)
-        }
+//        handlers.forEach { handler in
+//            handler.add(observer: self)
+//        }
     }
     
     // MARK: -

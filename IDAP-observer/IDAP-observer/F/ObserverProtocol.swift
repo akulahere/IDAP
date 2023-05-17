@@ -11,3 +11,4 @@ protocol ObserverProtocol: AnyObject {
     
     func update(with notification: NotificationType)
 }
+
