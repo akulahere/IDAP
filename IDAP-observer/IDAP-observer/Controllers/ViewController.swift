@@ -38,6 +38,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        carWash?.run()
+        self.carWash?.run()
     }
 }

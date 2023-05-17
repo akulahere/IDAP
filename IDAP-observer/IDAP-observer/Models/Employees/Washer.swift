@@ -50,8 +50,8 @@ class Washer: Employee<Car> {
     
     override func processInMainThread(processable: Car) {
         
-        washerDispatcher?.update(with: .state(self.state))
-        accountantDispatcher?.add(processable: self.money)
+        self.washerDispatcher?.update(with: .state(self.state))
+        self.accountantDispatcher?.add(processable: self.money)
 
         print("\(self.name!) Finish task. Money sended: \(self.money.value)")
         

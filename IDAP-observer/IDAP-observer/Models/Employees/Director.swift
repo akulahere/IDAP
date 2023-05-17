@@ -13,7 +13,6 @@ class Director: Employee<Money>, ObserverProtocol {
     // MARK: Public
     
     func update(with notification: NotificationType) {
-        print("Director start")
         guard case .money(let money) = notification else { return }
         startProcessing(processable: money)
     }
@@ -30,7 +29,8 @@ class Director: Employee<Money>, ObserverProtocol {
     // MARK: Overrided
     
     override func processInBackgroundThread(processable: Money) {
-        receive(money: processable)
+        print("Director start working")
+        self.receive(money: processable)
     }
     
     override func processInMainThread(processable: Money) {
