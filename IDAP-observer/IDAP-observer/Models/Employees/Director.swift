@@ -14,7 +14,7 @@ class Director: Employee<Money>, ObserverProtocol {
     
     func update(with notification: NotificationType) {
         guard case .money(let money) = notification else { return }
-        startProcessing(processable: money)
+        self.startProcessing(processable: money)
     }
     
     // MARK: -

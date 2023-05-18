@@ -13,21 +13,8 @@ class Washer: Employee<Car> {
     // MARK: -
     // MARK: Variables
     
-//    var accountantObservers = ThreadSafeObservers<Accountant>()
-//    var carWashObservers = ThreadSafeObservers<CarWash>()
     weak var washerDispatcher: Dispatcher<Car>?
     weak var accountantDispatcher: Dispatcher<Money>?
-    // MARK: -
-    // MARK: Public
-    
-//    func add(observer: Accountant) {
-//        self.accountantObservers.add(observer: observer)
-//    }
-//    
-//    func add(observer: CarWash) {
-//        self.carWashObservers.add(observer: observer)
-//    }
-    
     
     // MARK: -
     // MARK: Private
@@ -38,8 +25,7 @@ class Washer: Employee<Car> {
     }
     
     private func collect(car: Car) {
-                let washPrice = 5.0  // - Test value
-//        let washPrice = Double.random(in: 1...10).rounded()
+        let washPrice = Double.random(in: 1...10).rounded()
         let payment = Money(value: washPrice)
         car.money.subtract(amount: payment)
         self.money.add(amount: payment)
@@ -50,8 +36,8 @@ class Washer: Employee<Car> {
     
     override func processInMainThread(processable: Car) {
         
-        self.washerDispatcher?.update(with: .state(self.state))
         self.accountantDispatcher?.add(processable: self.money)
+        self.washerDispatcher?.update(with: .state(self.state))
 
         print("\(self.name!) Finish task. Money sended: \(self.money.value)")
         

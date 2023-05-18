@@ -49,7 +49,6 @@ class CarWash {
             $0.accountanteDispatcher = self.accountantDispatcher
             $0.directorObservers.add(observer: director)
         }
-        
     }
     
     // MARK: -

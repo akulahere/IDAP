@@ -8,26 +8,19 @@
 import Foundation
 
 class Accountant: Employee<Money> {
-//class Accountant: Employee<Money>, ObserverProtocol {
 
     // MARK: -
     // MARK: Vaiables
     
     var directorObservers = ThreadSafeObservers<Director>()
     weak var accountanteDispatcher: Dispatcher<Money>?
+    
     // MARK: -
     // MARK: Public
     
     func add(observer: Director) {
         self.directorObservers.add(observer: observer)
     }
-    
-    
-//    func update(with notification: NotificationType) {
-//        print("Accountant start")
-//        guard case .money(let money) = notification else { return }
-//        startProcessing(processable: money)
-//    }
 
     // MARK: -
     // MARK: Private

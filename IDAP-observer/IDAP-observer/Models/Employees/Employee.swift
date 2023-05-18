@@ -60,8 +60,4 @@ class Employee<T> {
             }
         }
     }
-    
-//    func add(observer: ObserverProtocol) {
-//        self.observers.append(observer)
-//    }
 }

@@ -21,10 +21,6 @@ class Dispatcher<T>: ObserverProtocol {
     init(handlers: [Employee<T>]) {
         self.handlers = handlers
         self.queue = []
-        
-//        handlers.forEach { handler in
-//            handler.add(observer: self)
-//        }
     }
     
     // MARK: -
