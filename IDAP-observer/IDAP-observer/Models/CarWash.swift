@@ -21,7 +21,12 @@ class CarWash {
     let washers: [Washer]
     let accountants: [Accountant]
     let director: Director
-    let carGenerator: CarGenerator = CarGenerator()
+
+    lazy private(set) var carGenerator: CarGenerator = {
+        return CarGenerator(carHandler: { [weak self] car in
+            self?.addToQueue(car: car)
+        })
+    }()
     
     let washersDispatcher: Dispatcher<Car>
     let accountantDispatcher: Dispatcher<Money>
@@ -39,7 +44,7 @@ class CarWash {
         self.accountantDispatcher = Dispatcher(handlers: accountants)
         
         self.director = director
-        self.carGenerator.carWash = self
+
         
         self.washers.forEach {
             $0.washerDispatcher = self.washersDispatcher
@@ -49,6 +54,7 @@ class CarWash {
             $0.accountanteDispatcher = self.accountantDispatcher
             $0.directorObservers.add(observer: director)
         }
+
     }
     
     // MARK: -

@@ -14,8 +14,15 @@ class CarGenerator {
     
     private let carGeneratorQueue = DispatchQueue(label: "com.carwash.cargenerator", attributes: .concurrent)
     
-    weak var carWash: CarWash?
+    public let carHandler: (Car) -> ()
     
+    // MARK: -
+    // MARK: Initializations and Deallocations
+    
+    init(carHandler: @escaping (Car) -> Void) {
+        self.carHandler = carHandler
+    }
+
     // MARK: -
     // MARK: Public
     
@@ -24,7 +31,7 @@ class CarGenerator {
             self.carGeneratorQueue.async { [weak self] in
                 let newCar = Car(isDirty: true, money: Double.random(in: 30...100).rounded())
                 print("Car created")
-                self?.carWash?.addToQueue(car: newCar)
+                self?.carHandler(newCar)
             }
         }
     }
