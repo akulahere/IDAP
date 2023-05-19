@@ -12,13 +12,13 @@ class Dispatcher<T>: ObserverProtocol {
     // MARK: Variables
     
     private var queue: [T]
-    private var handlers: [Employee<T>]
+    private var handlers: [EmployeeController<T>]
     private let dispatcherQueue = DispatchQueue(label: "com.carwash.dispatcher", attributes: .concurrent)
 
     // MARK: -
     // MARK: Initializations and Deallocations
     
-    init(handlers: [Employee<T>]) {
+    init(handlers: [EmployeeController<T>]) {
         self.handlers = handlers
         self.queue = []
     }
@@ -27,7 +27,7 @@ class Dispatcher<T>: ObserverProtocol {
     // MARK: Public
     
     func add(processable: T) {
-        if let handler = self.handlers.first(where: { $0.state == .ready }) {
+        if let handler = self.handlers.first(where: { $0.model.state == .ready }) {
             handler.startProcessing(processable: processable)
         } else {
             self.queue.append(processable)

@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     // MARK: -
     // MARK: Variables
     
-    var carWash: CarWash?
+    var carWashController: CarWashController?
     
     // MARK: -
     // MARK: Initializations and Deallocations
@@ -29,8 +29,8 @@ class ViewController: UIViewController {
         accountant2.name = "Accountant 2"
         let director = Director(salary: Money(value: 2000), experience: 1)
         director.name = "Director"
-        let carWash = CarWash(washers: [washer1, washer2], accountants: [accountant, accountant2], director: director)
-        self.carWash = carWash
+        let carWash = CarWashController(washers: [washer1, washer2], accountants: [accountant, accountant2], director: director)
+        self.carWashController = carWash
     }
     
     // MARK: -
@@ -38,6 +38,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.carWash?.run()
+        self.carWashController?.run()
     }
 }

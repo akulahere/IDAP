@@ -7,20 +7,14 @@
 
 import Foundation
 
-class CarWash {
+class CarWashController {
     
     // MARK: -
     // MARK: Variables
     
-    private var carQueue: [Car] = [] {
-        didSet {
-            print("Car added/removed from queue")
-        }
-    }
-    
-    let washers: [Washer]
-    let accountants: [Accountant]
-    let director: Director
+    let washerControllers: [WasherController]
+    let accountantControllers: [AccountantController]
+    let directorController: DirectorController
 
     lazy private(set) var carGenerator: CarGenerator = {
         return CarGenerator(carHandler: { [weak self] car in
@@ -37,24 +31,29 @@ class CarWash {
     // MARK: Initializations and Deallocations
     
     init(washers: [Washer], accountants: [Accountant], director: Director) {
-        self.washers = washers
-        self.accountants = accountants
+
+        self.washerControllers = washers.map({ washer in
+            WasherController(employee: washer)
+        })
         
-        self.washersDispatcher = Dispatcher(handlers: washers)
-        self.accountantDispatcher = Dispatcher(handlers: accountants)
+        self.accountantControllers = accountants.map({ accountant in
+            AccountantController(employee: accountant)
+        })
         
-        self.director = director
+        self.directorController = DirectorController(employee: director)
+
+        self.washersDispatcher = Dispatcher(handlers: washerControllers)
+        self.accountantDispatcher = Dispatcher(handlers: accountantControllers)
 
         
-        self.washers.forEach {
+        self.washerControllers.forEach {
             $0.washerDispatcher = self.washersDispatcher
             $0.accountantDispatcher = self.accountantDispatcher
         }
-        self.accountants.forEach {
+        self.accountantControllers.forEach {
             $0.accountanteDispatcher = self.accountantDispatcher
-            $0.directorObservers.add(observer: director)
+            $0.directorObservers.add(observer: directorController)
         }
-
     }
     
     // MARK: -
