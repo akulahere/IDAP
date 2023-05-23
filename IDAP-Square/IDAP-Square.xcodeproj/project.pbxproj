@@ -15,6 +15,8 @@
 		664B4C9F2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C9E2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift */; };
 		664B4CA12A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CA02A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift */; };
 		664B4CB22A1CB18600CCD1C0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664B4CB12A1CB18600CCD1C0 /* ViewController.xib */; };
+		664B4CB72A1CD81500CCD1C0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CB62A1CD81500CCD1C0 /* MainView.swift */; };
+		664B4CBA2A1CDF3A00CCD1C0 /* SquarePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CB92A1CDF3A00CCD1C0 /* SquarePosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		664B4C9E2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_SquareUITests.swift; sourceTree = "<group>"; };
 		664B4CA02A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_SquareUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		664B4CB12A1CB18600CCD1C0 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		664B4CB62A1CD81500CCD1C0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		664B4CB92A1CDF3A00CCD1C0 /* SquarePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquarePosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +101,9 @@
 		664B4C7C2A1CABCA00CCD1C0 /* IDAP-Square */ = {
 			isa = PBXGroup;
 			children = (
+				664B4CB82A1CDF2E00CCD1C0 /* F */,
 				664B4C7D2A1CABCA00CCD1C0 /* AppDelegate.swift */,
+				664B4CB62A1CD81500CCD1C0 /* MainView.swift */,
 				664B4C812A1CABCA00CCD1C0 /* ViewController.swift */,
 				664B4CB12A1CB18600CCD1C0 /* ViewController.xib */,
 				664B4C862A1CABCB00CCD1C0 /* Assets.xcassets */,
@@ -122,6 +128,14 @@
 				664B4CA02A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift */,
 			);
 			path = "IDAP-SquareUITests";
+			sourceTree = "<group>";
+		};
+		664B4CB82A1CDF2E00CCD1C0 /* F */ = {
+			isa = PBXGroup;
+			children = (
+				664B4CB92A1CDF3A00CCD1C0 /* SquarePosition.swift */,
+			);
+			path = F;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				664B4C822A1CABCA00CCD1C0 /* ViewController.swift in Sources */,
+				664B4CBA2A1CDF3A00CCD1C0 /* SquarePosition.swift in Sources */,
+				664B4CB72A1CD81500CCD1C0 /* MainView.swift in Sources */,
 				664B4C7E2A1CABCA00CCD1C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

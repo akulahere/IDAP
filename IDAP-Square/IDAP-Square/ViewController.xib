@@ -10,30 +10,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="IDAP_Square">
             <connections>
-                <outlet property="square" destination="HI5-H6-Thy" id="J9h-w1-ovY"/>
-                <outlet property="view" destination="iN0-l3-epB" id="NHe-UY-cKu"/>
+                <outlet property="mainView" destination="iN0-l3-epB" id="GyS-LH-bjU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="zDa-L4-LsA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainView" customModule="IDAP_Square" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-H6-Thy" userLabel="Square">
-                    <rect key="frame" x="16" y="75" width="100" height="100"/>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="cFE-Nc-utL"/>
-                        <constraint firstAttribute="width" constant="100" id="flZ-af-mTZ"/>
-                    </constraints>
-                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KM-PS-GzL">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled">
+                        <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="handleSquareTap" destination="-1" eventType="touchDown" id="LNm-nq-Bzn"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="HI5-H6-Thy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="V1W-J6-o0t"/>
-                <constraint firstItem="HI5-H6-Thy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="XVh-u2-7IG"/>
-            </constraints>
+            <connections>
+                <outlet property="square" destination="5KM-PS-GzL" id="YyI-Et-ayO"/>
+            </connections>
             <point key="canvasLocation" x="138" y="20"/>
         </view>
     </objects>

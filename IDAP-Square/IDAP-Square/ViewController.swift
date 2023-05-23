@@ -9,14 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var square: UIView?
+    // MARK: -
+    // MARK: Outlets
+
+    @IBOutlet var mainView: MainView!
     
-    override func viewDidLoad() {
-        print("did load")
-//        view.backgroundColor = .red
-        super.viewDidLoad()
+    // MARK: -
+    // MARK: IBActions
+
+    @IBAction func handleSquareTap() {
+        mainView.moveSquareToNextPositionInfinite()
+
     }
+    
+    // MARK: -
+    // MARK: Overrided
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainView.backgroundColor = .blue
+    }
 }
-
