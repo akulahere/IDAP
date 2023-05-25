@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		664B4C7E2A1CABCA00CCD1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C7D2A1CABCA00CCD1C0 /* AppDelegate.swift */; };
-		664B4C822A1CABCA00CCD1C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C812A1CABCA00CCD1C0 /* ViewController.swift */; };
+		664B4C822A1CABCA00CCD1C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C812A1CABCA00CCD1C0 /* MainViewController.swift */; };
 		664B4C872A1CABCB00CCD1C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664B4C862A1CABCB00CCD1C0 /* Assets.xcassets */; };
 		664B4C8A2A1CABCB00CCD1C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664B4C882A1CABCB00CCD1C0 /* LaunchScreen.storyboard */; };
 		664B4C952A1CABCB00CCD1C0 /* IDAP_SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C942A1CABCB00CCD1C0 /* IDAP_SquareTests.swift */; };
 		664B4C9F2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4C9E2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift */; };
 		664B4CA12A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CA02A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift */; };
-		664B4CB22A1CB18600CCD1C0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664B4CB12A1CB18600CCD1C0 /* ViewController.xib */; };
+		664B4CB22A1CB18600CCD1C0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664B4CB12A1CB18600CCD1C0 /* MainViewController.xib */; };
 		664B4CB72A1CD81500CCD1C0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CB62A1CD81500CCD1C0 /* MainView.swift */; };
 		664B4CBA2A1CDF3A00CCD1C0 /* SquarePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B4CB92A1CDF3A00CCD1C0 /* SquarePosition.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		664B4C7A2A1CABCA00CCD1C0 /* IDAP-Square.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-Square.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		664B4C7D2A1CABCA00CCD1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		664B4C812A1CABCA00CCD1C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		664B4C812A1CABCA00CCD1C0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		664B4C862A1CABCB00CCD1C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664B4C892A1CABCB00CCD1C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		664B4C8B2A1CABCB00CCD1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		664B4C9A2A1CABCB00CCD1C0 /* IDAP-SquareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-SquareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		664B4C9E2A1CABCB00CCD1C0 /* IDAP_SquareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_SquareUITests.swift; sourceTree = "<group>"; };
 		664B4CA02A1CABCB00CCD1C0 /* IDAP_SquareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_SquareUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		664B4CB12A1CB18600CCD1C0 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		664B4CB12A1CB18600CCD1C0 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		664B4CB62A1CD81500CCD1C0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		664B4CB92A1CDF3A00CCD1C0 /* SquarePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquarePosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +104,8 @@
 				664B4CB82A1CDF2E00CCD1C0 /* F */,
 				664B4C7D2A1CABCA00CCD1C0 /* AppDelegate.swift */,
 				664B4CB62A1CD81500CCD1C0 /* MainView.swift */,
-				664B4C812A1CABCA00CCD1C0 /* ViewController.swift */,
-				664B4CB12A1CB18600CCD1C0 /* ViewController.xib */,
+				664B4C812A1CABCA00CCD1C0 /* MainViewController.swift */,
+				664B4CB12A1CB18600CCD1C0 /* MainViewController.xib */,
 				664B4C862A1CABCB00CCD1C0 /* Assets.xcassets */,
 				664B4C882A1CABCB00CCD1C0 /* LaunchScreen.storyboard */,
 				664B4C8B2A1CABCB00CCD1C0 /* Info.plist */,
@@ -243,7 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				664B4C8A2A1CABCB00CCD1C0 /* LaunchScreen.storyboard in Resources */,
-				664B4CB22A1CB18600CCD1C0 /* ViewController.xib in Resources */,
+				664B4CB22A1CB18600CCD1C0 /* MainViewController.xib in Resources */,
 				664B4C872A1CABCB00CCD1C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				664B4C822A1CABCA00CCD1C0 /* ViewController.swift in Sources */,
+				664B4C822A1CABCA00CCD1C0 /* MainViewController.swift in Sources */,
 				664B4CBA2A1CDF3A00CCD1C0 /* SquarePosition.swift in Sources */,
 				664B4CB72A1CD81500CCD1C0 /* MainView.swift in Sources */,
 				664B4C7E2A1CABCA00CCD1C0 /* AppDelegate.swift in Sources */,

@@ -8,9 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="IDAP_Square">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="IDAP_Square">
             <connections>
-                <outlet property="mainView" destination="iN0-l3-epB" id="GyS-LH-bjU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="zDa-L4-LsA"/>
             </connections>
         </placeholder>

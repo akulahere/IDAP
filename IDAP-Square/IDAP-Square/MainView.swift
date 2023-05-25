@@ -10,27 +10,23 @@ import UIKit
 class MainView: UIView {
     
     // MARK: -
-    // MARK: Variables
-
-    var squarePosition: SquarePosition = .topLeft
-    
-    // MARK: -
     // MARK: Outlets
 
     @IBOutlet var square: UIButton?
-    
-    // MARK: -
-    // MARK: Private
 
-    private func setSquarePosition(_ position: SquarePosition) {
-        setSquarePosition(position, animated: false)
+    // MARK: -
+    // MARK: Public
+
+    func setSquare(position: SquarePosition) {
+        self.setSquare(position: position, animated: false)
     }
     
-    private func setSquarePosition(_ position: SquarePosition, animated: Bool) {
-        setSquarePosition(position, animated: animated, completionHandler: nil)
+    func setSquare(position: SquarePosition, animated: Bool) {
+        self.setSquare(position: position, animated: animated, completionHandler: nil)
     }
     
-    private func setSquarePosition(_ position: SquarePosition, animated: Bool, completionHandler: (() -> Void)?) {
+    func setSquare(position: SquarePosition, animated: Bool, completionHandler: (() -> Void)?) {
+        
         guard let square = self.square else { return }
         
         let squareSideSize = square.frame.width
@@ -48,38 +44,14 @@ class MainView: UIView {
         }
         
         if animated {
-            UIView.animate(withDuration: 3) {
+            UIView.animate(withDuration: 3, animations: {
                 square.frame = newSquareFrame
-            } completion: { _ in
-                self.squarePosition = position
+            }, completion: { _ in
                 completionHandler?()
-            }
+            })
         } else {
             square.frame = newSquareFrame
-            self.squarePosition = position
             completionHandler?()
-        }
-    }
-    
-    // MARK: -
-    // MARK: Public
-
-    func moveSquareToNextPositionInfinite() {
-        var nextPosition: SquarePosition
-        
-        switch squarePosition {
-            case .topLeft:
-                nextPosition = .topRight
-            case .topRight:
-                nextPosition = .bottomRight
-            case .bottomRight:
-                nextPosition = .bottomLeft
-            case .bottomLeft:
-                nextPosition = .topLeft
-        }
-        
-        setSquarePosition(nextPosition, animated: true) { [weak self] in
-            self?.moveSquareToNextPositionInfinite()
         }
     }
 }
