@@ -15,7 +15,12 @@
 		666B06A82A20AE480063FF48 /* IDAP_TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06A72A20AE480063FF48 /* IDAP_TableViewUITests.swift */; };
 		666B06AA2A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06A92A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift */; };
 		666B06B82A20AE650063FF48 /* RootViewGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06B72A20AE650063FF48 /* RootViewGettable.swift */; };
-		666B06BA2A20B9CB0063FF48 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */; };
+		666B06BD2A20C6430063FF48 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06BC2A20C6430063FF48 /* DataModel.swift */; };
+		666B06BF2A20C6620063FF48 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06BE2A20C6620063FF48 /* ArrayModel.swift */; };
+		666B06C12A20C73D0063FF48 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B06C02A20C73D0063FF48 /* Empty.xib */; };
+		666B06C62A20CACB0063FF48 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06C42A20CACB0063FF48 /* CustomTableViewCell.swift */; };
+		666B06C72A20CACB0063FF48 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B06C52A20CACB0063FF48 /* CustomTableViewCell.xib */; };
+		666B06C92A20CC3E0063FF48 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +53,12 @@
 		666B06A72A20AE480063FF48 /* IDAP_TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_TableViewUITests.swift; sourceTree = "<group>"; };
 		666B06A92A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_TableViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		666B06B72A20AE650063FF48 /* RootViewGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewGettable.swift; sourceTree = "<group>"; };
-		666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		666B06BC2A20C6430063FF48 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		666B06BE2A20C6620063FF48 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
+		666B06C02A20C73D0063FF48 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
+		666B06C42A20CACB0063FF48 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		666B06C52A20CACB0063FF48 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +111,13 @@
 			children = (
 				666B06B62A20AE5B0063FF48 /* F */,
 				666B06862A20AE460063FF48 /* AppDelegate.swift */,
-				666B068A2A20AE460063FF48 /* MainViewController.swift */,
-				666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */,
+				666B06C32A20C8980063FF48 /* Controllers */,
+				666B06C22A20C8900063FF48 /* Views */,
+				666B06BB2A20C6380063FF48 /* Models */,
 				666B068F2A20AE480063FF48 /* Assets.xcassets */,
 				666B06912A20AE480063FF48 /* LaunchScreen.storyboard */,
 				666B06942A20AE480063FF48 /* Info.plist */,
+				666B06C02A20C73D0063FF48 /* Empty.xib */,
 			);
 			path = "IDAP-TableView";
 			sourceTree = "<group>";
@@ -131,8 +143,35 @@
 			isa = PBXGroup;
 			children = (
 				666B06B72A20AE650063FF48 /* RootViewGettable.swift */,
+				666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */,
 			);
 			path = F;
+			sourceTree = "<group>";
+		};
+		666B06BB2A20C6380063FF48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				666B06BC2A20C6430063FF48 /* DataModel.swift */,
+				666B06BE2A20C6620063FF48 /* ArrayModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		666B06C22A20C8900063FF48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				666B06C42A20CACB0063FF48 /* CustomTableViewCell.swift */,
+				666B06C52A20CACB0063FF48 /* CustomTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		666B06C32A20C8980063FF48 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				666B068A2A20AE460063FF48 /* MainViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666B06C12A20C73D0063FF48 /* Empty.xib in Resources */,
 				666B06932A20AE480063FF48 /* LaunchScreen.storyboard in Resources */,
+				666B06C72A20CACB0063FF48 /* CustomTableViewCell.xib in Resources */,
 				666B06902A20AE480063FF48 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				666B06BA2A20B9CB0063FF48 /* MainTableViewController.swift in Sources */,
+				666B06C62A20CACB0063FF48 /* CustomTableViewCell.swift in Sources */,
+				666B06BD2A20C6430063FF48 /* DataModel.swift in Sources */,
 				666B06B82A20AE650063FF48 /* RootViewGettable.swift in Sources */,
+				666B06BF2A20C6620063FF48 /* ArrayModel.swift in Sources */,
+				666B06C92A20CC3E0063FF48 /* BaseTableViewCell.swift in Sources */,
 				666B068B2A20AE460063FF48 /* MainViewController.swift in Sources */,
 				666B06872A20AE460063FF48 /* AppDelegate.swift in Sources */,
 			);
