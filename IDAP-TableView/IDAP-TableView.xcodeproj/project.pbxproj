@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		666B06872A20AE460063FF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06862A20AE460063FF48 /* AppDelegate.swift */; };
+		666B068B2A20AE460063FF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B068A2A20AE460063FF48 /* MainViewController.swift */; };
+		666B06902A20AE480063FF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666B068F2A20AE480063FF48 /* Assets.xcassets */; };
+		666B06932A20AE480063FF48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666B06912A20AE480063FF48 /* LaunchScreen.storyboard */; };
+		666B069E2A20AE480063FF48 /* IDAP_TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B069D2A20AE480063FF48 /* IDAP_TableViewTests.swift */; };
+		666B06A82A20AE480063FF48 /* IDAP_TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06A72A20AE480063FF48 /* IDAP_TableViewUITests.swift */; };
+		666B06AA2A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06A92A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift */; };
+		666B06B82A20AE650063FF48 /* RootViewGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06B72A20AE650063FF48 /* RootViewGettable.swift */; };
+		666B06BA2A20B9CB0063FF48 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		666B069A2A20AE480063FF48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 666B067B2A20AE460063FF48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 666B06822A20AE460063FF48;
+			remoteInfo = "IDAP-TableView";
+		};
+		666B06A42A20AE480063FF48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 666B067B2A20AE460063FF48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 666B06822A20AE460063FF48;
+			remoteInfo = "IDAP-TableView";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		666B06832A20AE460063FF48 /* IDAP-TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		666B06862A20AE460063FF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		666B068A2A20AE460063FF48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		666B068F2A20AE480063FF48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		666B06922A20AE480063FF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		666B06942A20AE480063FF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		666B06992A20AE480063FF48 /* IDAP-TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-TableViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		666B069D2A20AE480063FF48 /* IDAP_TableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_TableViewTests.swift; sourceTree = "<group>"; };
+		666B06A32A20AE480063FF48 /* IDAP-TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-TableViewUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		666B06A72A20AE480063FF48 /* IDAP_TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_TableViewUITests.swift; sourceTree = "<group>"; };
+		666B06A92A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_TableViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		666B06B72A20AE650063FF48 /* RootViewGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewGettable.swift; sourceTree = "<group>"; };
+		666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		666B06802A20AE460063FF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B06962A20AE480063FF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B06A02A20AE480063FF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		666B067A2A20AE460063FF48 = {
+			isa = PBXGroup;
+			children = (
+				666B06852A20AE460063FF48 /* IDAP-TableView */,
+				666B069C2A20AE480063FF48 /* IDAP-TableViewTests */,
+				666B06A62A20AE480063FF48 /* IDAP-TableViewUITests */,
+				666B06842A20AE460063FF48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		666B06842A20AE460063FF48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				666B06832A20AE460063FF48 /* IDAP-TableView.app */,
+				666B06992A20AE480063FF48 /* IDAP-TableViewTests.xctest */,
+				666B06A32A20AE480063FF48 /* IDAP-TableViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		666B06852A20AE460063FF48 /* IDAP-TableView */ = {
+			isa = PBXGroup;
+			children = (
+				666B06B62A20AE5B0063FF48 /* F */,
+				666B06862A20AE460063FF48 /* AppDelegate.swift */,
+				666B068A2A20AE460063FF48 /* MainViewController.swift */,
+				666B06B92A20B9CB0063FF48 /* MainTableViewController.swift */,
+				666B068F2A20AE480063FF48 /* Assets.xcassets */,
+				666B06912A20AE480063FF48 /* LaunchScreen.storyboard */,
+				666B06942A20AE480063FF48 /* Info.plist */,
+			);
+			path = "IDAP-TableView";
+			sourceTree = "<group>";
+		};
+		666B069C2A20AE480063FF48 /* IDAP-TableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				666B069D2A20AE480063FF48 /* IDAP_TableViewTests.swift */,
+			);
+			path = "IDAP-TableViewTests";
+			sourceTree = "<group>";
+		};
+		666B06A62A20AE480063FF48 /* IDAP-TableViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				666B06A72A20AE480063FF48 /* IDAP_TableViewUITests.swift */,
+				666B06A92A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift */,
+			);
+			path = "IDAP-TableViewUITests";
+			sourceTree = "<group>";
+		};
+		666B06B62A20AE5B0063FF48 /* F */ = {
+			isa = PBXGroup;
+			children = (
+				666B06B72A20AE650063FF48 /* RootViewGettable.swift */,
+			);
+			path = F;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		666B06822A20AE460063FF48 /* IDAP-TableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666B06AD2A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableView" */;
+			buildPhases = (
+				666B067F2A20AE460063FF48 /* Sources */,
+				666B06802A20AE460063FF48 /* Frameworks */,
+				666B06812A20AE460063FF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IDAP-TableView";
+			productName = "IDAP-TableView";
+			productReference = 666B06832A20AE460063FF48 /* IDAP-TableView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		666B06982A20AE480063FF48 /* IDAP-TableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666B06B02A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableViewTests" */;
+			buildPhases = (
+				666B06952A20AE480063FF48 /* Sources */,
+				666B06962A20AE480063FF48 /* Frameworks */,
+				666B06972A20AE480063FF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				666B069B2A20AE480063FF48 /* PBXTargetDependency */,
+			);
+			name = "IDAP-TableViewTests";
+			productName = "IDAP-TableViewTests";
+			productReference = 666B06992A20AE480063FF48 /* IDAP-TableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		666B06A22A20AE480063FF48 /* IDAP-TableViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666B06B32A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableViewUITests" */;
+			buildPhases = (
+				666B069F2A20AE480063FF48 /* Sources */,
+				666B06A02A20AE480063FF48 /* Frameworks */,
+				666B06A12A20AE480063FF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				666B06A52A20AE480063FF48 /* PBXTargetDependency */,
+			);
+			name = "IDAP-TableViewUITests";
+			productName = "IDAP-TableViewUITests";
+			productReference = 666B06A32A20AE480063FF48 /* IDAP-TableViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		666B067B2A20AE460063FF48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					666B06822A20AE460063FF48 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					666B06982A20AE480063FF48 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 666B06822A20AE460063FF48;
+					};
+					666B06A22A20AE480063FF48 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 666B06822A20AE460063FF48;
+					};
+				};
+			};
+			buildConfigurationList = 666B067E2A20AE460063FF48 /* Build configuration list for PBXProject "IDAP-TableView" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 666B067A2A20AE460063FF48;
+			productRefGroup = 666B06842A20AE460063FF48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				666B06822A20AE460063FF48 /* IDAP-TableView */,
+				666B06982A20AE480063FF48 /* IDAP-TableViewTests */,
+				666B06A22A20AE480063FF48 /* IDAP-TableViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		666B06812A20AE460063FF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666B06932A20AE480063FF48 /* LaunchScreen.storyboard in Resources */,
+				666B06902A20AE480063FF48 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B06972A20AE480063FF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B06A12A20AE480063FF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		666B067F2A20AE460063FF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666B06BA2A20B9CB0063FF48 /* MainTableViewController.swift in Sources */,
+				666B06B82A20AE650063FF48 /* RootViewGettable.swift in Sources */,
+				666B068B2A20AE460063FF48 /* MainViewController.swift in Sources */,
+				666B06872A20AE460063FF48 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B06952A20AE480063FF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666B069E2A20AE480063FF48 /* IDAP_TableViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666B069F2A20AE480063FF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666B06AA2A20AE480063FF48 /* IDAP_TableViewUITestsLaunchTests.swift in Sources */,
+				666B06A82A20AE480063FF48 /* IDAP_TableViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		666B069B2A20AE480063FF48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 666B06822A20AE460063FF48 /* IDAP-TableView */;
+			targetProxy = 666B069A2A20AE480063FF48 /* PBXContainerItemProxy */;
+		};
+		666B06A52A20AE480063FF48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 666B06822A20AE460063FF48 /* IDAP-TableView */;
+			targetProxy = 666B06A42A20AE480063FF48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		666B06912A20AE480063FF48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				666B06922A20AE480063FF48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		666B06AB2A20AE480063FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		666B06AC2A20AE480063FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		666B06AE2A20AE480063FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IDAP-TableView/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		666B06AF2A20AE480063FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IDAP-TableView/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		666B06B12A20AE480063FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDAP-TableView.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IDAP-TableView";
+			};
+			name = Debug;
+		};
+		666B06B22A20AE480063FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDAP-TableView.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IDAP-TableView";
+			};
+			name = Release;
+		};
+		666B06B42A20AE480063FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IDAP-TableView";
+			};
+			name = Debug;
+		};
+		666B06B52A20AE480063FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-TableViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IDAP-TableView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		666B067E2A20AE460063FF48 /* Build configuration list for PBXProject "IDAP-TableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666B06AB2A20AE480063FF48 /* Debug */,
+				666B06AC2A20AE480063FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		666B06AD2A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666B06AE2A20AE480063FF48 /* Debug */,
+				666B06AF2A20AE480063FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		666B06B02A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666B06B12A20AE480063FF48 /* Debug */,
+				666B06B22A20AE480063FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		666B06B32A20AE480063FF48 /* Build configuration list for PBXNativeTarget "IDAP-TableViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666B06B42A20AE480063FF48 /* Debug */,
+				666B06B52A20AE480063FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 666B067B2A20AE460063FF48 /* Project object */;
+}
