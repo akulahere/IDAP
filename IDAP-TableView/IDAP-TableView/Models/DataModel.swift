@@ -8,8 +8,15 @@
 import UIKit
 
 class DataModel {
+    
+    // MARK: -
+    // MARK: Variables
+
     var text: String
     var image: UIImage?
+
+    // MARK: -
+    // MARK: Initializations and Deallocations
 
     init(text: String, image: UIImage?) {
         self.text = text

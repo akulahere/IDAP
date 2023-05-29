@@ -8,43 +8,96 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var tableView: UITableView!
-    var arrayModel: ArrayModel!
-    var image: UIImage!
+
+    // MARK: -
+    // MARK: Variables
+
+    var tableView: UITableView?
+    var arrayModel: ArrayModel
+    var image: UIImage?
     
+    // MARK: -
+    // MARK: Initialization and Dealocationn
+    
+    init(model: ArrayModel) {
+        if let pepeImage = UIImage(named: "pepe") {
+            self.image = pepeImage
+        } else {
+            self.image = UIImage(systemName: "photo.artframe")
+        }
+        
+        self.arrayModel = model
+        super.init(nibName: nil, bundle: nil)
+        arrayModel.delegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: -
+    // MARK: View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.image = loadImage()
+        setUpTable()
+        setUpNavBar()
         
-        let dataModels = (0..<10).map { _ in DataModel(text: UUID().uuidString, image: image) }
-        arrayModel = ArrayModel(array: dataModels)
-        self.tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CustomTableViewCell.nib, forCellReuseIdentifier: CustomTableViewCell.reuseIdentifier)
-        view.addSubview(tableView)
+        if let tableView = tableView {
+            view.addSubview(tableView)
+        }
+    }
+
+    // MARK: -
+    // MARK: Private
+
+    private func setUpNavBar() {
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewCell))
         let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortCells))
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditing))
         navigationItem.rightBarButtonItems = [addButton, sortButton]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditing))
+        navigationItem.leftBarButtonItem = editButton
     }
     
-   
-    func loadImage() -> UIImage {
-        return UIImage(named: "pepe")!
+    private func setUpTable() {
+        self.tableView = UITableView(frame: view.bounds, style: .plain)
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        self.tableView?.register(CustomTableViewCell.nib, forCellReuseIdentifier: CustomTableViewCell.reuseIdentifier)
+    }
+    
+    @objc private func toggleEditing() {
+        self.tableView?.isEditing = !(tableView?.isEditing ?? false)
+        navigationItem.rightBarButtonItem?.title = tableView?.isEditing ?? false ? "Done" : "Edit"
+    }
+    
+    @objc private func addNewCell() {
+        
+        let newData = DataModel(text: UUID().uuidString, image: image)
+        self.arrayModel.append(newData)
+    }
+    
+    @objc private func sortCells() {
+        self.arrayModel.sort()
+        self.tableView?.reloadData()
     }
 }
+
+// MARK: -
+// MARK: TableView Delegate
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayModel.count
+        return self.arrayModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.reuseIdentifier, for: indexPath) as! CustomTableViewCell
-        let dataModel = arrayModel[indexPath.row]
+        let dataModel = self.arrayModel[indexPath.row]
         cell.configure(with: dataModel)
+        
         return cell
     }
     
@@ -60,28 +113,21 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            arrayModel.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.arrayModel.remove(at: indexPath.row)
         } else if editingStyle == .insert {
             let newData = DataModel(text: UUID().uuidString, image: image)
-            arrayModel.append(newData)
-            tableView.insertRows(at: [IndexPath(row: arrayModel.count - 1, section: 0)], with: .automatic)
+            self.arrayModel.append(newData)
         }
     }
- 
-    @objc func toggleEditing() {
-        tableView.isEditing = !tableView.isEditing
-        navigationItem.rightBarButtonItem?.title = tableView.isEditing ? "Done" : "Edit"
-    }
-    
-    @objc func addNewCell() {
-        let newData = DataModel(text: UUID().uuidString, image: image)
-        arrayModel.append(newData)
-        tableView.insertRows(at: [IndexPath(row: arrayModel.count - 1, section: 0)], with: .automatic)
-    }
-    
-    @objc func sortCells() {
-        arrayModel.sort()
-        tableView.reloadData()
+}
+
+// MARK: -
+// MARK: ArrayModelDelegate
+
+extension MainViewController: ArrayModelDelegate {
+    func arrayModelDidUpdate() {
+        guard let tableView = self.tableView else { return }
+        UIView.transition(with: tableView, duration: 1.0, options: .transitionCrossDissolve, animations: { tableView.reloadData() }, completion: nil)
+
     }
 }

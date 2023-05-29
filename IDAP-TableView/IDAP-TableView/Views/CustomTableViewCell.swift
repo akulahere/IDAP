@@ -15,8 +15,8 @@ class CustomTableViewCell: BaseTableViewCell {
     
     func configure(with model: DataModel) {
         self.dataModel = model
-        cellText?.text = model.text
-        cellImage?.image = model.image
+        self.cellText?.text = model.text
+        self.cellImage?.image = model.image
     }
     
     override func awakeFromNib() {

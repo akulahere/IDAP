@@ -8,6 +8,10 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell {
+    
+    // MARK: -
+    // MARK: Variables
+
     static var nib: UINib {
         return UINib(nibName: String(describing: self), bundle: nil)
     }
@@ -16,7 +20,9 @@ class BaseTableViewCell: UITableViewCell {
         return String(describing: self)
     }
 
-    
+    // MARK: -
+    // MARK: Public
+
     class func loadFromNib() -> Self {
         return loadFromNibHelper()
     }

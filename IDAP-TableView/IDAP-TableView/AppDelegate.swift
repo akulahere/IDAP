@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow()
-        let mainViewController = MainViewController()
+        let model = setUpMainControllerModel()
+        let mainViewController = MainViewController(model: model)
         let navigationController = UINavigationController(rootViewController: mainViewController)
         window.rootViewController = navigationController
 
@@ -23,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         return true
+    }
+    
+    func setUpMainControllerModel() -> ArrayModel{
+        var image: UIImage
+        if let pepeImage = UIImage(named: "pepe") {
+            image = pepeImage
+        } else {
+            image = UIImage(systemName: "photo.artframe")!
+        }
+        
+        let dataModels = (0..<10).map { _ in DataModel(text: UUID().uuidString, image: image) }
+        return ArrayModel(array: dataModels)
     }
 
 }
