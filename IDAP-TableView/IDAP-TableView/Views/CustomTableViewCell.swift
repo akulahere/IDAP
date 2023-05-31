@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTableViewCell: BaseTableViewCell {
+class CustomTableViewCell: UITableViewCell {
     var dataModel: DataModel?
     
     @IBOutlet var cellImage: UIImageView?
@@ -18,13 +18,4 @@ class CustomTableViewCell: BaseTableViewCell {
         self.cellText?.text = model.text
         self.cellImage?.image = model.image
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

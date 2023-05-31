@@ -7,12 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, MainViewDelegate, RootViewGettable {
+    typealias RootViewType = MainView
+    
 
     // MARK: -
     // MARK: Variables
 
-    var tableView: UITableView?
     var arrayModel: ArrayModel
     var image: UIImage?
     
@@ -28,7 +29,8 @@ class MainViewController: UIViewController {
         
         self.arrayModel = model
         super.init(nibName: nil, bundle: nil)
-        arrayModel.delegate = self
+        self.arrayModel.delegate = self
+        self.rootView?.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -38,49 +40,30 @@ class MainViewController: UIViewController {
     // MARK: -
     // MARK: View Life Cycle
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTable()
-        setUpNavBar()
+        self.rootView?.setUpTable(delegate: self)
+        self.rootView?.setUpNavBar(delegate: self)
         
-        if let tableView = tableView {
-            view.addSubview(tableView)
-        }
     }
 
     // MARK: -
-    // MARK: Private
-
-    private func setUpNavBar() {
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewCell))
-        let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortCells))
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditing))
-        navigationItem.rightBarButtonItems = [addButton, sortButton]
-        navigationItem.leftBarButtonItem = editButton
+    // MARK: Public
+    
+    @objc func toggleEditing() {
+        self.rootView?.tableView?.isEditing = !(rootView?.tableView?.isEditing ?? false)
+        self.navigationItem.rightBarButtonItem?.title = rootView?.tableView?.isEditing ?? false ? "Done" : "Edit"
     }
     
-    private func setUpTable() {
-        self.tableView = UITableView(frame: view.bounds, style: .plain)
-        self.tableView?.delegate = self
-        self.tableView?.dataSource = self
-        self.tableView?.register(CustomTableViewCell.nib, forCellReuseIdentifier: CustomTableViewCell.reuseIdentifier)
-    }
-    
-    @objc private func toggleEditing() {
-        self.tableView?.isEditing = !(tableView?.isEditing ?? false)
-        navigationItem.rightBarButtonItem?.title = tableView?.isEditing ?? false ? "Done" : "Edit"
-    }
-    
-    @objc private func addNewCell() {
-        
+    @objc func addNewCell() {
         let newData = DataModel(text: UUID().uuidString, image: image)
         self.arrayModel.append(newData)
     }
+
     
-    @objc private func sortCells() {
+    @objc func sortCells() {
         self.arrayModel.sort()
-        self.tableView?.reloadData()
     }
 }
 
@@ -94,12 +77,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.reuseIdentifier, for: indexPath) as! CustomTableViewCell
+        let cell: CustomTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let dataModel = self.arrayModel[indexPath.row]
         cell.configure(with: dataModel)
-        
+
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -126,8 +110,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MainViewController: ArrayModelDelegate {
     func arrayModelDidUpdate() {
-        guard let tableView = self.tableView else { return }
-        UIView.transition(with: tableView, duration: 1.0, options: .transitionCrossDissolve, animations: { tableView.reloadData() }, completion: nil)
-
+        rootView?.reloadTable()
     }
 }
