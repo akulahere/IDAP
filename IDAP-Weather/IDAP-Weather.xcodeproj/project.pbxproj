@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC58A2A28B88B0082DDDF /* AppDelegate.swift */; };
 		669EC58F2A28B88B0082DDDF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC58E2A28B88B0082DDDF /* MainViewController.swift */; };
-		669EC5922A28B88B0082DDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5902A28B88B0082DDDF /* Main.storyboard */; };
 		669EC5942A28B88C0082DDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5932A28B88C0082DDDF /* Assets.xcassets */; };
 		669EC5A22A28B88C0082DDDF /* IDAP_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5A12A28B88C0082DDDF /* IDAP_WeatherTests.swift */; };
 		669EC5AC2A28B88C0082DDDF /* IDAP_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5AB2A28B88C0082DDDF /* IDAP_WeatherUITests.swift */; };
 		669EC5AE2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5AD2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift */; };
+		669EC5BF2A28C35F0082DDDF /* RootViewGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */; };
+		669EC5C12A28C3840082DDDF /* TableView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C02A28C3840082DDDF /* TableView+ext.swift */; };
+		669EC5C32A28DC4E0082DDDF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C22A28DC4E0082DDDF /* MainView.swift */; };
+		669EC5C52A28DD060082DDDF /* MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C42A28DD060082DDDF /* MainViewTableViewCell.swift */; };
+		669EC5C82A28E6120082DDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5C62A28E6120082DDDF /* LaunchScreen.storyboard */; };
+		669EC5CC2A28E6520082DDDF /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5CB2A28E6520082DDDF /* MainView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,6 @@
 		669EC5872A28B88B0082DDDF /* IDAP-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669EC58A2A28B88B0082DDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669EC58E2A28B88B0082DDDF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		669EC5912A28B88B0082DDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		669EC5932A28B88C0082DDDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669EC5982A28B88C0082DDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		669EC59D2A28B88C0082DDDF /* IDAP-WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +49,12 @@
 		669EC5A72A28B88C0082DDDF /* IDAP-WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-WeatherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669EC5AB2A28B88C0082DDDF /* IDAP_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_WeatherUITests.swift; sourceTree = "<group>"; };
 		669EC5AD2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewGettable.swift; sourceTree = "<group>"; };
+		669EC5C02A28C3840082DDDF /* TableView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+ext.swift"; sourceTree = "<group>"; };
+		669EC5C22A28DC4E0082DDDF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		669EC5C42A28DD060082DDDF /* MainViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCell.swift; sourceTree = "<group>"; };
+		669EC5C72A28E6120082DDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../IDAP-TableView/IDAP-TableView/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		669EC5CB2A28E6520082DDDF /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +105,13 @@
 		669EC5892A28B88B0082DDDF /* IDAP-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				669EC5BD2A28BCD40082DDDF /* Views */,
+				669EC5BC2A28BCCF0082DDDF /* Controllers */,
+				669EC5BB2A28BCC80082DDDF /* Models */,
+				669EC5BA2A28BCBF0082DDDF /* F */,
 				669EC58A2A28B88B0082DDDF /* AppDelegate.swift */,
-				669EC58E2A28B88B0082DDDF /* MainViewController.swift */,
-				669EC5902A28B88B0082DDDF /* Main.storyboard */,
 				669EC5932A28B88C0082DDDF /* Assets.xcassets */,
+				669EC5C62A28E6120082DDDF /* LaunchScreen.storyboard */,
 				669EC5982A28B88C0082DDDF /* Info.plist */,
 			);
 			path = "IDAP-Weather";
@@ -119,6 +132,40 @@
 				669EC5AD2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift */,
 			);
 			path = "IDAP-WeatherUITests";
+			sourceTree = "<group>";
+		};
+		669EC5BA2A28BCBF0082DDDF /* F */ = {
+			isa = PBXGroup;
+			children = (
+				669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */,
+				669EC5C02A28C3840082DDDF /* TableView+ext.swift */,
+			);
+			path = F;
+			sourceTree = "<group>";
+		};
+		669EC5BB2A28BCC80082DDDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		669EC5BC2A28BCCF0082DDDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				669EC58E2A28B88B0082DDDF /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		669EC5BD2A28BCD40082DDDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				669EC5C22A28DC4E0082DDDF /* MainView.swift */,
+				669EC5C42A28DD060082DDDF /* MainViewTableViewCell.swift */,
+				669EC5CB2A28E6520082DDDF /* MainView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669EC5CC2A28E6520082DDDF /* MainView.xib in Resources */,
 				669EC5942A28B88C0082DDDF /* Assets.xcassets in Resources */,
-				669EC5922A28B88B0082DDDF /* Main.storyboard in Resources */,
+				669EC5C82A28E6120082DDDF /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				669EC58F2A28B88B0082DDDF /* MainViewController.swift in Sources */,
+				669EC5C12A28C3840082DDDF /* TableView+ext.swift in Sources */,
 				669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */,
+				669EC5C32A28DC4E0082DDDF /* MainView.swift in Sources */,
+				669EC5BF2A28C35F0082DDDF /* RootViewGettable.swift in Sources */,
+				669EC5C52A28DD060082DDDF /* MainViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,12 +341,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		669EC5902A28B88B0082DDDF /* Main.storyboard */ = {
+		669EC5C62A28E6120082DDDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				669EC5912A28B88B0082DDDF /* Base */,
+				669EC5C72A28E6120082DDDF /* Base */,
 			);
-			name = Main.storyboard;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
