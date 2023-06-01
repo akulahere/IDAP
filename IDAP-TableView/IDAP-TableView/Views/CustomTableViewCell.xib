@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="IDAP_TableView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bid-22-ZDe">
+                        <rect key="frame" x="5" y="5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="CaS-di-cUi"/>
+                            <constraint firstAttribute="height" constant="34" id="ioa-lt-jUW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-6b-shE">
+                        <rect key="frame" x="89" y="5" width="226" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KRs-6b-shE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="HLT-Zd-iNu"/>
+                    <constraint firstItem="bid-22-ZDe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="aVI-jI-AyW"/>
+                    <constraint firstAttribute="trailing" secondItem="KRs-6b-shE" secondAttribute="trailing" constant="5" id="rWh-W2-3jU"/>
+                    <constraint firstItem="KRs-6b-shE" firstAttribute="leading" secondItem="bid-22-ZDe" secondAttribute="trailing" constant="50" id="vZA-l5-ktn"/>
+                    <constraint firstAttribute="bottom" secondItem="KRs-6b-shE" secondAttribute="bottom" constant="5" id="yH1-8e-jOt"/>
+                    <constraint firstItem="bid-22-ZDe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zVg-0K-JrC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellImage" destination="bid-22-ZDe" id="V2x-Zn-eOF"/>
+                <outlet property="cellText" destination="KRs-6b-shE" id="DgD-MG-Ssd"/>
+            </connections>
+            <point key="canvasLocation" x="47.328244274809158" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+</document>

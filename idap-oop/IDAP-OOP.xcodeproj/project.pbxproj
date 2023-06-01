@@ -1,0 +1,943 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660B16B12A095E700054A7AF /* DirectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16B02A095E700054A7AF /* DirectorView.swift */; };
+		660B16B32A095E790054A7AF /* AccountantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B16B22A095E790054A7AF /* AccountantView.swift */; };
+		663640FE2A03E9C80088CB80 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663640FD2A03E9C80088CB80 /* Creature.swift */; };
+		663641012A0519110088CB80 /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663641002A0519110088CB80 /* CarWash.swift */; };
+		6650D2C12A039CE40083033D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2C02A039CE40083033D /* AppDelegate.swift */; };
+		6650D2C32A039CE40083033D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2C22A039CE40083033D /* SceneDelegate.swift */; };
+		6650D2C82A039CE40083033D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6650D2C62A039CE40083033D /* Main.storyboard */; };
+		6650D2CA2A039CE50083033D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6650D2C92A039CE50083033D /* Assets.xcassets */; };
+		6650D2CD2A039CE50083033D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6650D2CB2A039CE50083033D /* LaunchScreen.storyboard */; };
+		6650D2D82A039CE50083033D /* IDAP_OOPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2D72A039CE50083033D /* IDAP_OOPTests.swift */; };
+		6650D2E22A039CE50083033D /* IDAP_OOPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2E12A039CE50083033D /* IDAP_OOPUITests.swift */; };
+		6650D2E42A039CE50083033D /* IDAP_OOPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2E32A039CE50083033D /* IDAP_OOPUITestsLaunchTests.swift */; };
+		6650D2F22A039D500083033D /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2F12A039D500083033D /* Gender.swift */; };
+		6650D2F42A039D690083033D /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2F32A039D690083033D /* Child.swift */; };
+		6650D2F62A039D850083033D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2F52A039D850083033D /* Person.swift */; };
+		6650D2F82A039DB50083033D /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650D2F72A039DB50083033D /* Human.swift */; };
+		6686D53A2A03A0320061AA21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D5392A03A0320061AA21 /* ViewController.swift */; };
+		6686D53F2A03A4B60061AA21 /* Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D53E2A03A4B60061AA21 /* Age.swift */; };
+		66D57C582A08D8E20055F58A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C572A08D8E20055F58A /* Car.swift */; };
+		66D57C5D2A08DF390055F58A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C5C2A08DF390055F58A /* Employee.swift */; };
+		66D57C5F2A08DF710055F58A /* Washer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C5E2A08DF710055F58A /* Washer.swift */; };
+		66D57C612A08DF9B0055F58A /* AccountantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C602A08DF9B0055F58A /* AccountantController.swift */; };
+		66D57C632A08DFAB0055F58A /* DirectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57C622A08DFAB0055F58A /* DirectorController.swift */; };
+		66D57CBB2A0931EE0055F58A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CBA2A0931EE0055F58A /* Money.swift */; };
+		66D57CBD2A09340B0055F58A /* WasherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CBC2A09340B0055F58A /* WasherController.swift */; };
+		66D57CC02A0934810055F58A /* MoneyTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CBF2A0934810055F58A /* MoneyTaker.swift */; };
+		66D57CC22A09349A0055F58A /* MoneyContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC12A09349A0055F58A /* MoneyContainable.swift */; };
+		66D57CC42A0935780055F58A /* WasherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC32A0935780055F58A /* WasherView.swift */; };
+		66D57CC62A0944250055F58A /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC52A0944250055F58A /* Accountant.swift */; };
+		66D57CC82A0944420055F58A /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D57CC72A0944420055F58A /* Director.swift */; };
+		8286F2723CBB01444A7984C7 /* Pods_IDAP_OOP_IDAP_OOPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BFD002526EC61763E1E83F /* Pods_IDAP_OOP_IDAP_OOPUITests.framework */; };
+		BBD065FA811BA676F5FE776D /* Pods_IDAP_OOP_IDAP_OOPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94F57F07CF3468FB1C61EB8 /* Pods_IDAP_OOP_IDAP_OOPTests.framework */; };
+		D01412709941FD2D22BCD8EE /* Pods_IDAP_OOP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE023C713F040FE59019EF6 /* Pods_IDAP_OOP.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6650D2D42A039CE50083033D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6650D2B52A039CE40083033D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6650D2BC2A039CE40083033D;
+			remoteInfo = "IDAP-OOP";
+		};
+		6650D2DE2A039CE50083033D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6650D2B52A039CE40083033D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6650D2BC2A039CE40083033D;
+			remoteInfo = "IDAP-OOP";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21BFD002526EC61763E1E83F /* Pods_IDAP_OOP_IDAP_OOPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDAP_OOP_IDAP_OOPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA6BC67BCD06300925EF9D6 /* Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig"; sourceTree = "<group>"; };
+		472C7D7434F95E4E35BC70EC /* Pods-IDAP-OOP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP/Pods-IDAP-OOP.release.xcconfig"; sourceTree = "<group>"; };
+		660B16B02A095E700054A7AF /* DirectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorView.swift; sourceTree = "<group>"; };
+		660B16B22A095E790054A7AF /* AccountantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountantView.swift; sourceTree = "<group>"; };
+		663640FD2A03E9C80088CB80 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		663641002A0519110088CB80 /* CarWash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
+		6650D2BD2A039CE40083033D /* IDAP-OOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-OOP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6650D2C02A039CE40083033D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6650D2C22A039CE40083033D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6650D2C72A039CE40083033D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6650D2C92A039CE50083033D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6650D2CC2A039CE50083033D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6650D2CE2A039CE50083033D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6650D2D32A039CE50083033D /* IDAP-OOPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-OOPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6650D2D72A039CE50083033D /* IDAP_OOPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_OOPTests.swift; sourceTree = "<group>"; };
+		6650D2DD2A039CE50083033D /* IDAP-OOPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IDAP-OOPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6650D2E12A039CE50083033D /* IDAP_OOPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_OOPUITests.swift; sourceTree = "<group>"; };
+		6650D2E32A039CE50083033D /* IDAP_OOPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_OOPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6650D2F12A039D500083033D /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		6650D2F32A039D690083033D /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		6650D2F52A039D850083033D /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		6650D2F72A039DB50083033D /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
+		6686D5392A03A0320061AA21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6686D53E2A03A4B60061AA21 /* Age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Age.swift; sourceTree = "<group>"; };
+		66D57C572A08D8E20055F58A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		66D57C5C2A08DF390055F58A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		66D57C5E2A08DF710055F58A /* Washer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washer.swift; sourceTree = "<group>"; };
+		66D57C602A08DF9B0055F58A /* AccountantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountantController.swift; sourceTree = "<group>"; };
+		66D57C622A08DFAB0055F58A /* DirectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorController.swift; sourceTree = "<group>"; };
+		66D57CBA2A0931EE0055F58A /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		66D57CBC2A09340B0055F58A /* WasherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherController.swift; sourceTree = "<group>"; };
+		66D57CBF2A0934810055F58A /* MoneyTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTaker.swift; sourceTree = "<group>"; };
+		66D57CC12A09349A0055F58A /* MoneyContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyContainable.swift; sourceTree = "<group>"; };
+		66D57CC32A0935780055F58A /* WasherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherView.swift; sourceTree = "<group>"; };
+		66D57CC52A0944250055F58A /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
+		66D57CC72A0944420055F58A /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
+		753F2658274EA8E1034DF9A1 /* Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		797392052E83689CB89CABB0 /* Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80371B41055A68165C3145D7 /* Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A94F57F07CF3468FB1C61EB8 /* Pods_IDAP_OOP_IDAP_OOPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDAP_OOP_IDAP_OOPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE023C713F040FE59019EF6 /* Pods_IDAP_OOP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDAP_OOP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7B6170DC882F2AF77C9786 /* Pods-IDAP-OOP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDAP-OOP.debug.xcconfig"; path = "Target Support Files/Pods-IDAP-OOP/Pods-IDAP-OOP.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6650D2BA2A039CE40083033D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01412709941FD2D22BCD8EE /* Pods_IDAP_OOP.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2D02A039CE50083033D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBD065FA811BA676F5FE776D /* Pods_IDAP_OOP_IDAP_OOPTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2DA2A039CE50083033D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8286F2723CBB01444A7984C7 /* Pods_IDAP_OOP_IDAP_OOPUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		249B0653F189EA9CB755F828 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAE023C713F040FE59019EF6 /* Pods_IDAP_OOP.framework */,
+				A94F57F07CF3468FB1C61EB8 /* Pods_IDAP_OOP_IDAP_OOPTests.framework */,
+				21BFD002526EC61763E1E83F /* Pods_IDAP_OOP_IDAP_OOPUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E01A855730F51CBFEF10E58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED7B6170DC882F2AF77C9786 /* Pods-IDAP-OOP.debug.xcconfig */,
+				472C7D7434F95E4E35BC70EC /* Pods-IDAP-OOP.release.xcconfig */,
+				797392052E83689CB89CABB0 /* Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig */,
+				3EA6BC67BCD06300925EF9D6 /* Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig */,
+				753F2658274EA8E1034DF9A1 /* Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig */,
+				80371B41055A68165C3145D7 /* Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		663640FB2A03E99A0088CB80 /* HumanOOPTask */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2F12A039D500083033D /* Gender.swift */,
+				6650D2F32A039D690083033D /* Child.swift */,
+				6650D2F52A039D850083033D /* Person.swift */,
+				6650D2F72A039DB50083033D /* Human.swift */,
+				6686D53E2A03A4B60061AA21 /* Age.swift */,
+			);
+			path = HumanOOPTask;
+			sourceTree = "<group>";
+		};
+		663640FC2A03E9B50088CB80 /* CreatureOOPTask */ = {
+			isa = PBXGroup;
+			children = (
+				663640FD2A03E9C80088CB80 /* Creature.swift */,
+			);
+			path = CreatureOOPTask;
+			sourceTree = "<group>";
+		};
+		663640FF2A0518C90088CB80 /* СarWashTask */ = {
+			isa = PBXGroup;
+			children = (
+				66D57CBE2A0934740055F58A /* Protocols */,
+				66D57CB92A0930C70055F58A /* Views */,
+				66D57CB82A0930C20055F58A /* Controllers */,
+				66D57CB72A0930B80055F58A /* Models */,
+			);
+			path = "СarWashTask";
+			sourceTree = "<group>";
+		};
+		6650D2B42A039CE40083033D = {
+			isa = PBXGroup;
+			children = (
+				6650D2BF2A039CE40083033D /* IDAP-OOP */,
+				6650D2D62A039CE50083033D /* IDAP-OOPTests */,
+				6650D2E02A039CE50083033D /* IDAP-OOPUITests */,
+				6650D2BE2A039CE40083033D /* Products */,
+				3E01A855730F51CBFEF10E58 /* Pods */,
+				249B0653F189EA9CB755F828 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6650D2BE2A039CE40083033D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2BD2A039CE40083033D /* IDAP-OOP.app */,
+				6650D2D32A039CE50083033D /* IDAP-OOPTests.xctest */,
+				6650D2DD2A039CE50083033D /* IDAP-OOPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6650D2BF2A039CE40083033D /* IDAP-OOP */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2F02A039D2B0083033D /* Tasks */,
+				663640FF2A0518C90088CB80 /* СarWashTask */,
+				6686D53D2A03A3A90061AA21 /* Views */,
+				6686D53C2A03A3650061AA21 /* Resources */,
+				6686D53B2A03A1D80061AA21 /* Controllers */,
+				6650D2C02A039CE40083033D /* AppDelegate.swift */,
+				6650D2C22A039CE40083033D /* SceneDelegate.swift */,
+				6650D2CE2A039CE50083033D /* Info.plist */,
+			);
+			path = "IDAP-OOP";
+			sourceTree = "<group>";
+		};
+		6650D2D62A039CE50083033D /* IDAP-OOPTests */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2D72A039CE50083033D /* IDAP_OOPTests.swift */,
+			);
+			path = "IDAP-OOPTests";
+			sourceTree = "<group>";
+		};
+		6650D2E02A039CE50083033D /* IDAP-OOPUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2E12A039CE50083033D /* IDAP_OOPUITests.swift */,
+				6650D2E32A039CE50083033D /* IDAP_OOPUITestsLaunchTests.swift */,
+			);
+			path = "IDAP-OOPUITests";
+			sourceTree = "<group>";
+		};
+		6650D2F02A039D2B0083033D /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				663640FC2A03E9B50088CB80 /* CreatureOOPTask */,
+				663640FB2A03E99A0088CB80 /* HumanOOPTask */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		6686D53B2A03A1D80061AA21 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6686D5392A03A0320061AA21 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6686D53C2A03A3650061AA21 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2C92A039CE50083033D /* Assets.xcassets */,
+				6650D2CB2A039CE50083033D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6686D53D2A03A3A90061AA21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6650D2C62A039CE40083033D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66D57C5B2A08DF2F0055F58A /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C602A08DF9B0055F58A /* AccountantController.swift */,
+				66D57C622A08DFAB0055F58A /* DirectorController.swift */,
+				66D57CBC2A09340B0055F58A /* WasherController.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		66D57CB72A0930B80055F58A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C5C2A08DF390055F58A /* Employee.swift */,
+				66D57C5E2A08DF710055F58A /* Washer.swift */,
+				66D57CC72A0944420055F58A /* Director.swift */,
+				66D57C572A08D8E20055F58A /* Car.swift */,
+				66D57CBA2A0931EE0055F58A /* Money.swift */,
+				66D57CC52A0944250055F58A /* Accountant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66D57CB82A0930C20055F58A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66D57C5B2A08DF2F0055F58A /* Employees */,
+				663641002A0519110088CB80 /* CarWash.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66D57CB92A0930C70055F58A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66D57CC32A0935780055F58A /* WasherView.swift */,
+				660B16B02A095E700054A7AF /* DirectorView.swift */,
+				660B16B22A095E790054A7AF /* AccountantView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66D57CBE2A0934740055F58A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				66D57CBF2A0934810055F58A /* MoneyTaker.swift */,
+				66D57CC12A09349A0055F58A /* MoneyContainable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6650D2BC2A039CE40083033D /* IDAP-OOP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6650D2E72A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOP" */;
+			buildPhases = (
+				FD5966D55FC3CF0125292841 /* [CP] Check Pods Manifest.lock */,
+				6650D2B92A039CE40083033D /* Sources */,
+				6650D2BA2A039CE40083033D /* Frameworks */,
+				6650D2BB2A039CE40083033D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IDAP-OOP";
+			productName = "IDAP-OOP";
+			productReference = 6650D2BD2A039CE40083033D /* IDAP-OOP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6650D2D22A039CE50083033D /* IDAP-OOPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6650D2EA2A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOPTests" */;
+			buildPhases = (
+				29C80F3C8097BDA5CBAC49E2 /* [CP] Check Pods Manifest.lock */,
+				6650D2CF2A039CE50083033D /* Sources */,
+				6650D2D02A039CE50083033D /* Frameworks */,
+				6650D2D12A039CE50083033D /* Resources */,
+				3E4C85ADAAC717358E746875 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6650D2D52A039CE50083033D /* PBXTargetDependency */,
+			);
+			name = "IDAP-OOPTests";
+			productName = "IDAP-OOPTests";
+			productReference = 6650D2D32A039CE50083033D /* IDAP-OOPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6650D2DC2A039CE50083033D /* IDAP-OOPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6650D2ED2A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOPUITests" */;
+			buildPhases = (
+				B07508CBACCCDCD162248897 /* [CP] Check Pods Manifest.lock */,
+				6650D2D92A039CE50083033D /* Sources */,
+				6650D2DA2A039CE50083033D /* Frameworks */,
+				6650D2DB2A039CE50083033D /* Resources */,
+				7E37D4AF963267D98ED8BCA0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6650D2DF2A039CE50083033D /* PBXTargetDependency */,
+			);
+			name = "IDAP-OOPUITests";
+			productName = "IDAP-OOPUITests";
+			productReference = 6650D2DD2A039CE50083033D /* IDAP-OOPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6650D2B52A039CE40083033D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6650D2BC2A039CE40083033D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					6650D2D22A039CE50083033D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 6650D2BC2A039CE40083033D;
+					};
+					6650D2DC2A039CE50083033D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 6650D2BC2A039CE40083033D;
+					};
+				};
+			};
+			buildConfigurationList = 6650D2B82A039CE40083033D /* Build configuration list for PBXProject "IDAP-OOP" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6650D2B42A039CE40083033D;
+			productRefGroup = 6650D2BE2A039CE40083033D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6650D2BC2A039CE40083033D /* IDAP-OOP */,
+				6650D2D22A039CE50083033D /* IDAP-OOPTests */,
+				6650D2DC2A039CE50083033D /* IDAP-OOPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6650D2BB2A039CE40083033D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6650D2CD2A039CE50083033D /* LaunchScreen.storyboard in Resources */,
+				6650D2CA2A039CE50083033D /* Assets.xcassets in Resources */,
+				6650D2C82A039CE40083033D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2D12A039CE50083033D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2DB2A039CE50083033D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29C80F3C8097BDA5CBAC49E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IDAP-OOP-IDAP-OOPTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E4C85ADAAC717358E746875 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPTests/Pods-IDAP-OOP-IDAP-OOPTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E37D4AF963267D98ED8BCA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IDAP-OOP-IDAP-OOPUITests/Pods-IDAP-OOP-IDAP-OOPUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B07508CBACCCDCD162248897 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IDAP-OOP-IDAP-OOPUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD5966D55FC3CF0125292841 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IDAP-OOP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6650D2B92A039CE40083033D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6650D2F22A039D500083033D /* Gender.swift in Sources */,
+				6686D53F2A03A4B60061AA21 /* Age.swift in Sources */,
+				663640FE2A03E9C80088CB80 /* Creature.swift in Sources */,
+				6650D2F82A039DB50083033D /* Human.swift in Sources */,
+				66D57CC02A0934810055F58A /* MoneyTaker.swift in Sources */,
+				66D57CC42A0935780055F58A /* WasherView.swift in Sources */,
+				66D57CC22A09349A0055F58A /* MoneyContainable.swift in Sources */,
+				6650D2F62A039D850083033D /* Person.swift in Sources */,
+				66D57C632A08DFAB0055F58A /* DirectorController.swift in Sources */,
+				663641012A0519110088CB80 /* CarWash.swift in Sources */,
+				660B16B12A095E700054A7AF /* DirectorView.swift in Sources */,
+				66D57CBB2A0931EE0055F58A /* Money.swift in Sources */,
+				66D57C5F2A08DF710055F58A /* Washer.swift in Sources */,
+				6650D2C12A039CE40083033D /* AppDelegate.swift in Sources */,
+				66D57C582A08D8E20055F58A /* Car.swift in Sources */,
+				66D57C5D2A08DF390055F58A /* Employee.swift in Sources */,
+				66D57CBD2A09340B0055F58A /* WasherController.swift in Sources */,
+				6686D53A2A03A0320061AA21 /* ViewController.swift in Sources */,
+				6650D2F42A039D690083033D /* Child.swift in Sources */,
+				66D57C612A08DF9B0055F58A /* AccountantController.swift in Sources */,
+				66D57CC62A0944250055F58A /* Accountant.swift in Sources */,
+				660B16B32A095E790054A7AF /* AccountantView.swift in Sources */,
+				6650D2C32A039CE40083033D /* SceneDelegate.swift in Sources */,
+				66D57CC82A0944420055F58A /* Director.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2CF2A039CE50083033D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6650D2D82A039CE50083033D /* IDAP_OOPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6650D2D92A039CE50083033D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6650D2E42A039CE50083033D /* IDAP_OOPUITestsLaunchTests.swift in Sources */,
+				6650D2E22A039CE50083033D /* IDAP_OOPUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6650D2D52A039CE50083033D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6650D2BC2A039CE40083033D /* IDAP-OOP */;
+			targetProxy = 6650D2D42A039CE50083033D /* PBXContainerItemProxy */;
+		};
+		6650D2DF2A039CE50083033D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6650D2BC2A039CE40083033D /* IDAP-OOP */;
+			targetProxy = 6650D2DE2A039CE50083033D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6650D2C62A039CE40083033D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6650D2C72A039CE40083033D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6650D2CB2A039CE50083033D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6650D2CC2A039CE50083033D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6650D2E52A039CE50083033D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6650D2E62A039CE50083033D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6650D2E82A039CE50083033D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED7B6170DC882F2AF77C9786 /* Pods-IDAP-OOP.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IDAP-OOP/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6650D2E92A039CE50083033D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472C7D7434F95E4E35BC70EC /* Pods-IDAP-OOP.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IDAP-OOP/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6650D2EB2A039CE50083033D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 797392052E83689CB89CABB0 /* Pods-IDAP-OOP-IDAP-OOPTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDAP-OOP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IDAP-OOP";
+			};
+			name = Debug;
+		};
+		6650D2EC2A039CE50083033D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EA6BC67BCD06300925EF9D6 /* Pods-IDAP-OOP-IDAP-OOPTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDAP-OOP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IDAP-OOP";
+			};
+			name = Release;
+		};
+		6650D2EE2A039CE50083033D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 753F2658274EA8E1034DF9A1 /* Pods-IDAP-OOP-IDAP-OOPUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOPUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IDAP-OOP";
+			};
+			name = Debug;
+		};
+		6650D2EF2A039CE50083033D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80371B41055A68165C3145D7 /* Pods-IDAP-OOP-IDAP-OOPUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ST823QU25Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.akula.IDAP-OOPUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IDAP-OOP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6650D2B82A039CE40083033D /* Build configuration list for PBXProject "IDAP-OOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6650D2E52A039CE50083033D /* Debug */,
+				6650D2E62A039CE50083033D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6650D2E72A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6650D2E82A039CE50083033D /* Debug */,
+				6650D2E92A039CE50083033D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6650D2EA2A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6650D2EB2A039CE50083033D /* Debug */,
+				6650D2EC2A039CE50083033D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6650D2ED2A039CE50083033D /* Build configuration list for PBXNativeTarget "IDAP-OOPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6650D2EE2A039CE50083033D /* Debug */,
+				6650D2EF2A039CE50083033D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6650D2B52A039CE40083033D /* Project object */;
+}
