@@ -14,9 +14,12 @@ class MainView: UIView {
     weak var delegate: MainViewDelegate?
     
     func setUpTable(delegate: MainViewDelegate) {
+        print("table set up")
+        self.tableView?.estimatedRowHeight = 120
+        self.tableView?.rowHeight = UITableView.automaticDimension
         self.tableView?.delegate = delegate
         self.tableView?.dataSource = delegate
-//        self.tableView?.register(CustomTableViewCell.self)
+        self.tableView?.register(MainTableViewCell.self)
     }
     
 }
