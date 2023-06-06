@@ -74,10 +74,8 @@ class APIService {
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("failed to load image")
                 completion(.failure(error))
             } else if let data = data {
-                print("image ok")
                 completion(.success(data))
             }
         }
