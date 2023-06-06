@@ -6,15 +6,27 @@
 //
 
 import UIKit
+
 protocol MainViewDelegate: MainViewController {
     
 }
+
 class MainView: UIView {
+    
+    // MARK: -
+    // MARK: Outlets
+
     @IBOutlet weak var tableView: UITableView?
+    
+    // MARK: -
+    // MARK: Vairables
+
     weak var delegate: MainViewDelegate?
     
+    // MARK: -
+    // MARK: Public
+
     func setUpTable(delegate: MainViewDelegate) {
-        print("table set up")
         self.tableView?.estimatedRowHeight = 120
         self.tableView?.rowHeight = UITableView.automaticDimension
         self.tableView?.delegate = delegate

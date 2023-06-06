@@ -8,6 +8,10 @@
 import UIKit
 
 class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
+    
+    // MARK: -
+    // MARK: Vairables
+
     typealias RootViewType = MainView
     var forecasts: [Forecast] = [] {
         didSet {
@@ -17,15 +21,16 @@ class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
         }
     }
     
-    
-    
-    
+    // MARK: -
+    // MARK: Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View did load")
+
         self.rootView?.setUpTable(delegate: self)
-        self.rootView?.backgroundColor = .red
-        APIService.shared.fetchForecast(lat: 44.34, lon: 10.99) { result in
+        self.rootView?.backgroundColor = .tintColor
+        
+        APIService.shared.fetchForecast(lat: 49.84, lon: 24.03) { result in
             switch result {
             case .success(let forecasts):
                 self.forecasts = forecasts
@@ -43,15 +48,11 @@ class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count")
         return forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-//        let dataModel = self.arrayModel[indexPath.row]
-//        cell.configure(with: dataModel)
-        print("cell for row at")
         let forecast = forecasts[indexPath.row]
 
         APIService.shared.fetchWeatherIcon(icon: forecast.iconName) { result in
@@ -59,7 +60,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             case .success(let data):
                 let image = UIImage(data: data) ?? UIImage(systemName: "photo.artframe")
                 DispatchQueue.main.async {
-                    print("Configure image")
                     cell.configure(model: forecast, icon: image)
                 }
             case .failure(let error):
@@ -74,6 +74,4 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
-    
 }
