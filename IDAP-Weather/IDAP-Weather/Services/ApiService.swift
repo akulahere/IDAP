@@ -24,7 +24,7 @@ class APIService {
     // MARK: -
     // MARK: Public
 
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<[Forecast], Error>) -> Void) {
+    func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<ApiResponse, Error>) -> Void) {
         
         let path = "/forecast"
         let urlStr = self.baseURL + path
@@ -47,7 +47,7 @@ class APIService {
 
         var request = URLRequest(url: urlFromComponents)
         request.httpMethod = "GET"
-        
+
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -55,14 +55,7 @@ class APIService {
                 do {
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(ApiResponse.self, from: data)
-                    let forecasts = response.list.map { listItem -> Forecast in
-                        let time = listItem.dtTxt
-                        let temp = listItem.main.temp
-                        let weather = listItem.weather.first?.main ?? ""
-                        let iconName = listItem.weather.first?.icon ?? ""
-                        return Forecast(time: time, temp: temp, weather: weather, iconName: iconName)
-                    }
-                    completion(.success(forecasts))
+                    completion(.success(response))
                 } catch {
                     completion(.failure(error))
                 }

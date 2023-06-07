@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewDelegate: MainViewController {
-    
+    var currentCity: String { get }
 }
 
 class MainView: UIView {
@@ -17,6 +17,7 @@ class MainView: UIView {
     // MARK: Outlets
 
     @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var currentCity: UILabel?
     
     // MARK: -
     // MARK: Vairables
@@ -32,6 +33,10 @@ class MainView: UIView {
         self.tableView?.delegate = delegate
         self.tableView?.dataSource = delegate
         self.tableView?.register(MainTableViewCell.self)
+    }
+    
+    func setUpCityLabel(delegate: MainViewDelegate) {
+        self.currentCity?.text = "Current city: \(delegate.currentCity)"
     }
     
 }
