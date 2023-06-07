@@ -14,6 +14,7 @@ class APIService {
 
     static let shared = APIService()
     let baseURL = "https://api.openweathermap.org/data/2.5"
+    let token = "87edb2e6fea049dd604cf126e86556e2"
 
     // MARK: -
     // MARK: Initialization
@@ -31,15 +32,20 @@ class APIService {
         guard let url = URL(string: urlStr) else {
             return
         }
-        
+
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        
         urlComponents?.queryItems = [
             URLQueryItem(name: "lat", value: "\(lat)"),
             URLQueryItem(name: "lon", value: "\(lon)"),
-            URLQueryItem(name: "appid", value: "87edb2e6fea049dd604cf126e86556e2")
+            URLQueryItem(name: "appid", value: "\(token)")
         ]
-        
-        var request = URLRequest(url: (urlComponents?.url)!)
+                
+        guard let urlFromComponents = urlComponents?.url else {
+            return
+        }
+
+        var request = URLRequest(url: urlFromComponents)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

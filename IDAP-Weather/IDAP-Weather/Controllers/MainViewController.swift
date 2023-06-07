@@ -53,7 +53,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        let forecast = forecasts[indexPath.row]
+        let forecast = self.forecasts[indexPath.row]
 
         APIService.shared.fetchWeatherIcon(icon: forecast.iconName) { result in
             switch result {
