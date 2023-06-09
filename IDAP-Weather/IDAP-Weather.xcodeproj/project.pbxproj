@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		667DC03D2A2E021000C27F2E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03C2A2E021000C27F2E /* ApiResponse.swift */; };
 		667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03E2A2E077B00C27F2E /* Forecast.swift */; };
-		667DC0422A2E07D100C27F2E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC0412A2E07D100C27F2E /* ApiService.swift */; };
+		667DC0422A2E07D100C27F2E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC0412A2E07D100C27F2E /* APIService.swift */; };
 		669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC58A2A28B88B0082DDDF /* AppDelegate.swift */; };
 		669EC58F2A28B88B0082DDDF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC58E2A28B88B0082DDDF /* MainViewController.swift */; };
 		669EC5942A28B88C0082DDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5932A28B88C0082DDDF /* Assets.xcassets */; };
@@ -45,7 +45,7 @@
 /* Begin PBXFileReference section */
 		667DC03C2A2E021000C27F2E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		667DC03E2A2E077B00C27F2E /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		667DC0412A2E07D100C27F2E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		667DC0412A2E07D100C27F2E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		669EC5872A28B88B0082DDDF /* IDAP-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IDAP-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669EC58A2A28B88B0082DDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669EC58E2A28B88B0082DDDF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		667DC0402A2E079D00C27F2E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				667DC0412A2E07D100C27F2E /* ApiService.swift */,
+				667DC0412A2E07D100C27F2E /* APIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */,
 				66A9DFD02A2E26F600681A10 /* MainTableViewCell.swift in Sources */,
 				669EC5C32A28DC4E0082DDDF /* MainView.swift in Sources */,
-				667DC0422A2E07D100C27F2E /* ApiService.swift in Sources */,
+				667DC0422A2E07D100C27F2E /* APIService.swift in Sources */,
 				667DC03D2A2E021000C27F2E /* ApiResponse.swift in Sources */,
 				669EC5BF2A28C35F0082DDDF /* RootViewGettable.swift in Sources */,
 			);

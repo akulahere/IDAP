@@ -13,18 +13,19 @@ class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
     // MARK: Vairables
     
     typealias RootViewType = MainView
+    
     var forecasts: [Forecast] = [] {
         didSet {
-            DispatchQueue.main.async {
-                self.rootView?.tableView?.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.rootView?.tableView?.reloadData()
             }
         }
     }
     
     var currentCity: String = "" {
         didSet {
-            DispatchQueue.main.async {
-                self.rootView?.setUpCityLabel(delegate: self)
+            DispatchQueue.main.async { [weak self] in
+                self?.rootView?.setUpCityLabel(text: self?.currentCity)
             }
         }
     }
@@ -55,8 +56,6 @@ class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
             }
         }
     }
-    
-    
 }
 
 // MARK: -

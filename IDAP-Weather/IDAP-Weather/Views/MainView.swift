@@ -35,8 +35,9 @@ class MainView: UIView {
         self.tableView?.register(MainTableViewCell.self)
     }
     
-    func setUpCityLabel(delegate: MainViewDelegate) {
-        self.currentCity?.text = "Current city: \(delegate.currentCity)"
+    func setUpCityLabel(text: String?) {
+        let labelText = text ?? "Unknown city"
+        self.currentCity?.text = "Current city: \(labelText)"
     }
     
 }
