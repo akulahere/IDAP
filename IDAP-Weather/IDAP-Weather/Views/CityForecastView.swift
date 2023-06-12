@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol MainViewDelegate: MainViewController {
+protocol MainViewDelegate: CityForecastViewController {
     var currentCity: String { get }
 }
 
-class MainView: UIView {
+class CityForecastView: UIView {
     
     // MARK: -
     // MARK: Outlets
@@ -32,7 +32,7 @@ class MainView: UIView {
         self.tableView?.rowHeight = UITableView.automaticDimension
         self.tableView?.delegate = delegate
         self.tableView?.dataSource = delegate
-        self.tableView?.register(MainTableViewCell.self)
+        self.tableView?.register(CityForecastTableViewCell.self)
     }
     
     func setUpCityLabel(text: String?) {

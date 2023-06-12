@@ -24,7 +24,7 @@ class APIService {
     // MARK: -
     // MARK: Public
 
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<ApiResponse, Error>) -> Void) {
+    func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<APIResponse, Error>) -> Void) {
         
         let path = "/forecast"
         let urlStr = self.baseURL + path
@@ -54,7 +54,7 @@ class APIService {
             } else if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let response = try decoder.decode(ApiResponse.self, from: data)
+                    let response = try decoder.decode(APIResponse.self, from: data)
                     completion(.success(response))
                 } catch {
                     completion(.failure(error))

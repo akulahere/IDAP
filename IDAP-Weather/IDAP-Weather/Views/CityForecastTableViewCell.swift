@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MainTableViewCell: UITableViewCell {
+class CityForecastTableViewCell: UITableViewCell {
     
     // MARK: -
     // MARK: Outlets

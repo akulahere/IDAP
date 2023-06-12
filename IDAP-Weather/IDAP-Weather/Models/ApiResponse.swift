@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiResponse: Codable {
+struct APIResponse: Codable {
     let code: String
     let message: Int
     let count: Int

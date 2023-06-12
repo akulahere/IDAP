@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
+class CityForecastViewController: UIViewController, RootViewGettable, MainViewDelegate {
     
     // MARK: -
     // MARK: Vairables
     
-    typealias RootViewType = MainView
+    typealias RootViewType = CityForecastView
     
     var forecasts: [Forecast] = [] {
         didSet {
@@ -61,14 +61,14 @@ class MainViewController: UIViewController, RootViewGettable, MainViewDelegate {
 // MARK: -
 // MARK: TableView Delegate
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MainTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let forecast = self.forecasts[indexPath.row]
         
         APIService.shared.fetchWeatherIcon(icon: forecast.iconName) { result in
