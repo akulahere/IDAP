@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660A767B2A371FE300722676 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A767A2A371FE300722676 /* MainCoordinator.swift */; };
+		660A767D2A37203B00722676 /* DetailForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A767C2A37203B00722676 /* DetailForecastViewController.swift */; };
+		660A767F2A3720A600722676 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A767E2A3720A600722676 /* Coordinator.swift */; };
 		667DC03D2A2E021000C27F2E /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03C2A2E021000C27F2E /* APIResponse.swift */; };
 		667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03E2A2E077B00C27F2E /* Forecast.swift */; };
 		667DC0422A2E07D100C27F2E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC0412A2E07D100C27F2E /* APIService.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		660A767A2A371FE300722676 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		660A767C2A37203B00722676 /* DetailForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailForecastViewController.swift; sourceTree = "<group>"; };
+		660A767E2A3720A600722676 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		667DC03C2A2E021000C27F2E /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		667DC03E2A2E077B00C27F2E /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		667DC0412A2E07D100C27F2E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -90,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		660A76792A371FD600722676 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				660A767A2A371FE300722676 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		667DC0402A2E079D00C27F2E /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +135,7 @@
 		669EC5892A28B88B0082DDDF /* IDAP-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				660A76792A371FD600722676 /* Coordinators */,
 				667DC0402A2E079D00C27F2E /* Services */,
 				669EC5BD2A28BCD40082DDDF /* Views */,
 				669EC5BC2A28BCCF0082DDDF /* Controllers */,
@@ -156,6 +171,7 @@
 			children = (
 				669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */,
 				669EC5C02A28C3840082DDDF /* TableView+ReusableCell.swift */,
+				660A767E2A3720A600722676 /* Coordinator.swift */,
 			);
 			path = F;
 			sourceTree = "<group>";
@@ -173,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				669EC58E2A28B88B0082DDDF /* CityForecastViewController.swift */,
+				660A767C2A37203B00722676 /* DetailForecastViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,11 +340,14 @@
 				667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */,
 				669EC58F2A28B88B0082DDDF /* CityForecastViewController.swift in Sources */,
 				669EC5C12A28C3840082DDDF /* TableView+ReusableCell.swift in Sources */,
+				660A767B2A371FE300722676 /* MainCoordinator.swift in Sources */,
 				669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */,
 				66A9DFD02A2E26F600681A10 /* CityForecastTableViewCell.swift in Sources */,
 				669EC5C32A28DC4E0082DDDF /* CityForecastView.swift in Sources */,
 				667DC0422A2E07D100C27F2E /* APIService.swift in Sources */,
+				660A767F2A3720A600722676 /* Coordinator.swift in Sources */,
 				667DC03D2A2E021000C27F2E /* APIResponse.swift in Sources */,
+				660A767D2A37203B00722676 /* DetailForecastViewController.swift in Sources */,
 				669EC5BF2A28C35F0082DDDF /* RootViewGettable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

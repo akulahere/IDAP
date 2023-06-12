@@ -13,7 +13,9 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
     // MARK: Vairables
     
     typealias RootViewType = CityForecastView
-    
+
+    var coordinator: MainCoordinator?
+
     var forecasts: [Forecast] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -86,8 +88,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.showDetailForecast(for: indexPath)
     }
 }
