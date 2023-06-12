@@ -17,7 +17,7 @@
 		669EC5AC2A28B88C0082DDDF /* IDAP_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5AB2A28B88C0082DDDF /* IDAP_WeatherUITests.swift */; };
 		669EC5AE2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5AD2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift */; };
 		669EC5BF2A28C35F0082DDDF /* RootViewGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */; };
-		669EC5C12A28C3840082DDDF /* TableView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C02A28C3840082DDDF /* TableView+ext.swift */; };
+		669EC5C12A28C3840082DDDF /* TableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C02A28C3840082DDDF /* TableView+ReusableCell.swift */; };
 		669EC5C32A28DC4E0082DDDF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EC5C22A28DC4E0082DDDF /* MainView.swift */; };
 		669EC5C82A28E6120082DDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5C62A28E6120082DDDF /* LaunchScreen.storyboard */; };
 		669EC5CC2A28E6520082DDDF /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669EC5CB2A28E6520082DDDF /* MainView.xib */; };
@@ -57,7 +57,7 @@
 		669EC5AB2A28B88C0082DDDF /* IDAP_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_WeatherUITests.swift; sourceTree = "<group>"; };
 		669EC5AD2A28B88C0082DDDF /* IDAP_WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAP_WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewGettable.swift; sourceTree = "<group>"; };
-		669EC5C02A28C3840082DDDF /* TableView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+ext.swift"; sourceTree = "<group>"; };
+		669EC5C02A28C3840082DDDF /* TableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+ReusableCell.swift"; sourceTree = "<group>"; };
 		669EC5C22A28DC4E0082DDDF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		669EC5C72A28E6120082DDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../IDAP-TableView/IDAP-TableView/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		669EC5CB2A28E6520082DDDF /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				669EC5BE2A28C35F0082DDDF /* RootViewGettable.swift */,
-				669EC5C02A28C3840082DDDF /* TableView+ext.swift */,
+				669EC5C02A28C3840082DDDF /* TableView+ReusableCell.swift */,
 			);
 			path = F;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			files = (
 				667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */,
 				669EC58F2A28B88B0082DDDF /* MainViewController.swift in Sources */,
-				669EC5C12A28C3840082DDDF /* TableView+ext.swift in Sources */,
+				669EC5C12A28C3840082DDDF /* TableView+ReusableCell.swift in Sources */,
 				669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */,
 				66A9DFD02A2E26F600681A10 /* MainTableViewCell.swift in Sources */,
 				669EC5C32A28DC4E0082DDDF /* MainView.swift in Sources */,
