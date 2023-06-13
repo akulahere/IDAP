@@ -11,6 +11,8 @@
 		660A767D2A37203B00722676 /* DetailForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A767C2A37203B00722676 /* DetailForecastViewController.swift */; };
 		660A767F2A3720A600722676 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A767E2A3720A600722676 /* Coordinator.swift */; };
 		6652FB5C2A385CBD00F77EB7 /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652FB5B2A385CBD00F77EB7 /* URLService.swift */; };
+		6652FB5E2A3868C800F77EB7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652FB5D2A3868C800F77EB7 /* ImageLoader.swift */; };
+		6652FB602A3878E400F77EB7 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652FB5F2A3878E400F77EB7 /* CacheManager.swift */; };
 		667DC03D2A2E021000C27F2E /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03C2A2E021000C27F2E /* APIResponse.swift */; };
 		667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC03E2A2E077B00C27F2E /* Forecast.swift */; };
 		667DC0422A2E07D100C27F2E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DC0412A2E07D100C27F2E /* APIService.swift */; };
@@ -51,6 +53,8 @@
 		660A767C2A37203B00722676 /* DetailForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailForecastViewController.swift; sourceTree = "<group>"; };
 		660A767E2A3720A600722676 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6652FB5B2A385CBD00F77EB7 /* URLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
+		6652FB5D2A3868C800F77EB7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		6652FB5F2A3878E400F77EB7 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		667DC03C2A2E021000C27F2E /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		667DC03E2A2E077B00C27F2E /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		667DC0412A2E07D100C27F2E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			children = (
 				667DC0412A2E07D100C27F2E /* APIService.swift */,
 				6652FB5B2A385CBD00F77EB7 /* URLService.swift */,
+				6652FB5D2A3868C800F77EB7 /* ImageLoader.swift */,
+				6652FB5F2A3878E400F77EB7 /* CacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -356,6 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6652FB5E2A3868C800F77EB7 /* ImageLoader.swift in Sources */,
+				6652FB602A3878E400F77EB7 /* CacheManager.swift in Sources */,
 				667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */,
 				669EC58F2A28B88B0082DDDF /* CityForecastViewController.swift in Sources */,
 				669EC5C12A28C3840082DDDF /* TableView+ReusableCell.swift in Sources */,

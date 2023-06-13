@@ -23,10 +23,12 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let urlService = URLService()
+        let imageLoader = ImageLoader()
         let apiService = APIService(
             baseURL: "https://api.openweathermap.org/data/2.5",
             token: "87edb2e6fea049dd604cf126e86556e2",
-            urlService: urlService
+            urlService: urlService,
+            imageLoader: imageLoader
         )
         
         let cityForecastVC = CityForecastViewController(apiService: apiService)

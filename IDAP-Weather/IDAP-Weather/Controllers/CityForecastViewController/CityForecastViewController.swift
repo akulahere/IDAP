@@ -85,19 +85,27 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let forecast = self.forecasts[indexPath.row]
+        let defaultIcon = UIImage(systemName: "photo.artframe")
+        DispatchQueue.main.async {
+            cell.configure(model: forecast, icon: defaultIcon)
+        }
         
-        apiService.fetchWeatherIcon(icon: forecast.iconName) { result in
+        let imageLoadingTask = apiService.fetchWeatherIcon(icon: forecast.iconName) { result in
+            var image: UIImage? = nil
+            
             switch result {
-                case .success(let data):
-                    let image = UIImage(data: data) ?? UIImage(systemName: "photo.artframe")
-                    DispatchQueue.main.async {
-                        cell.configure(model: forecast, icon: image)
-                    }
-                case .failure(let error):
-                    print(error)
+            case .success(let fetchedImage):
+                image = fetchedImage
+            case .failure(let error):
+                print("Error fetching image: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                cell.configure(model: forecast, icon: image)
             }
         }
         
+        cell.assign(task: imageLoadingTask)
         return cell
     }
     
