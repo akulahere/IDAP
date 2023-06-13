@@ -16,6 +16,7 @@ struct Forecast {
     let temp: Double
     let weather: String
     let iconName: String
+    let city: String
     
     // MARK: -
     // MARK: Public

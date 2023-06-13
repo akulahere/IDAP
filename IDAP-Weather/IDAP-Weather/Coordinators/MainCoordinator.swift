@@ -36,8 +36,8 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(cityForecastVC, animated: false)
     }
     
-    func showDetailForecast(for indexPath: IndexPath) {
-        let detailForecastVC = DetailForecastViewController()
+    func showDetailForecast(forecast: Forecast, apiService: APIServiceProtocol) {
+        let detailForecastVC = DetailedForecastViewController(forecast: forecast, apiService: apiService)
         detailForecastVC.coordinator = self
         navigationController.pushViewController(detailForecastVC, animated: true)
     }

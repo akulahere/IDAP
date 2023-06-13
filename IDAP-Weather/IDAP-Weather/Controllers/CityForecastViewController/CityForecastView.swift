@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol MainViewDelegate: CityForecastViewController {
+protocol CityForecastViewDelegate: CityForecastViewController {
     var currentCity: String { get }
+}
+
+protocol CityPickerDelegate: CityForecastViewController {
+    func cityPicker(didSelect city: City)
 }
 
 class CityForecastView: UIView {
@@ -18,16 +22,17 @@ class CityForecastView: UIView {
 
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var currentCity: UILabel?
+    @IBOutlet weak var cityPicker: UIPickerView?
     
     // MARK: -
     // MARK: Vairables
 
-    weak var delegate: MainViewDelegate?
+    weak var delegate: CityForecastViewDelegate?
     
     // MARK: -
     // MARK: Public
 
-    func setUpTable(delegate: MainViewDelegate) {
+    func setUpTable(delegate: CityForecastViewDelegate) {
         self.tableView?.estimatedRowHeight = 120
         self.tableView?.rowHeight = UITableView.automaticDimension
         self.tableView?.delegate = delegate
@@ -36,8 +41,12 @@ class CityForecastView: UIView {
     }
     
     func setUpCityLabel(text: String?) {
-        let labelText = text ?? "Unknown city"
-        self.currentCity?.text = "Current city: \(labelText)"
+        self.currentCity?.text = "Current city: "
+    }
+    
+    func setupCityPicker(delegate: CityPickerDelegate) {
+        self.cityPicker?.delegate = delegate
+        self.cityPicker?.dataSource = delegate
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol APIServiceProtocol {
     func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<APIResponse, Error>) -> Void)
-    func fetchWeatherIcon(icon: String, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask?
+    func iconFetchingTask(icon: String, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask?
 }
 
 
@@ -57,7 +57,7 @@ class APIService: APIServiceProtocol {
         urlService.request(url: urlFromComponents, completion: completion)
     }
     
-    func fetchWeatherIcon(icon: String, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask? {
+    func iconFetchingTask(icon: String, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask? {
         let urlStr = "https://openweathermap.org/img/wn/\(icon)@2x.png"
         guard let url = URL(string: urlStr) else {
             return nil

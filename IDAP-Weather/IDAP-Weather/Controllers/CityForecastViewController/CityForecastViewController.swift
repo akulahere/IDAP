@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityForecastViewController: UIViewController, RootViewGettable, MainViewDelegate {
+class CityForecastViewController: UIViewController, RootViewGettable, CityForecastViewDelegate, CityPickerDelegate {
     
     // MARK: -
     // MARK: Vairables
@@ -50,11 +50,20 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.rootView?.setupCityPicker(delegate: self)
+
         self.rootView?.setUpTable(delegate: self)
         self.rootView?.backgroundColor = .tintColor
         
-        apiService.fetchForecast(lat: 49.84, lon: 24.03) {[weak self] result in
+        fetchForecast(for: .lviv)
+    }
+    
+    // MARK: -
+    // MARK: Public
+
+    func fetchForecast(for city: City) {
+        let coordinates = city.coordinates
+        apiService.fetchForecast(lat: coordinates.latitude, lon: coordinates.longitude) { [weak self] result in
             switch result {
                 case .success(let apiResponse):
                     self?.forecasts = apiResponse.list.map { listItem -> Forecast in
@@ -62,14 +71,19 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
                         let temp = listItem.main.temp
                         let weather = listItem.weather.first?.main ?? ""
                         let iconName = listItem.weather.first?.icon ?? ""
-                        return Forecast(time: time, temp: temp, weather: weather, iconName: iconName)
+                        let city = apiResponse.city.name
+                        return Forecast(time: time, temp: temp, weather: weather, iconName: iconName, city: city)
                     }
-                    
+
                     self?.currentCity = apiResponse.city.name
                 case .failure(let error):
                     print(error)
             }
         }
+    }
+    
+    func cityPicker(didSelect city: City) {
+        fetchForecast(for: city)
     }
 }
 
@@ -90,7 +104,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             cell.configure(model: forecast, icon: defaultIcon)
         }
         
-        let imageLoadingTask = apiService.fetchWeatherIcon(icon: forecast.iconName) { result in
+        let imageLoadingTask = apiService.iconFetchingTask(icon: forecast.iconName) { result in
             var image: UIImage? = nil
             
             switch result {
@@ -110,6 +124,27 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showDetailForecast(for: indexPath)
+        coordinator?.showDetailForecast(forecast: forecasts[indexPath.row], apiService: self.apiService)
+    }
+}
+
+
+extension CityForecastViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return City.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return City.allCases[row].rawValue
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedCity = City.allCases[row]
+        fetchForecast(for: selectedCity)
     }
 }
