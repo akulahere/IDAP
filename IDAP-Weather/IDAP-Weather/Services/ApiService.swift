@@ -7,34 +7,41 @@
 
 import Foundation
 
-class APIService {
+protocol APIServiceProtocol {
+    func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<APIResponse, Error>) -> Void)
+    func fetchWeatherIcon(icon: String, completion: @escaping (Result<Data, Error>) -> Void)
+}
+
+
+class APIService: APIServiceProtocol {
     
     // MARK: -
     // MARK: Variables
 
-    static let shared = APIService()
-    let baseURL = "https://api.openweathermap.org/data/2.5"
-    let token = "87edb2e6fea049dd604cf126e86556e2"
-
+    private let baseURL: String
+    private let token: String
+    private let urlService: URLServiceProtocol
+    
     // MARK: -
     // MARK: Initialization
-
-    private init() {}
+    
+    init(baseURL: String, token: String, urlService: URLServiceProtocol) {
+        self.baseURL = baseURL
+        self.token = token
+        self.urlService = urlService
+    }
     
     // MARK: -
     // MARK: Public
 
     func fetchForecast(lat: Double, lon: Double, completion: @escaping (Result<APIResponse, Error>) -> Void) {
-        
         let path = "/forecast"
         let urlStr = self.baseURL + path
-        
         guard let url = URL(string: urlStr) else {
             return
         }
 
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        
         urlComponents?.queryItems = [
             URLQueryItem(name: "lat", value: "\(lat)"),
             URLQueryItem(name: "lon", value: "\(lon)"),
@@ -45,40 +52,15 @@ class APIService {
             return
         }
 
-        var request = URLRequest(url: urlFromComponents)
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(APIResponse.self, from: data)
-                    completion(.success(response))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-        }
-        task.resume()
+        urlService.request(url: urlFromComponents, completion: completion)
     }
     
     func fetchWeatherIcon(icon: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let urlStr = "https://openweathermap.org/img/wn/\(icon)@2x.png"
-        
         guard let url = URL(string: urlStr) else {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-                completion(.success(data))
-            }
-        }
-
-        task.resume()
+        urlService.requestData(url: url, completion: completion)
     }
 }

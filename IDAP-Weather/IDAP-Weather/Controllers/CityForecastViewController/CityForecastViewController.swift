@@ -15,6 +15,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
     typealias RootViewType = CityForecastView
 
     var coordinator: MainCoordinator?
+    private let apiService: APIServiceProtocol
 
     var forecasts: [Forecast] = [] {
         didSet {
@@ -33,6 +34,18 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
     }
     
     // MARK: -
+    // MARK: Initialization
+    
+    init(apiService: APIServiceProtocol) {
+        self.apiService = apiService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: -
     // MARK: Life cycle
     
     override func viewDidLoad() {
@@ -41,7 +54,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, MainViewDe
         self.rootView?.setUpTable(delegate: self)
         self.rootView?.backgroundColor = .tintColor
         
-        APIService.shared.fetchForecast(lat: 49.84, lon: 24.03) {[weak self] result in
+        apiService.fetchForecast(lat: 49.84, lon: 24.03) {[weak self] result in
             switch result {
                 case .success(let apiResponse):
                     self?.forecasts = apiResponse.list.map { listItem -> Forecast in
@@ -73,7 +86,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
         let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let forecast = self.forecasts[indexPath.row]
         
-        APIService.shared.fetchWeatherIcon(icon: forecast.iconName) { result in
+        apiService.fetchWeatherIcon(icon: forecast.iconName) { result in
             switch result {
                 case .success(let data):
                     let image = UIImage(data: data) ?? UIImage(systemName: "photo.artframe")

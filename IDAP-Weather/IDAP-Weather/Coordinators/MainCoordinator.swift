@@ -22,7 +22,14 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let cityForecastVC = CityForecastViewController()
+        let urlService = URLService()
+        let apiService = APIService(
+            baseURL: "https://api.openweathermap.org/data/2.5",
+            token: "87edb2e6fea049dd604cf126e86556e2",
+            urlService: urlService
+        )
+        
+        let cityForecastVC = CityForecastViewController(apiService: apiService)
         cityForecastVC.coordinator = self
         navigationController.pushViewController(cityForecastVC, animated: false)
     }
@@ -30,7 +37,6 @@ class MainCoordinator: Coordinator {
     func showDetailForecast(for indexPath: IndexPath) {
         let detailForecastVC = DetailForecastViewController()
         detailForecastVC.coordinator = self
-        // передача данных в detailVC, если необходимо
         navigationController.pushViewController(detailForecastVC, animated: true)
     }
 }
