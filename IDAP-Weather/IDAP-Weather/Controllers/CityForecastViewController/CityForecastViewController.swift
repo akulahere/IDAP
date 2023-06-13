@@ -61,7 +61,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     // MARK: -
     // MARK: Public
 
-    func fetchForecast(for city: City) {
+    func fetchForecast(for city: CityPickable) {
         let coordinates = city.coordinates
         apiService.fetchForecast(lat: coordinates.latitude, lon: coordinates.longitude) { [weak self] result in
             switch result {
@@ -82,7 +82,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
         }
     }
     
-    func cityPicker(didSelect city: City) {
+    func cityPicker(didSelect city: CityPickable) {
         fetchForecast(for: city)
     }
 }
@@ -136,15 +136,15 @@ extension CityForecastViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return City.allCases.count
+        return CityPickable.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return City.allCases[row].rawValue
+        return CityPickable.allCases[row].rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedCity = City.allCases[row]
+        let selectedCity = CityPickable.allCases[row]
         fetchForecast(for: selectedCity)
     }
 }

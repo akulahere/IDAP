@@ -5,7 +5,7 @@
 //  Created by Dmytro Akulinin on 13.06.2023.
 //
 
-enum City: String, CaseIterable {
+enum CityPickable: String, CaseIterable {
     case lviv = "Lviv"
     case melitopol = "Melitopol"
     case zaporizhia = "Zaporizhia"

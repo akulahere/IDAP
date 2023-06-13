@@ -12,7 +12,7 @@ protocol CityForecastViewDelegate: CityForecastViewController {
 }
 
 protocol CityPickerDelegate: CityForecastViewController {
-    func cityPicker(didSelect city: City)
+    func cityPicker(didSelect city: CityPickable)
 }
 
 class CityForecastView: UIView {
