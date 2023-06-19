@@ -54,7 +54,7 @@ class APIService: APIServiceProtocol {
             return
         }
 
-        urlService.request(url: urlFromComponents, completion: completion)
+        self.urlService.request(url: urlFromComponents, completion: completion)
     }
     
     func iconFetchingTask(icon: String, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask? {
@@ -63,6 +63,6 @@ class APIService: APIServiceProtocol {
             return nil
         }
         
-        return imageLoader.loadImage(from: url, completion: completion)
+        return self.imageLoader.loadImage(from: url, completion: completion)
     }
 }

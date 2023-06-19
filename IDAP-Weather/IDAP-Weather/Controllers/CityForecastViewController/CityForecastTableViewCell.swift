@@ -28,8 +28,8 @@ class CityForecastTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dataTask?.cancel()
-        dataTask = nil
+        self.dataTask?.cancel()
+        self.dataTask = nil
     }
 
     // MARK: -
@@ -44,7 +44,7 @@ class CityForecastTableViewCell: UITableViewCell {
     
     func assign(task: URLSessionDataTask?) {
         self.dataTask = task
-        task?.resume()
+        self.dataTask?.resume()
     }
 }
 

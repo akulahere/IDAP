@@ -12,7 +12,6 @@ class DetailedForecastViewController: UIViewController, RootViewGettable {
     // MARK: -
     // MARK: Variables
 
-    var coordinator: MainCoordinator?
     var forecast: Forecast
     var apiService: APIServiceProtocol
     

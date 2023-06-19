@@ -13,8 +13,9 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     // MARK: Vairables
     
     typealias RootViewType = CityForecastView
+    var eventsHandler: ((ViewControllerEvent) -> Void)?
 
-    var coordinator: MainCoordinator?
+//    var coordinator: MainCoordinator?
     private let apiService: APIServiceProtocol
 
     var forecasts: [Forecast] = [] {
@@ -55,7 +56,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
         self.rootView?.setUpTable(delegate: self)
         self.rootView?.backgroundColor = .tintColor
         
-        fetchForecast(for: .lviv)
+        self.fetchForecast(for: .lviv)
     }
     
     // MARK: -
@@ -83,7 +84,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     }
     
     func cityPicker(didSelect city: CityPickable) {
-        fetchForecast(for: city)
+        self.fetchForecast(for: city)
     }
 }
 
@@ -93,7 +94,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
 extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return forecasts.count
+        return self.forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,7 +105,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             cell.configure(model: forecast, icon: defaultIcon)
         }
         
-        let imageLoadingTask = apiService.iconFetchingTask(icon: forecast.iconName) { result in
+        let imageLoadingTask = self.apiService.iconFetchingTask(icon: forecast.iconName) { result in
             var image: UIImage? = nil
             
             switch result {
@@ -124,7 +125,8 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showDetailForecast(forecast: forecasts[indexPath.row], apiService: self.apiService)
+//        self.coordinator?.showDetailForecast(forecast: forecasts[indexPath.row], apiService: self.apiService)
+        self.eventsHandler?(.displayForecast(forecasts[indexPath.row]))
     }
 }
 
@@ -145,6 +147,6 @@ extension CityForecastViewController: UIPickerViewDelegate, UIPickerViewDataSour
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedCity = CityPickable.allCases[row]
-        fetchForecast(for: selectedCity)
+        self.fetchForecast(for: selectedCity)
     }
 }
