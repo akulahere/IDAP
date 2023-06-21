@@ -23,8 +23,8 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.urlService = URLService()
         self.imageLoader = ImageLoader()
+        self.urlService = URLService()
         self.apiService = APIService(
             baseURL: "https://api.openweathermap.org/data/2.5",
             token: "87edb2e6fea049dd604cf126e86556e2",

@@ -105,6 +105,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
         let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let forecast = self.forecasts[indexPath.row]
         let defaultIcon = UIImage(systemName: "photo.artframe")
+        
         DispatchQueue.main.async {
             cell.configure(model: forecast, icon: defaultIcon)
         }
@@ -129,7 +130,6 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.coordinator?.showDetailForecast(forecast: forecasts[indexPath.row], apiService: self.apiService)
         self.eventsHandler?(.displayForecast(forecasts[indexPath.row]))
     }
 }

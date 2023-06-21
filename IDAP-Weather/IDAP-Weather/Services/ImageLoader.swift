@@ -7,8 +7,10 @@
 
 import UIKit
 
+typealias LoadImageCompletion = (Result<UIImage, Error>) -> Void
+
 protocol ImageLoaderProtocol {
-    func loadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask?
+    func loadImage(from url: URL, completion: @escaping LoadImageCompletion) -> CancellableTask?
 }
 
 class ImageLoader: ImageLoaderProtocol {
@@ -16,15 +18,15 @@ class ImageLoader: ImageLoaderProtocol {
     // MARK: -
     // MARK: Variables
     
-    let imageCacheManager = CacheImageManager()
+    private let imageCacheManager = CacheImageManager()
     
     enum ImageLoadingError: Error, LocalizedError {
         case failedToConvertDataToImage
         
         var errorDescription: String? {
             switch self {
-            case .failedToConvertDataToImage:
-                return "Failed to convert data to image."
+                case .failedToConvertDataToImage:
+                    return "Failed to convert data to image."
             }
         }
     }
@@ -32,13 +34,14 @@ class ImageLoader: ImageLoaderProtocol {
     // MARK: -
     // MARK: Public
     
-    func loadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask? {
+    @discardableResult
+    func loadImage(from url: URL, completion: @escaping LoadImageCompletion) -> CancellableTask? {
         if let cachedImage = self.imageCacheManager.getCachedImage(for: url) {
             completion(.success(cachedImage))
             return nil
         }
         
-        let task = URLSession.shared.dataTask(with: url) {[weak self] (data, response, error) in
+        let task = NetworkTask(url: url) {[weak self] (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data {
@@ -50,7 +53,10 @@ class ImageLoader: ImageLoaderProtocol {
                 }
             }
         }
+        task.resume()
         return task
     }
+
+    
 }
 

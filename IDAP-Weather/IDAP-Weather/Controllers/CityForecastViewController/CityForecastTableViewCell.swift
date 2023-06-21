@@ -13,7 +13,7 @@ class CityForecastTableViewCell: UITableViewCell {
     // MARK: -
     // MARK: Variables
     
-    var dataTask: URLSessionDataTask?
+    var dataTask: CancellableTask?
     
     // MARK: -
     // MARK: Outlets
@@ -30,6 +30,7 @@ class CityForecastTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.dataTask?.cancel()
         self.dataTask = nil
+        self.iconImageView?.image = nil
     }
 
     // MARK: -
@@ -42,9 +43,8 @@ class CityForecastTableViewCell: UITableViewCell {
         self.timeLabel?.text = model.dateConverted()
     }
     
-    func assign(task: URLSessionDataTask?) {
+    func assign(task: CancellableTask?) {
         self.dataTask = task
-        self.dataTask?.resume()
     }
 }
 
