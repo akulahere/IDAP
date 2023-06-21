@@ -36,13 +36,14 @@ class MainCoordinator: Coordinator {
     func start() {
         
         let cityForecastVC = CityForecastViewController(apiService: self.apiService)
-        cityForecastVC.eventsHandler = { [weak self] event in
+        let handler: EventHandler = { [weak self] event in
             switch event {
                 case .displayForecast(let forecast):
                     self?.showDetailForecast(forecast: forecast)
             }
         }
         
+        cityForecastVC.setEventHandler(handler: handler)
         self.navigationController.pushViewController(cityForecastVC, animated: false)
     }
     
