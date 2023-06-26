@@ -7,10 +7,8 @@
 
 import UIKit
 
-typealias LoadImageCompletion = (Result<UIImage, Error>) -> Void
-
 protocol ImageLoaderProtocol {
-    func loadImage(from url: URL, completion: @escaping LoadImageCompletion) -> CancellableTask?
+    func loadImage(from url: URL, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask?
 }
 
 class ImageLoader: ImageLoaderProtocol {
@@ -35,7 +33,7 @@ class ImageLoader: ImageLoaderProtocol {
     // MARK: Public
     
     @discardableResult
-    func loadImage(from url: URL, completion: @escaping LoadImageCompletion) -> CancellableTask? {
+    func loadImage(from url: URL, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask? {
         if let cachedImage = self.imageCacheManager.getCachedImage(for: url) {
             completion(.success(cachedImage))
             return nil

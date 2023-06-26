@@ -7,12 +7,11 @@
 
 import UIKit
 
-typealias ForecastFetchingCompletion = (Result<APIResponse, Error>) -> Void
-typealias IconFetchingCompletion = (Result<UIImage, Error>) -> Void
+typealias ResultedCompletion<R> = (Result<R, Error>) -> Void
 
 protocol APIServiceProtocol {
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping ForecastFetchingCompletion)
-    func iconFetchingTask(icon: String, completion: @escaping IconFetchingCompletion) -> CancellableTask?
+    func fetchForecast(lat: Double, lon: Double, completion: @escaping ResultedCompletion<APIResponse>)
+    func iconFetchingTask(icon: String, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask?
 }
 
 
@@ -39,7 +38,7 @@ class APIService: APIServiceProtocol {
     // MARK: -
     // MARK: Public
 
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping ForecastFetchingCompletion) {
+    func fetchForecast(lat: Double, lon: Double, completion: @escaping ResultedCompletion<APIResponse>) {
         let path = "/forecast"
         let urlStr = self.baseURL + path
         guard let url = URL(string: urlStr) else {
@@ -60,7 +59,7 @@ class APIService: APIServiceProtocol {
         self.urlService.request(url: urlFromComponents, completion: completion)
     }
     
-    func iconFetchingTask(icon: String, completion: @escaping IconFetchingCompletion) -> CancellableTask? {
+    func iconFetchingTask(icon: String, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask? {
         let urlStr = "https://openweathermap.org/img/wn/\(icon)@2x.png"
         guard let url = URL(string: urlStr) else {
             return nil

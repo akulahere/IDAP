@@ -7,15 +7,14 @@
 
 import Foundation
 
-typealias URLServiceRequestCompletion<T> = (Result<T, Error>) -> Void
 
 protocol URLServiceProtocol {
-    func request<T: Decodable>(url: URL, completion: @escaping URLServiceRequestCompletion<T>)
+    func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>)
 
 }
 
 class URLService: URLServiceProtocol {
-    func request<T: Decodable>(url: URL, completion: @escaping URLServiceRequestCompletion<T>) {
+    func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>) {
         let task = NetworkTask(url: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
