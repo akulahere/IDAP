@@ -31,6 +31,7 @@ class CityForecastTableViewCell: UITableViewCell {
         self.dataTask?.cancel()
         self.dataTask = nil
         self.iconImageView?.image = nil
+        self.iconImageView?.hideSpinner()
     }
 
     // MARK: -
@@ -48,3 +49,7 @@ class CityForecastTableViewCell: UITableViewCell {
     }
 }
 
+
+extension UIImageView: Spinnable {
+    typealias SpinnerType = CircleSpinner
+}

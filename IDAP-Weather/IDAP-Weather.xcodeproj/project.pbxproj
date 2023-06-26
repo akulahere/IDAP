@@ -35,6 +35,12 @@
 		66A9DFD02A2E26F600681A10 /* CityForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9DFCE2A2E26F600681A10 /* CityForecastTableViewCell.swift */; };
 		66A9DFD12A2E26F600681A10 /* CityForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A9DFCF2A2E26F600681A10 /* CityForecastTableViewCell.xib */; };
 		66DEC87F2A404A5D0098DB5E /* ViewControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DEC87E2A404A5D0098DB5E /* ViewControllerEvent.swift */; };
+		66F3F2072A497ECA00BFB0BC /* Spinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F2062A497ECA00BFB0BC /* Spinnable.swift */; };
+		66F3F2092A497EFA00BFB0BC /* SpinnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F2082A497EFA00BFB0BC /* SpinnerService.swift */; };
+		66F3F20B2A49802A00BFB0BC /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F20A2A49802A00BFB0BC /* WeakBox.swift */; };
+		66F3F20D2A49803E00BFB0BC /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F20C2A49803E00BFB0BC /* Spinner.swift */; };
+		66F3F20F2A49804A00BFB0BC /* F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F20E2A49804A00BFB0BC /* F.swift */; };
+		66F3F2122A49806600BFB0BC /* CircleSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F2112A49806600BFB0BC /* CircleSpinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,12 @@
 		66A9DFCE2A2E26F600681A10 /* CityForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityForecastTableViewCell.swift; sourceTree = "<group>"; };
 		66A9DFCF2A2E26F600681A10 /* CityForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityForecastTableViewCell.xib; sourceTree = "<group>"; };
 		66DEC87E2A404A5D0098DB5E /* ViewControllerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEvent.swift; sourceTree = "<group>"; };
+		66F3F2062A497ECA00BFB0BC /* Spinnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinnable.swift; sourceTree = "<group>"; };
+		66F3F2082A497EFA00BFB0BC /* SpinnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerService.swift; sourceTree = "<group>"; };
+		66F3F20A2A49802A00BFB0BC /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
+		66F3F20C2A49803E00BFB0BC /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		66F3F20E2A49804A00BFB0BC /* F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F.swift; sourceTree = "<group>"; };
+		66F3F2112A49806600BFB0BC /* CircleSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSpinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +164,7 @@
 				6652FB5D2A3868C800F77EB7 /* ImageLoader.swift */,
 				6652FB5F2A3878E400F77EB7 /* CacheManager.swift */,
 				66910F622A4327FC00C84020 /* NetworkTask.swift */,
+				66F3F2082A497EFA00BFB0BC /* SpinnerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 		669EC5892A28B88B0082DDDF /* IDAP-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				66F3F2102A49805600BFB0BC /* Views */,
 				660A76792A371FD600722676 /* Coordinators */,
 				667DC0402A2E079D00C27F2E /* Services */,
 				669EC5BC2A28BCCF0082DDDF /* Controllers */,
@@ -218,6 +232,10 @@
 				660A767E2A3720A600722676 /* Coordinator.swift */,
 				6652FB672A389F6300F77EB7 /* CityPickable.swift */,
 				668EAA952A42F43300289450 /* EventHandler.swift */,
+				66F3F2062A497ECA00BFB0BC /* Spinnable.swift */,
+				66F3F20A2A49802A00BFB0BC /* WeakBox.swift */,
+				66F3F20C2A49803E00BFB0BC /* Spinner.swift */,
+				66F3F20E2A49804A00BFB0BC /* F.swift */,
 			);
 			path = F;
 			sourceTree = "<group>";
@@ -238,6 +256,14 @@
 				660A76802A37223300722676 /* CityForecastViewController */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66F3F2102A49805600BFB0BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66F3F2112A49806600BFB0BC /* CircleSpinner.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,9 +405,15 @@
 				6652FB602A3878E400F77EB7 /* CacheManager.swift in Sources */,
 				6652FB682A389F6300F77EB7 /* CityPickable.swift in Sources */,
 				667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */,
+				66F3F20F2A49804A00BFB0BC /* F.swift in Sources */,
+				66F3F2122A49806600BFB0BC /* CircleSpinner.swift in Sources */,
 				6652FB622A387DB000F77EB7 /* DetailedForecastView.swift in Sources */,
+				66F3F20D2A49803E00BFB0BC /* Spinner.swift in Sources */,
+				66F3F2092A497EFA00BFB0BC /* SpinnerService.swift in Sources */,
+				66F3F2072A497ECA00BFB0BC /* Spinnable.swift in Sources */,
 				669EC58F2A28B88B0082DDDF /* CityForecastViewController.swift in Sources */,
 				669EC5C12A28C3840082DDDF /* TableView+ReusableCell.swift in Sources */,
+				66F3F20B2A49802A00BFB0BC /* WeakBox.swift in Sources */,
 				660A767B2A371FE300722676 /* MainCoordinator.swift in Sources */,
 				669EC58B2A28B88B0082DDDF /* AppDelegate.swift in Sources */,
 				6652FB5C2A385CBD00F77EB7 /* URLService.swift in Sources */,

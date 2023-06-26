@@ -50,3 +50,7 @@ class CityForecastView: UIView {
     }
     
 }
+
+extension CityForecastView: Spinnable {
+    typealias SpinnerType = CircleSpinner
+}

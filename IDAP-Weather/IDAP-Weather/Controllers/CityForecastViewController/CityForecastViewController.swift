@@ -68,7 +68,11 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     
     func fetchForecast(for city: CityPickable) {
         let coordinates = city.coordinates
+        self.rootView?.showSpinner()
         apiService.fetchForecast(lat: coordinates.latitude, lon: coordinates.longitude) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.rootView?.hideSpinner()
+            }
             switch result {
                 case .success(let apiResponse):
                     self?.forecasts = apiResponse.list.map { listItem -> Forecast in
@@ -104,10 +108,10 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let forecast = self.forecasts[indexPath.row]
-        let defaultIcon = UIImage(systemName: "photo.artframe")
         
         DispatchQueue.main.async {
-            cell.configure(model: forecast, icon: defaultIcon)
+            cell.iconImageView?.showSpinner()
+            cell.configure(model: forecast, icon: nil)
         }
         
         let imageLoadingTask = self.apiService.iconFetchingTask(icon: forecast.iconName) { result in
@@ -115,6 +119,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             
             switch result {
             case .success(let fetchedImage):
+
                 image = fetchedImage
             case .failure(let error):
                 print("Error fetching image: \(error)")
@@ -122,6 +127,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             
             DispatchQueue.main.async {
                 cell.configure(model: forecast, icon: image)
+                cell.iconImageView?.hideSpinner()
             }
         }
         
