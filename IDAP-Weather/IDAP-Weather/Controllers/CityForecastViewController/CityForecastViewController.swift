@@ -106,7 +106,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CityForecastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let cell = tableView.dequeueReusableCell(type: CityForecastTableViewCell.self, for: indexPath)
         let forecast = self.forecasts[indexPath.row]
         
         DispatchQueue.main.async {
