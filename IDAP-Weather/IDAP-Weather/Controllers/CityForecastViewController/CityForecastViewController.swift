@@ -15,7 +15,6 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     typealias RootViewType = CityForecastView
     private var eventsHandler: EventHandler?
     
-    //    var coordinator: MainCoordinator?
     private let apiService: APIServiceProtocol
     
     var forecasts: [Forecast] = [] {

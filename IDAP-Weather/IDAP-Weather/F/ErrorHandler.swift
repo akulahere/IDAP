@@ -16,11 +16,5 @@ extension ErrorHandler where Self: UIViewController {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alertController, animated: true, completion: nil)
-//        DispatchQueue.main.async { [weak self] in
-//            self?.present(alertController, animated: true, completion: nil)
-
-//        }
-            
-        
     }
 }
