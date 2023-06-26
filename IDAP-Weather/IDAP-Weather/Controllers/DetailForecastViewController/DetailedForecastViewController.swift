@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailedForecastViewController: UIViewController, RootViewGettable {
+class DetailedForecastViewController: UIViewController, RootViewGettable, ErrorHandler {
     
     // MARK: -
     // MARK: Variables
@@ -50,7 +50,7 @@ class DetailedForecastViewController: UIViewController, RootViewGettable {
             case .success(let fetchedImage):
                 image = fetchedImage
             case .failure(let error):
-                print("Error fetching image: \(error)")
+                self?.present(error: error)
             }
             
             DispatchQueue.main.async {

@@ -7,17 +7,17 @@
 
 import UIKit
 
-class CityForecastViewController: UIViewController, RootViewGettable, CityForecastViewDelegate, CityPickerDelegate {
+class CityForecastViewController: UIViewController, RootViewGettable, CityForecastViewDelegate, CityPickerDelegate, ErrorHandler {
     
     // MARK: -
     // MARK: Vairables
     
     typealias RootViewType = CityForecastView
     private var eventsHandler: EventHandler?
-
-//    var coordinator: MainCoordinator?
+    
+    //    var coordinator: MainCoordinator?
     private let apiService: APIServiceProtocol
-
+    
     var forecasts: [Forecast] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -45,14 +45,14 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: -
     // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.rootView?.setupCityPicker(delegate: self)
-
+        
         self.rootView?.setUpTable(delegate: self)
         self.rootView?.backgroundColor = .tintColor
         
@@ -83,10 +83,12 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
                         let city = apiResponse.city.name
                         return Forecast(time: time, temp: temp, weather: weather, iconName: iconName, city: city)
                     }
-
+                    
                     self?.currentCity = apiResponse.city.name
                 case .failure(let error):
-                    print(error)
+                    DispatchQueue.main.async {
+                        self?.present(error: error)
+                    }
             }
         }
     }
@@ -114,15 +116,17 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             cell.configure(model: forecast, icon: nil)
         }
         
-        let imageLoadingTask = self.apiService.iconFetchingTask(icon: forecast.iconName) { result in
+        let imageLoadingTask = self.apiService.iconFetchingTask(icon: forecast.iconName) {[weak self] result in
             var image: UIImage? = nil
             
             switch result {
-            case .success(let fetchedImage):
-
-                image = fetchedImage
-            case .failure(let error):
-                print("Error fetching image: \(error)")
+                case .success(let fetchedImage):
+                    
+                    image = fetchedImage
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.present(error: error)
+                    }
             }
             
             DispatchQueue.main.async {

@@ -41,6 +41,7 @@
 		66F3F20D2A49803E00BFB0BC /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F20C2A49803E00BFB0BC /* Spinner.swift */; };
 		66F3F20F2A49804A00BFB0BC /* F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F20E2A49804A00BFB0BC /* F.swift */; };
 		66F3F2122A49806600BFB0BC /* CircleSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F2112A49806600BFB0BC /* CircleSpinner.swift */; };
+		66F3F2142A499AFE00BFB0BC /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3F2132A499AFE00BFB0BC /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		66F3F20C2A49803E00BFB0BC /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		66F3F20E2A49804A00BFB0BC /* F.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F.swift; sourceTree = "<group>"; };
 		66F3F2112A49806600BFB0BC /* CircleSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSpinner.swift; sourceTree = "<group>"; };
+		66F3F2132A499AFE00BFB0BC /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				66F3F20A2A49802A00BFB0BC /* WeakBox.swift */,
 				66F3F20C2A49803E00BFB0BC /* Spinner.swift */,
 				66F3F20E2A49804A00BFB0BC /* F.swift */,
+				66F3F2132A499AFE00BFB0BC /* ErrorHandler.swift */,
 			);
 			path = F;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				6652FB602A3878E400F77EB7 /* CacheManager.swift in Sources */,
 				6652FB682A389F6300F77EB7 /* CityPickable.swift in Sources */,
 				667DC03F2A2E077B00C27F2E /* Forecast.swift in Sources */,
+				66F3F2142A499AFE00BFB0BC /* ErrorHandler.swift in Sources */,
 				66F3F20F2A49804A00BFB0BC /* F.swift in Sources */,
 				66F3F2122A49806600BFB0BC /* CircleSpinner.swift in Sources */,
 				6652FB622A387DB000F77EB7 /* DetailedForecastView.swift in Sources */,

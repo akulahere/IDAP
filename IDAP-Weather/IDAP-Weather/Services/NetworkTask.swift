@@ -21,7 +21,6 @@ class NetworkTask: CancellableTask {
     }
     
     func cancel() {
-        print("Task cancelled")
         self.dataTask.cancel()
     }
     

@@ -15,6 +15,7 @@ protocol URLServiceProtocol {
 
 class URLService: URLServiceProtocol {
     func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>) {
+        
         let task = NetworkTask(url: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
