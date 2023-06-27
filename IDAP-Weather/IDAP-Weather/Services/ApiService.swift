@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 typealias ResultedCompletion<R> = (Result<R, Error>) -> Void
 
 protocol APIServiceProtocol {
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping ResultedCompletion<APIResponse>)
-    func iconFetchingTask(icon: String, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask?
+    func fetchForecast(lat: Double, lon: Double) -> AnyPublisher<APIResponse, Error>
+    func fetchIcon(icon: String) -> AnyPublisher<UIImage, Error>
 }
 
 
@@ -19,7 +20,18 @@ class APIService: APIServiceProtocol {
     
     // MARK: -
     // MARK: Variables
-
+    
+    enum APIServiceError: Error, LocalizedError {
+        case invalidURL
+        
+        var errorDescription: String? {
+            switch self {
+                case .invalidURL:
+                    return "Invalid URL."
+            }
+        }
+    }
+    
     private let baseURL: String
     private let token: String
     private let urlService: URLServiceProtocol
@@ -38,11 +50,12 @@ class APIService: APIServiceProtocol {
     // MARK: -
     // MARK: Public
 
-    func fetchForecast(lat: Double, lon: Double, completion: @escaping ResultedCompletion<APIResponse>) {
+    func fetchForecast(lat: Double, lon: Double) -> AnyPublisher<APIResponse, Error> {
         let path = "/forecast"
         let urlStr = self.baseURL + path
         guard let url = URL(string: urlStr) else {
-            return
+            return Fail(error: APIServiceError.invalidURL)
+                .eraseToAnyPublisher()
         }
 
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
@@ -53,18 +66,20 @@ class APIService: APIServiceProtocol {
         ]
                 
         guard let urlFromComponents = urlComponents?.url else {
-            return
+            return Fail(error: APIServiceError.invalidURL)
+                 .eraseToAnyPublisher()
         }
 
-        self.urlService.request(url: urlFromComponents, completion: completion)
+        return self.urlService.request(url: urlFromComponents)
     }
     
-    func iconFetchingTask(icon: String, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask? {
+    func fetchIcon(icon: String) -> AnyPublisher<UIImage, Error> {
         let urlStr = "https://openweathermap.org/img/wn/\(icon)@2x.png"
         guard let url = URL(string: urlStr) else {
-            return nil
+            return Fail(error: APIServiceError.invalidURL)
+                .eraseToAnyPublisher()
         }
         
-        return self.imageLoader.loadImage(from: url, completion: completion)
+        return self.imageLoader.loadImage(from: url)
     }
 }

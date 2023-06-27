@@ -6,29 +6,19 @@
 //
 
 import Foundation
-
+import Combine
 
 protocol URLServiceProtocol {
-    func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>)
-
+    func request<T: Decodable>(url: URL) -> AnyPublisher<T, Error>
 }
 
 class URLService: URLServiceProtocol {
-    func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>) {
-        
-        let task = NetworkTask(url: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(T.self, from: data)
-                    completion(.success(response))
-                } catch {
-                    completion(.failure(error))
-                }
+    func request<T: Decodable>(url: URL) -> AnyPublisher<T, Error> {
+        URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { data, response in
+                let decoder = JSONDecoder()
+                return try decoder.decode(T.self, from: data)
             }
-        }
-        task.resume()
+            .eraseToAnyPublisher()
     }
 }

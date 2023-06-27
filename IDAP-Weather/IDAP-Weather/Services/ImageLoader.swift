@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 protocol ImageLoaderProtocol {
-    func loadImage(from url: URL, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask?
+    func loadImage(from url: URL) -> AnyPublisher<UIImage, Error>
 }
 
 class ImageLoader: ImageLoaderProtocol {
@@ -32,29 +33,16 @@ class ImageLoader: ImageLoaderProtocol {
     // MARK: -
     // MARK: Public
     
-    @discardableResult
-    func loadImage(from url: URL, completion: @escaping ResultedCompletion<UIImage>) -> CancellableTask? {
-        if let cachedImage = self.imageCacheManager.getCachedImage(for: url) {
-            completion(.success(cachedImage))
-            return nil
-        }
-        
-        let task = NetworkTask(url: url) {[weak self] (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
+    func loadImage(from url: URL) -> AnyPublisher<UIImage, Error> {
+        URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { data, response in
                 if let image = UIImage(data: data) {
-                    self?.imageCacheManager.cacheImage(image, for: url)
-                    completion(.success(image))
+                    return image
                 } else {
-                    completion(.failure(ImageLoadingError.failedToConvertDataToImage))
+                    throw ImageLoadingError.failedToConvertDataToImage
                 }
             }
-        }
-        task.resume()
-        return task
+            .eraseToAnyPublisher()
     }
-
-    
 }
 

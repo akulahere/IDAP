@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class CityForecastViewController: UIViewController, RootViewGettable, CityForecastViewDelegate, CityPickerDelegate, ErrorHandler {
     
@@ -13,8 +14,9 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     // MARK: Vairables
     
     typealias RootViewType = CityForecastView
-    private var eventsHandler: EventHandler?
     
+    private var eventsHandler: EventHandler?
+    private var subscriptions = Set<AnyCancellable>()
     private let apiService: APIServiceProtocol
     
     var forecasts: [Forecast] = [] {
@@ -67,30 +69,33 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     
     func fetchForecast(for city: CityPickable) {
         let coordinates = city.coordinates
-        self.rootView?.showSpinner()
-        apiService.fetchForecast(lat: coordinates.latitude, lon: coordinates.longitude) { [weak self] result in
-            DispatchQueue.main.async {
-                self?.rootView?.hideSpinner()
-            }
-            switch result {
-                case .success(let apiResponse):
-                    self?.forecasts = apiResponse.list.map { listItem -> Forecast in
-                        let time = listItem.dtTxt
-                        let temp = listItem.main.temp
-                        let weather = listItem.weather.first?.main ?? ""
-                        let iconName = listItem.weather.first?.icon ?? ""
-                        let city = apiResponse.city.name
-                        return Forecast(time: time, temp: temp, weather: weather, iconName: iconName, city: city)
-                    }
-                    
-                    self?.currentCity = apiResponse.city.name
-                case .failure(let error):
+        DispatchQueue.main.async {
+            self.rootView?.showSpinner()
+        }
+        apiService.fetchForecast(lat: coordinates.latitude, lon: coordinates.longitude)
+            .sink { [weak self] completion in
+                DispatchQueue.main.async {
+                    self?.rootView?.hideSpinner()
+                }
+                if case .failure(let error) = completion {
                     DispatchQueue.main.async {
                         self?.present(error: error)
                     }
+                }
+            } receiveValue: { [weak self] apiResponse in
+                self?.forecasts = apiResponse.list.map { listItem -> Forecast in
+                    let time = listItem.dtTxt
+                    let temp = listItem.main.temp
+                    let weather = listItem.weather.first?.main ?? ""
+                    let iconName = listItem.weather.first?.icon ?? ""
+                    let city = apiResponse.city.name
+                    return Forecast(time: time, temp: temp, weather: weather, iconName: iconName, city: city)
+                }
+                self?.currentCity = apiResponse.city.name
             }
-        }
+            .store(in: &subscriptions)
     }
+
     
     func cityPicker(didSelect city: CityPickable) {
         self.fetchForecast(for: city)
@@ -115,26 +120,20 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
             cell.configure(model: forecast, icon: nil)
         }
         
-        let imageLoadingTask = self.apiService.iconFetchingTask(icon: forecast.iconName) {[weak self] result in
-            var image: UIImage? = nil
-            
-            switch result {
-                case .success(let fetchedImage):
-                    
-                    image = fetchedImage
-                case .failure(let error):
+        let iconFetchingTask = self.apiService.fetchIcon(icon: forecast.iconName)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
                     DispatchQueue.main.async {
                         self?.present(error: error)
                     }
+                }
+            } receiveValue: { image in
+                DispatchQueue.main.async {
+                    cell.configure(model: forecast, icon: image) // Update the cell with the fetched icon
+                    cell.iconImageView?.hideSpinner()
+                }
             }
-            
-            DispatchQueue.main.async {
-                cell.configure(model: forecast, icon: image)
-                cell.iconImageView?.hideSpinner()
-            }
-        }
-        
-        cell.assign(task: imageLoadingTask)
+        cell.assign(task: iconFetchingTask)
         return cell
     }
     

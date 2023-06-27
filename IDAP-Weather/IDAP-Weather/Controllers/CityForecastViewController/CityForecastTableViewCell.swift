@@ -6,14 +6,14 @@
 //
 
 import UIKit
-
+import Combine
 
 class CityForecastTableViewCell: UITableViewCell {
     
     // MARK: -
     // MARK: Variables
     
-    var dataTask: CancellableTask?
+    var dataTask: AnyCancellable?
     
     // MARK: -
     // MARK: Outlets
@@ -44,7 +44,7 @@ class CityForecastTableViewCell: UITableViewCell {
         self.timeLabel?.text = model.dateConverted()
     }
     
-    func assign(task: CancellableTask?) {
+    func assign(task: AnyCancellable?) {
         self.dataTask = task
     }
 }

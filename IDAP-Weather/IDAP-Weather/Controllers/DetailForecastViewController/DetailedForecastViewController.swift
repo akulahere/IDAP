@@ -6,20 +6,21 @@
 //
 
 import UIKit
-
+import Combine
 class DetailedForecastViewController: UIViewController, RootViewGettable, ErrorHandler {
     
     // MARK: -
     // MARK: Variables
-
+    
     var forecast: Forecast
     var apiService: APIServiceProtocol
+    private var subscriptions = Set<AnyCancellable>()
     
     typealias RootViewType = DetailedForecastView
     
     // MARK: -
     // MARK: Initialization
-
+    
     init(forecast: Forecast, apiService: APIServiceProtocol) {
         self.forecast = forecast
         self.apiService = apiService
@@ -32,31 +33,30 @@ class DetailedForecastViewController: UIViewController, RootViewGettable, ErrorH
     
     // MARK: -
     // MARK: LifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
     }
-
+    
     // MARK: -
     // MARK: Public
-
+    
     func configureView() {
-        let imageLoadingTask = apiService.iconFetchingTask(icon: forecast.iconName) {[weak self] result in
-            guard let forecast = self?.forecast else { return }
-            var image: UIImage? = nil
-            
-            switch result {
-            case .success(let fetchedImage):
-                image = fetchedImage
-            case .failure(let error):
-                self?.present(error: error)
-            }
-            
-            DispatchQueue.main.async {
+        
+        apiService.fetchIcon(icon: forecast.iconName)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                    case .failure(let error):
+                        self?.present(error: error)
+                    case .finished:
+                        break
+                }
+            } receiveValue: { [weak self] image in
+                guard let forecast = self?.forecast else { return }
                 self?.rootView?.configure(model: forecast, icon: image)
             }
-        }
-        imageLoadingTask?.resume()
+            .store(in: &subscriptions)
     }
 }
