@@ -129,7 +129,7 @@ extension CityForecastViewController: UITableViewDataSource, UITableViewDelegate
                 }
             } receiveValue: { image in
                 DispatchQueue.main.async {
-                    cell.configure(model: forecast, icon: image) // Update the cell with the fetched icon
+                    cell.configure(model: forecast, icon: image) 
                     cell.iconImageView?.hideSpinner()
                 }
             }
