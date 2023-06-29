@@ -7,12 +7,7 @@
 
 import UIKit
 
-protocol DetailedForecastViewDelegate: DetailedForecastViewController {
-    var currentCity: String { get }
-}
-
 class DetailedForecastView: UIView {
-    weak var delegate: CityForecastViewDelegate?
 
     @IBOutlet weak var cityName: UILabel?
     
