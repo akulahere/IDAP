@@ -13,9 +13,9 @@ class MainCoordinator: Coordinator {
     // MARK: Variables
     
     var navigationController: UINavigationController
-    private let apiService: APIService
-    private let urlService: URLService
-    private let imageLoader: ImageLoader
+    private let apiService: APIServiceProtocol
+    private let urlService: URLServiceProtocol
+    private let imageLoader: ImageLoaderProtocol
 
 
     // MARK: -
