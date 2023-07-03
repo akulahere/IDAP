@@ -22,7 +22,6 @@
 		666B06BF2A20C6620063FF48 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06BE2A20C6620063FF48 /* ArrayModel.swift */; };
 		666B06C62A20CACB0063FF48 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06C42A20CACB0063FF48 /* CustomTableViewCell.swift */; };
 		666B06C72A20CACB0063FF48 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B06C52A20CACB0063FF48 /* CustomTableViewCell.xib */; };
-		666B06C92A20CC3E0063FF48 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		666B06BE2A20C6620063FF48 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 		666B06C42A20CACB0063FF48 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		666B06C52A20CACB0063FF48 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				666B06B72A20AE650063FF48 /* RootViewGettable.swift */,
-				666B06C82A20CC3E0063FF48 /* BaseTableViewCell.swift */,
 				665CF4612A27344D00DC8DC1 /* TableViewCell+ext.swift */,
 			);
 			path = F;
@@ -318,7 +315,6 @@
 				666B06B82A20AE650063FF48 /* RootViewGettable.swift in Sources */,
 				665CF4622A27344D00DC8DC1 /* TableViewCell+ext.swift in Sources */,
 				666B06BF2A20C6620063FF48 /* ArrayModel.swift in Sources */,
-				666B06C92A20CC3E0063FF48 /* BaseTableViewCell.swift in Sources */,
 				666B068B2A20AE460063FF48 /* MainViewController.swift in Sources */,
 				666B06872A20AE460063FF48 /* AppDelegate.swift in Sources */,
 			);
