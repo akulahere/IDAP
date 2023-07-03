@@ -14,7 +14,7 @@ class MainCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private let apiService: APIServiceProtocol
-    private let urlService: URLServiceProtocol
+    private let urlService: NetworkServiceProtocol
     private let imageLoader: ImageLoaderProtocol
     
     
@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController,
          apiService: APIServiceProtocol,
-         urlService: URLServiceProtocol,
+         urlService: NetworkServiceProtocol,
          imageLoader: ImageLoader)
     {
         self.navigationController = navigationController
@@ -42,7 +42,7 @@ class MainCoordinator: Coordinator {
             }
         }
         
-        cityForecastVC.setEventHandler(handler: handler)
+        cityForecastVC.eventsHandler = handler
         self.navigationController.pushViewController(cityForecastVC, animated: false)
     }
     

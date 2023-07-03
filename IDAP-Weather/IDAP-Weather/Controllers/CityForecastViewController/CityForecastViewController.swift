@@ -13,7 +13,8 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     // MARK: Vairables
     
     typealias RootViewType = CityForecastView
-    private var eventsHandler: EventHandler?
+    
+    var eventsHandler: EventHandler?
     
     private let apiService: APIServiceProtocol
     
@@ -60,11 +61,7 @@ class CityForecastViewController: UIViewController, RootViewGettable, CityForeca
     
     // MARK: -
     // MARK: Public
-    
-    func setEventHandler(handler: @escaping (ViewControllerEvent) -> Void) {
-        self.eventsHandler = handler
-    }
-    
+ 
     func fetchForecast(for city: CityPickable) {
         let coordinates = city.coordinates
         self.rootView?.showSpinner()

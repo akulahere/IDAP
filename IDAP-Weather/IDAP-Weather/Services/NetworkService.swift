@@ -8,12 +8,12 @@
 import Foundation
 
 
-protocol URLServiceProtocol {
+protocol NetworkServiceProtocol {
     func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>)
 
 }
 
-class URLService: URLServiceProtocol {
+class NetworkService: NetworkServiceProtocol {
     func request<T: Decodable>(url: URL, completion: @escaping ResultedCompletion<T>) {
         
         let task = NetworkTask(url: url) { (data, response, error) in

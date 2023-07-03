@@ -15,20 +15,20 @@ protocol APIServiceProtocol {
 }
 
 
-class APIService: APIServiceProtocol {
+class APIForecastService: APIServiceProtocol {
     
     // MARK: -
     // MARK: Variables
 
     private let baseURL: String
     private let token: String
-    private let urlService: URLServiceProtocol
+    private let urlService: NetworkServiceProtocol
     private let imageLoader: ImageLoaderProtocol
 
     // MARK: -
     // MARK: Initialization
     
-    init(baseURL: String, token: String, urlService: URLServiceProtocol, imageLoader: ImageLoaderProtocol) {
+    init(baseURL: String, token: String, urlService: NetworkServiceProtocol, imageLoader: ImageLoaderProtocol) {
         self.baseURL = baseURL
         self.token = token
         self.urlService = urlService

@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let navController = UINavigationController()
-        let urlService = URLService()
+        let urlService = NetworkService()
         let imageLoader = ImageLoader()
-        let apiService = APIService(
+        let apiService = APIForecastService(
             baseURL: "https://api.openweathermap.org/data/2.5",
             token: "87edb2e6fea049dd604cf126e86556e2",
             urlService: urlService,
