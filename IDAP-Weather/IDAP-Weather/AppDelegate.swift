@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let navController = UINavigationController()
-        mainCoordinator = MainCoordinator(navigationController: navController)
+        let urlService = URLService()
+        let imageLoader = ImageLoader()
+        let apiService = APIService(
+            baseURL: "https://api.openweathermap.org/data/2.5",
+            token: "87edb2e6fea049dd604cf126e86556e2",
+            urlService: urlService,
+            imageLoader: imageLoader
+        )
+        mainCoordinator = MainCoordinator(navigationController: navController,
+                                          apiService: apiService,
+                                          urlService: urlService,
+                                          imageLoader: imageLoader)
         mainCoordinator?.start()
         
         let window = UIWindow(frame: UIScreen.main.bounds)

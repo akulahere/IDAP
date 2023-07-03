@@ -12,25 +12,24 @@ class MainCoordinator: Coordinator {
     // MARK: -
     // MARK: Variables
     
-    var navigationController: UINavigationController
+    private let navigationController: UINavigationController
     private let apiService: APIServiceProtocol
     private let urlService: URLServiceProtocol
     private let imageLoader: ImageLoaderProtocol
-
-
+    
+    
     // MARK: -
     // MARK: Initialisators
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         apiService: APIServiceProtocol,
+         urlService: URLServiceProtocol,
+         imageLoader: ImageLoader)
+    {
         self.navigationController = navigationController
-        self.imageLoader = ImageLoader()
-        self.urlService = URLService()
-        self.apiService = APIService(
-            baseURL: "https://api.openweathermap.org/data/2.5",
-            token: "87edb2e6fea049dd604cf126e86556e2",
-            urlService: urlService,
-            imageLoader: imageLoader
-        )
+        self.imageLoader = imageLoader
+        self.urlService = urlService
+        self.apiService = apiService
     }
     
     func start() {
