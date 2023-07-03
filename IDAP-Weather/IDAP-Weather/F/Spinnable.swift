@@ -7,15 +7,17 @@
 
 import UIKit
 
+typealias Completion<T> = (T) -> Void
+
 protocol Spinnable {
 
     associatedtype SpinnerType: Spinner
 
     func showSpinner()
-    func showSpinner(configure: F.Completion<SpinnerType.SpinnerView>?)
+    func showSpinner(configure: Completion<SpinnerType.SpinnerView>?)
 
     func hideSpinner()
-    func hideSpinner(configure: F.Completion<SpinnerType.SpinnerView>?)
+    func hideSpinner(configure: Completion<SpinnerType.SpinnerView>?)
 }
 
 extension Spinnable where Self: UIView {
@@ -28,11 +30,11 @@ extension Spinnable where Self: UIView {
         self.hideSpinner(configure: nil)
     }
 
-    func showSpinner(configure: F.Completion<SpinnerType.SpinnerView>?) {
+    func showSpinner(configure: Completion<SpinnerType.SpinnerView>?) {
         SpinnerService.show(on: self, provider: SpinnerType.self, configure: configure)
     }
 
-    func hideSpinner(configure: F.Completion<SpinnerType.SpinnerView>?) {
+    func hideSpinner(configure: Completion<SpinnerType.SpinnerView>?) {
         SpinnerService.hide(from: self, provider: SpinnerType.self, configure: configure)
     }
 }

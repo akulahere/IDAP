@@ -14,7 +14,7 @@ class SpinnerService {
     static func show<ProviderType: Spinner, Type>(
         on view: UIView,
         provider: ProviderType.Type,
-        configure: F.Completion<Type>?
+        configure: Completion<Type>?
     )
         where ProviderType.SpinnerView == Type
     {
@@ -44,7 +44,7 @@ class SpinnerService {
     static func hide<ProviderType: Spinner, Type>(
         from view: UIView,
         provider: ProviderType.Type,
-        configure: F.Completion<Type>?
+        configure: Completion<Type>?
     ) {
         let spinner = self.spinners.removeValue(forKey: view)
 

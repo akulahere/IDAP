@@ -7,7 +7,6 @@
 
 import UIKit
 
-typealias ResultedCompletion<R> = (Result<R, Error>) -> Void
 
 protocol APIServiceProtocol {
     func fetchForecast(lat: Double, lon: Double, completion: @escaping ResultedCompletion<APIResponse>)
